@@ -1,0 +1,13 @@
+[Desktop Entry]
+_Name=Pesbuk
+Exec=pesbuk
+Icon=pesbuk/icon.svg
+Terminal=false
+Type=Application
+Keywords=facebook;pesbuk;social;media;social media;
+X-Ubuntu-Touch=true
+X-Ubuntu-Splash-Image=pesbuk/splash.svg
+X-Ubuntu-Splash-Show-Header=false
+X-Ubuntu-Splash-Title=Pesbuk
+X-Ubuntu-Splash-Color=#3b5998
+Name[en_US]=Pesbuk

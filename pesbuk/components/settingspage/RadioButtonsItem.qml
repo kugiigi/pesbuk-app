@@ -15,20 +15,11 @@ GroupBox {
     width: parent.width
     focusPolicy: Qt.NoFocus
     
-    /*background: Rectangle{
-        color: theme.normal.background
-        border{
-           width: 1
-           color: theme.normal.foreground
-        }
-    }*/
-    
     label: Label {
         id: label
         
         text: radioButtonsItem.title
         verticalAlignment: Text.AlignVCenter
-        color: theme.normal.backgroundText
     }
     
     Column {

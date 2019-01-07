@@ -4,6 +4,7 @@
         "accounts",
         "audio",
         "content_exchange",
+        "content_exchange_source",
         "location",
         "camera",
         "microphone",

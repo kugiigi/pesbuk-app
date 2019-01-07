@@ -25,7 +25,6 @@ css.innerText += "div#header[data-sigil=MTopBlueBarHeader] div#bookmarks_flyout{
 
 if(header){
     topMargin = header.offsetHeight
-    console.log("topMargin: " + topMargin)
     css.innerText += "div#rootcontainer{top: -44px; position: relative; z-index: 2}"
 }
 

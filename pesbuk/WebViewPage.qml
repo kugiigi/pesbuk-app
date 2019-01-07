@@ -15,19 +15,33 @@ import "."
 BasePage {
     id: page
     
+    readonly property string baseURL: switch(appSettings.baseSite){
+                                case 0:
+                                    "https://touch.facebook.com"
+                                break
+                                case 1: 
+                                    "https://m.facebook.com"
+                                break
+                                default:
+                                    "https://touch.facebook.com"
+                                break
+                                
+                            }
+    readonly property string home: baseURL + "/home.php?sk="
     
-    readonly property string home: "https://touch.facebook.com"
     property alias webView: webview
     
     // Specific Facebook values
-    property int messagesCount
-    property int notificationsCount
-    property int requestsCount
-    property int feedsCount
-    property int totalCount: messagesCount + notificationsCount + requestsCount + feedsCount
+    property string messagesCount
+    property string notificationsCount
+    property string requestsCount
+    property string feedsCount
+    property string notificationExists: messagesCount || notificationsCount || requestsCount || feedsCount
+    property int notifyCount: parseInt(messagesCount ? messagesCount : 0) + parseInt(notificationsCount ? notificationsCount : 0) + parseInt(requestsCount ? requestsCount : 0) + parseInt(feedsCount ? feedsCount : 0)
     
-    title: webview. title
-    headerRightActions: [headerExpandAction, homeAction, reloadAction, forwardAction, backAction]
+    title: webview.title
+//~     headerRightActions: [testAction, testAction2, homeAction, reloadAction, forwardAction, backAction]
+    headerRightActions: [homeAction, reloadAction, forwardAction, backAction]
     
     BaseHeaderAction{
         id: backAction
@@ -51,6 +65,28 @@ BasePage {
 //~                 }
 //~             }
             webview.goBack()
+        }
+    }
+    
+    BaseHeaderAction{
+        id: testAction
+        
+        text: i18n.tr("Test")
+        iconName: "go-next"
+    
+        onTrigger:{
+            webview.runJavaScript("var test = document.querySelector('a[name=\"Notifications\"] span[data-sigil=count]'); test.innerHTML = \"" + Math.floor((Math.random() * 10) + 1) + '";')
+        }
+    }
+    BaseHeaderAction{
+        id: testAction2
+        
+        text: i18n.tr("Test 2")
+        iconName: "go-next"
+    
+        onTrigger:{
+//~             webview.runJavaScript("var test = document.querySelector('a[name=\"Friend Requests\"] span[data-sigil=count]'); test.innerHTML = \"" + Math.floor((Math.random() * 10) + 1) + '";')
+            webview.runJavaScript("var test = document.querySelector('a[name=\"Notifications\"] span[data-sigil=count]'); test.innerHTML = '0'")
         }
     }
     
@@ -89,6 +125,17 @@ BasePage {
     }
     
     BaseHeaderAction{
+        id: goTopAction
+        
+        text: i18n.tr("Go to top")
+        iconName: "go-up"
+    
+        onTrigger:{
+            webview.goToTop();
+        }
+    }
+    
+    BaseHeaderAction{
         id: headerExpandAction
         
         text: applicationHeader.expanded ? i18n.tr("Reset Header") : i18n.tr("Reach Header")
@@ -110,46 +157,104 @@ BasePage {
         zoomFactor: appSettings.zoomFactor
         url: page.home
 
-        userScripts: [
-            WebEngineScript {
-               name: "oxide://fb-no-appbanner/"
-               sourceUrl: Qt.resolvedUrl("js/fb-no-appbanner.js")
-               runOnSubframes: true
-           },
-           WebEngineScript {
-               name: "oxide://fb-no-header/"
-               sourceUrl: appSettings.hideHeader ? Qt.resolvedUrl("js/fb-no-header.js") : Qt.resolvedUrl("js/fb-with-header.js")
-               injectionPoint: WebEngineScript.DocumentReady
-               runOnSubframes: true
-           },
-           WebEngineScript {
-               name: "oxide://notifier/"
-               sourceUrl: Qt.resolvedUrl("js/notifier.js")
-               injectionPoint: WebEngineScript.DocumentReady
-               runOnSubframes: true
-           }
-        ]
+        userScripts: appSettings.hideHeader ? [fbNoBanner, noHeader, notifier] : [fbNoBanner, notifier]
+        WebEngineScript {
+            id: fbNoBanner
+            name: "oxide://fb-no-appbanner/"
+            sourceUrl: Qt.resolvedUrl("js/fb-no-appbanner.js")
+            runOnSubframes: true
+        }
+        WebEngineScript {
+            id: noHeader
+            name: "oxide://fb-no-header/"
+            sourceUrl: Qt.resolvedUrl("js/fb-no-header.js")
+            injectionPoint: WebEngineScript.DocumentReady
+            runOnSubframes: true
+        }
+        WebEngineScript {
+            id: notifier
+            name: "oxide://notifier/"
+            sourceUrl: Qt.resolvedUrl("js/notifier.js")
+            runOnSubframes: true
+        }
+        
+        function goToTop(){
+            runJavaScript("window.scrollTo(0, 0); ")
+        }
+        
+        function goToBottom(){
+            runJavaScript("window.scrollTo(0, " + webview.contentsSize.height +"); ")
+        }
         
         onJavaScriptConsoleMessage: {
-            console.log(message)
+//~             console.log(message + " - " + lineNumber + " - " + sourceID)
             var parsedData = JSON.parse(message)
+            var notifyEnabled
+            var notifyTitle
+            var notifyIcon
+            var notifyBody
+            var notifyUrl
+            var notifySound
             if(parsedData.type){
+                var parsedValue = !parsedData.value || parsedData.value === "0" ? "" : parsedData.value
                 switch(parsedData.type){
                     case "NOTIFY":
                         switch(parsedData.name){
                             case "Notifications":
-                                page.notificationsCount = parsedData.value
+                                page.notificationsCount = parsedValue
+                                notifyEnabled = appSettings.pushNotification.enable
+                                if(notifyEnabled){
+                                    notifyIcon = "notification"
+                                    notifyTitle = i18n.tr("New Facebook notification", "New Facebook notifications", parsedValue)
+                                    notifyBody = i18n.tr("notification", "notifications", parsedValue)
+                                    notifyUrl = "pesbuk://notifications"
+                                    notifySound = appSettings.pushNotification.sound
+                                }
                             break
                             case "Messages":
-                                page.messagesCount = parsedData.value
+                                page.messagesCount = parsedValue
+                                notifyEnabled = appSettings.pushMessage.enable
+                                if(notifyEnabled){
+                                    notifyIcon = "message"
+                                    notifyTitle = i18n.tr("New Facebook message", "New Facebook messages", parsedValue)
+                                    notifyBody = i18n.tr("message", "messages", parsedValue)
+                                    notifyUrl = "pesbuk://messages"
+                                    notifySound = appSettings.pushMessage.sound
+                                }
                             break
                             case "Feeds":
-                                page.feedsCount = parsedData.value
+                                page.feedsCount = parsedValue
+                                notifyEnabled = appSettings.pushFeed.enable
+                                if(notifyEnabled){
+                                    notifyIcon = "rssreader-app-symbolic"
+                                    notifyTitle = i18n.tr("New items in your Facebook feeds")
+                                    notifyBody = i18n.tr("feed", "feeds", parsedValue)
+                                    notifyUrl = "pesbuk://feeds"
+                                    notifySound = appSettings.pushFeed.sound
+                                }
                             break
                             case "Requests":
-                                page.requestsCount = parsedData.value
+                                page.requestsCount = parsedValue
+                                notifyEnabled = appSettings.pushRequest.enable
+                                if(notifyEnabled){
+                                    notifyIcon = "contact"
+                                    notifyTitle = i18n.tr("New Facebook friend request", "New Facebook friend requests", parsedValue)
+                                    notifyBody = i18n.tr("friend request", "friend requests", parsedValue)
+                                    notifyUrl = "pesbuk://requests"
+                                    notifySound = appSettings.pushRequest.sound
+                                }
                             break
                         }
+                        if(!parsedValue){
+//~                             console.log("clear Persistent")
+                            pushClient.clearPersistent([parsedData.name.toLowerCase()]);
+                        }
+                        if(parsedValue && parsedData.push && notifyEnabled){
+                            notifyBody = i18n.tr("You have %2 new %1","You have %2 new %1", parsedValue).arg(notifyBody).arg(parsedValue)
+                            pushClient.sendPush(parsedData.name.toLowerCase(), notifyTitle, notifyBody, notifyIcon, notifyUrl, notifySound)
+                        }
+                        
+                        
                     break
                 }
             }
@@ -161,28 +266,41 @@ BasePage {
             console.log("context requested")
         }
         
-//~         SwipeArea{
-//~             id: bottomSwipeArea
+        SwipeArea{
+            id: downSwipeArea
             
-//~             direction: SwipeArea.Downwards
-//~             enabled: webview.scrollPosition === Qt.point(0,0)
-//~             z: 1
-//~             anchors.fill: parent
-//~             grabGesture: false
-//~             onDistanceChanged: {
-//~                 if(distance > 0){
-//~                     if(applicationHeader.height < applicationHeader.expansionThreshold){
-//~                         applicationHeader.height = 50 + distance
-//~                     }
-                    
-//~                     if(applicationHeader.height >= applicationHeader.expansionThreshold){
-//~                         applicationHeader.expanded = true
-//~                     }
-//~                 }	
-//~             }
-//~         }
+            readonly property real expansionThreshold: applicationHeader.maxHeight
+            
+            direction: SwipeArea.Downwards
+            enabled: webview.scrollPosition === Qt.point(0,0)
+            z: 1
+            anchors.fill: parent
+            grabGesture: false
+            onDistanceChanged: {
+                if(distance > 0){
+                    if((distance + applicationHeader.height) >= expansionThreshold){
+                        applicationHeader.expanded = true
+                    }
+                }	
+            }
+        }
         
-//~             ScrollPositioner{}
+        SwipeArea{
+            id: upSwipeArea
+            
+            direction: SwipeArea.Upwards
+            enabled: applicationHeader.expanded
+            z: 1
+            anchors.fill: parent
+            grabGesture: false
+            onDraggingChanged:{
+                if(dragging){
+                    applicationHeader.expanded = false
+                }
+            }
+        }
+        
+        ScrollPositioner{z: 5; mode: "Down";}
             
         WebEngineProfile {
             id: webContext 
@@ -192,7 +310,8 @@ BasePage {
 
             dataPath: dataLocation
 
-            userAgent: "Mozilla/5.0 (Linux; U; Android 4.1.1; es-; AVA-V470 Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+//~             userAgent: "Mozilla/5.0 (Linux; U; Android 4.1.1; es-; AVA-V470 Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+//~             userAgent: "Mozilla/5.0 (Linux; Ubuntu 16.04; Android 5.0; Nexus 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${CHROMIUM_VERSION} Mobile Safari/537.36"
 
             persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
 
@@ -292,44 +411,44 @@ BasePage {
             Qt.openUrlExternally(request.requestedUrl);
         }
 
-        Loader {
-            anchors {
-                fill: webview
-            }
-            active: webProcessMonitor.crashed || (webProcessMonitor.killed && !webview.currentWebview.loading)
-            sourceComponent: SadPage {
-                webview: webview
-                objectName: "overlaySadPage"
-            }
-            WebProcessMonitor {
-                id: webProcessMonitor
-                webview: webview
-            }
-            asynchronous: true
-          }
-       }
-
-        Loader {
-            id: contentHandlerLoader
-            source: "ContentHandler.qml"
-            asynchronous: true
+    Loader {
+        anchors {
+            fill: webview
         }
-     
-        Loader {
-            id: downloadLoader
-            source: "Downloader.qml"
-            asynchronous: true
+        active: webProcessMonitor.crashed || (webProcessMonitor.killed && !webview.currentWebview.loading)
+        sourceComponent: SadPage {
+            webview: webview
+            objectName: "overlaySadPage"
         }
-        
-        Loader {
-            id: filePickerLoader
-            source: "ContentPickerDialog.qml"
-            asynchronous: true
+        WebProcessMonitor {
+            id: webProcessMonitor
+            webview: webview
         }
-
-        Loader {
-            id: downloadDialogLoader
-            source: "ContentDownloadDialog.qml"
-            asynchronous: true
-        }
+        asynchronous: true
+      }
+    }
+    
+    Loader {
+        id: contentHandlerLoader
+        source: "ContentHandler.qml"
+        asynchronous: true
+    }
+    
+    Loader {
+        id: downloadLoader
+        source: "Downloader.qml"
+        asynchronous: true
+    }
+    
+    Loader {
+        id: filePickerLoader
+        source: "ContentPickerDialog.qml"
+        asynchronous: true
+    }
+    
+    Loader {
+        id: downloadDialogLoader
+        source: "ContentDownloadDialog.qml"
+        asynchronous: true
+    }
 }

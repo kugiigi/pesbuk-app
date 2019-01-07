@@ -11,11 +11,14 @@ ToolButton {
     
     anchors.bottom: parent.bottom
     padding: 10
+    
+    height: applicationHeader.defaultHeight
 
-    contentItem: UT.Icon {
+    UT.Icon {
         id: icon
         
-        implicitWidth: 15
+        anchors.centerIn: parent
+        implicitWidth: 30
         implicitHeight: implicitWidth
         color: headerTitle.color
     }

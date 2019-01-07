@@ -7,23 +7,16 @@ RoundButton {
 
     readonly property int timeout: 500
     
+    property string scrollDirection
+    property real previousScrollPosition: 0
+    
     property string mode: "Down"
     property bool hide: false
     
+    width: 65
+    height: width
     visible: opacity != 0
-    opacity: {
-        if (!root.hide) {
-            if (root.mode === "Up") {
-                root.parent.visibleArea.yPosition
-                        + root.parent.visibleArea.heightRatio > 0.10 ? 1 : 0
-            } else {
-                root.parent.visibleArea.yPosition
-                        + root.parent.visibleArea.heightRatio < 0.95 ? 1 : 0
-            }
-        } else {
-            0
-        }
-    }
+    opacity: root.hide ? 0 : 1
 
     anchors {
         right: parent.right
@@ -32,22 +25,31 @@ RoundButton {
         bottomMargin: 30
     }
 
+
+    onScrollDirectionChanged: {
+        if(scrollDirection === "Downwards"){
+            root.mode = "Down"
+        }else{
+            root.mode = "Up"
+        }
+        
+        timer.restart()
+    }
+    
     Connections {
         id: parentFlickable
         target: root.parent
-
-        onVerticalVelocityChanged: {
-            if(target.verticalVelocity === 0){
-                timer.start()
+        
+        onScrollPositionChanged: {
+            if(target.scrollPosition.y > root.previousScrollPosition){
+                root.scrollDirection = "Downwards"
             }else{
-                timer.stop()
-                root.hide = false
-                if (target.verticalVelocity < 0) {
-                    root.mode = "Up"
-                } else{
-                    root.mode = "Down"
-                }
+                root.scrollDirection = "Upwards"
             }
+            root.previousScrollPosition = target.scrollPosition.y
+            
+            root.hide = false
+            timer.restart()
         }
     }
 
@@ -67,11 +69,11 @@ RoundButton {
     }
     
     onClicked: {
-        timer.start()
+        timer.restart()
         if (mode === "Up") {
-            root.parent.scrollPosition = Qt.point(0, root.parent.contentsSize.height)
+            root.parent.goToTop();
         } else {
-            root.parent.scrollPosition = Qt.point(0, 0)
+            root.parent.goToBottom();
         }
     }
 

@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
         QQuickStyle::setStyle(settings.value("style").toString());
     }
     else {
-        settings.setValue("style", "Suru");
-        QQuickStyle::setStyle("Suru");
+        settings.setValue("style", "Material");
+        QQuickStyle::setStyle("Material");
     }
 
     QQmlApplicationEngine engine;

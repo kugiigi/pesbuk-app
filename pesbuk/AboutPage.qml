@@ -75,9 +75,6 @@ BasePage {
                 append({"section": i18n.tr("Support"), "text": i18n.tr("View in OpenStore"), "subText": "", "icon": "ubuntu-store-symbolic", "urlText": "openstore://pesbuk.kugiigi"})
                 append({"section": i18n.tr("Support"), "text": i18n.tr("Other apps by the developer"), "subText": "", "icon": "stock_application", "urlText": "https://open-store.io/?search=author%3AKugi%20Eusebio"})
                 append({"section": i18n.tr("Developers"), "text": "Kugi Eusebio", "subText": i18n.tr("Main developer"), "icon": "", "urlText": "https://github.com/kugiigi"})
-//~                 append({"section": i18n.tr("Powered by"), "text": "accounting.js", "subText": i18n.tr("Money formatting"), "icon": "", "urlText": "http://openexchangerates.github.io/accounting.js/"})
-//~                 append({"section": i18n.tr("Powered by"), "text": "OpenExchangeRates.org", "subText": i18n.tr("Exchange rates data: 1000 requests/month only"), "icon": "", "urlText": "http://openexchangerates.org"})
-//~                 append({"section": i18n.tr("Powered by"), "text": "JSONListModel", "subText": i18n.tr("JSON models"), "icon": "", "urlText": "https://github.com/kromain/qml-utils"})
             }
         }
     }

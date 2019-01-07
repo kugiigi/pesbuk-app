@@ -16,7 +16,9 @@ QML_FILES += $$files(*.qml,true) \
 
 CONF_FILES +=  pesbuk.apparmor \
                icon.svg \
-               splash.svg
+               splash.svg \
+               content-hub.json \
+               app-dispatcher.json
 
 AP_TEST_FILES += tests/autopilot/run \
                  $$files(tests/*.py,true)

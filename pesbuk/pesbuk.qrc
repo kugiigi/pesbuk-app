@@ -36,6 +36,7 @@
         <file>components/aboutpage/IconComponent.qml</file>
         <file>components/aboutpage/NavigationItem.qml</file>
         <file>components/aboutpage/SectionItem.qml</file>
+        <file>components/menudrawer/MenuActions.qml</file>
         <file>ContentDownloadDialog.qml</file>
         <file>ContentHandler.qml</file>
         <file>ContentPickerDialog.qml</file>
@@ -43,7 +44,6 @@
         <file>FileExtensionMapper.js</file>
         <file>js/fb-no-appbanner.js</file>
         <file>js/fb-no-header.js</file>
-        <file>js/fb-with-header.js</file>
         <file>js/notifier.js</file>
         <file>MediaAccessDialog.qml</file>
         <file>MimeTypeMapper.js</file>

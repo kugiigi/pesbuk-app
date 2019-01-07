@@ -6,28 +6,54 @@ var elements = [
             ]
 
 var targetNode
+var elementName
 var arrayLength = elements.length;
 for (var i = 0; i < arrayLength; i++) {
+    elementName = elements[i].name
     targetNode = document.querySelector(elements[i].selector);
     if(targetNode){
-        console.log('{"type": "NOTIFY", "name": "' + elements[i].name + '", "value": "' + targetNode.innerText + '"}' )
-        createObserver(targetNode)
+        console.log('{"type": "NOTIFY", "push": false, "name": "' + elementName + '", "value": "' + targetNode.innerText + '"}' )
+        createObserver(targetNode, elementName)
     }
 }
 
 
-function createObserver(target){
-    // create an observer instance
+function createObserver(target, targetName){
     var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        console.log("mutation type: " + mutation.type)
-        console.log("mutation after Text: " + target.innerText)
-      });    
+        //~ console.log("mutation: " + mutation.type + " - " + JSON.stringify(targetName) + " - " + mutation)
+        console.log('{"type": "NOTIFY", "push": true, "name": "' + targetName + '", "value": "' + target.innerText + '"}' )
+        
+        // Commented out to avoid duplicate notifications
+        //~ mutations.forEach(function(mutation) {
+            //~ if (mutation.type === 'childList') {
+                //~ var isNodeChange = false;
+                //~ if (mutation.addedNodes.length) {
+                    //~ for (var i=0,node;node=mutation.addedNodes[i];i+=1) {
+                        //~ if (node.nodeType === 3) {
+                            //~ isNodeChange = true;
+                            //~ break;
+                        //~ }
+                    //~ }
+                //~ }
+                //~ if (mutation.removedNodes.length && !isNodeChange) {
+                    //~ for (var i=0,node;node=mutation.removedNodes[i];i+=1) {
+                        //~ if (node.nodeType === 3) {
+                            //~ isNodeChange = true;
+                            //~ break;
+                        //~ }
+                    //~ }
+                //~ }
+                
+                //~ if(isNodeChange){
+                    //~ console.log('{"type": "NOTIFY", "push": true, "name": "' + targetName + '", "value": "' + target.innerText + '"}' )
+                //~ }
+            //~ }
+            
+            
+          //~ });    
     });
      
-    // configuration of the observer:
-    var config = { attributes: true, childList: true, characterData: true };
+    var config = { childList: true };
      
-    // pass in the target node, as well as the observer options
     observer.observe(target, config);
 }

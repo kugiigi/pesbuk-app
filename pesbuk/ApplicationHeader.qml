@@ -20,14 +20,6 @@ ToolBar {
     
     //WORKAROUND: Label "HorizontalFit" still uses the height of the unadjusted font size.
     implicitHeight: defaultHeight
-
-//~     onExpandedChanged:{
-//~         if(expanded){
-//~             height = maxHeight
-//~         }else{
-//~             height = defaultHeight
-//~         }
-//~     }
     
     function triggerRight(fromBottom){
         if(rightActions.length > 0){
@@ -93,7 +85,7 @@ ToolBar {
     UT.UbuntuNumberAnimation on height{
         id: collapseAnimation
         
-        running: !expanded//(!expanded || !flickable)
+        running: !expanded
         from: height
         to: defaultHeight
         easing: UT.UbuntuAnimation.StandardEasing
@@ -175,12 +167,4 @@ ToolBar {
         sequence: "Menu"
         onActivated: triggerLeft(false)
     }
-    
-//~     Connections{
-//~         target: webview
-        
-//~         onScrollPositionChanged:{
-//~             console.log(target.scrollPosition)
-//~         }
-//~     }
 }

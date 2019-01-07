@@ -2,6 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import Ubuntu.Components 1.3 as UT
 import "components"
+import "components/menudrawer"
 
 Drawer {
     id: menuDrawer
@@ -39,18 +40,30 @@ Drawer {
         anchors.topMargin: applicationHeader.expanded ? applicationHeader.height - applicationHeader.defaultHeight : 0
 
         delegate: ItemDelegate {
+            id: itemDelegate
+            
             width: parent.width
             text: modelData.title
             highlighted: ListView.isCurrentItem
             
-            NotificationIndicator{
-                id: notification
-                
-                text: modelData.notifyText ? modelData.notifyText : ""
-                anchors{
-                    verticalCenter: parent.verticalCenter
-                    right: parent.right
-                    rightMargin: 20
+            function triggerAction(type, url){
+                switch(type){
+                    case "PAGE":
+                        stackView.push(url)
+                    break
+                    case "URL":
+                        webview.url = url
+                    break
+                    case "JS":
+                        webview.runJavaScript(url)
+                    break
+                    case "Menu":
+                        if(menuLoader.item.visible){
+                            menuLoader.item.close()
+                        }else{
+                            menuLoader.item.open()
+                        }
+                    break
                 }
             }
             
@@ -69,19 +82,36 @@ Drawer {
             
             onClicked: {
                 listView.currentIndex = index
-                switch(modelData.type){
-                    case "PAGE":
-                        stackView.push(modelData.url)
-                    break
-                    case "URL":
-                        webview.url = modelData.url
-                    break
-                    case "JS":
-                        webview.runJavaScript(modelData.url)
-                    break
+                triggerAction(modelData.type, modelData.url)
+                if(modelData.type !== "Menu"){
+                    drawer.close()
                 }
-                drawer.close()
             }
+            
+            NotificationIndicator{
+                id: notification
+                
+                text: modelData.notifyText ? modelData.notifyText : ""
+                anchors{
+                    verticalCenter: parent.verticalCenter
+                    right: parent.right
+                    rightMargin: 20
+                }
+            }
+            
+            Loader {
+                id: menuLoader
+                
+                active: modelData.type === "Menu"
+                asynchronous: true
+                visible: status == Loader.Ready
+                sourceComponent: MenuActions{
+                        id: menuActions
+                        
+                        x: itemDelegate.width
+                        model: modelData.url
+                    }
+            }  
         }
 
         ScrollIndicator.vertical: ScrollIndicator { }

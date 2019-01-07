@@ -8,7 +8,7 @@ ColumnLayout{
     Label{
         Layout.fillWidth: true
         
-        text: i18n.tr("Zoom factor")
+        text: i18n.tr("Zoom factor") + ":"
     }
     
     SpinBox {
@@ -16,8 +16,6 @@ ColumnLayout{
         
         property int decimals: 2
         property real realValue: value / 100
-        
-        Layout.leftMargin: 35
         
         from: 25
         to: 500

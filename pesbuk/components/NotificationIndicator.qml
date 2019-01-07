@@ -9,7 +9,7 @@ Rectangle{
     property bool indicatorOnly: false
     
     visible: text !== "0" && text
-    width: 15
+    width: indicatorOnly ? 15 : label.width + 6
     height: indicatorOnly ? width : 20
     
     color: UT.UbuntuColors.red

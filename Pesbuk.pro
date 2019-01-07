@@ -6,7 +6,7 @@ TEMPLATE = subdirs
 #load Ubuntu specific features
 load(ubuntu-click)
 
-SUBDIRS += pesbuk
+SUBDIRS += pesbuk push
 
 # specify the manifest file, this file is required for click
 # packaging and for the IDE to create runconfigurations

@@ -1,2 +1,16 @@
+v1.1
+ - Implemented push notification
+ - Set "Material" as the default style
+ - Improved notification indicator
+ - Added new settings (home site, notification)
+ - Removed action "Reach header" and implemented same gesture in normal pages (i.e. About and Settings)
+ - Added "View Profile" in the drawer
+ - Fixed issue with bottom edge gesture slightly moving the web view when triggered
+ - Added floating button for going to the top or bottom of the current page.
+ - Fixed layout issue with Toolbutton especially in Suru and Default styles
+ - Removed indicator in the back button
+ - Added "More" section in the menu drawer
+ - Removed custom user agent (experimental)
+ - Implemented URI handling
 v1.0
  - First release in the OpenStore

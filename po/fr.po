@@ -1,0 +1,378 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-07 18:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:8
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:227
+msgid "About"
+msgstr "À propos"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:71
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:72
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:73
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:74
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:75
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:76
+msgid "Support"
+msgstr "Aide"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:71
+msgid "Report a bug"
+msgstr "Signaler un problème"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:72
+msgid "Contact Developer"
+msgstr "Contacter le développeur"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:73
+msgid "View source"
+msgstr "Voir le code source"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:74
+msgid "Donate"
+msgstr "Faire un don"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:75
+msgid "View in OpenStore"
+msgstr "Afficher dans l'OpenStore"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:76
+msgid "Other apps by the developer"
+msgstr "Autres applications par le même développeur"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
+msgid "Developers"
+msgstr "Développeurs"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
+msgid "Main developer"
+msgstr "Développeur principal"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentDownloadDialog.qml:63
+msgid ""
+"Choose an application to open this file or add it to the downloads folder."
+msgstr ""
+"Choisissez une application pour ouvrir ce fichier ou ajoutez-le au dossier des téléchargements."
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentDownloadDialog.qml:69
+msgid "Choose an application"
+msgstr "Choisir une application"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentDownloadDialog.qml:82
+msgid "Download"
+msgstr "Télécharger"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentDownloadDialog.qml:94
+msgid "Cancel"
+msgstr "Annuler"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:39
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:50
+msgid "Back"
+msgstr "Retour"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:39
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:224
+msgid "Menu"
+msgstr "Menu"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:202
+msgid "View Profile"
+msgstr "Afficher le profil"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:203
+msgid "Marketplace"
+msgstr "Marché"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:204
+msgid "Pages"
+msgstr "Pages"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:205
+msgid "Saved"
+msgstr "Enregistré"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:206
+msgid "Groups"
+msgstr "Groupes"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:207
+msgid "Events"
+msgstr "Événements"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:208
+msgid "On This Day"
+msgstr "Ce jour-là"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:209
+msgid "Buy and Sell Groups"
+msgstr "Groupe d'achats et de ventes"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:210
+msgid "Jobs"
+msgstr "Emplois"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:219
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:122
+msgid "Notifications"
+msgstr "Notifications"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:220
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:150
+msgid "Messages"
+msgstr "Messages"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:221
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:206
+msgid "Feeds"
+msgstr "Flux"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:222
+msgid "Friends"
+msgstr "Amis"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:223
+msgid "Search"
+msgstr "Recherche"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:225
+msgid "More"
+msgstr "Plus"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:226
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:9
+msgid "Settings"
+msgstr "Paramètres"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:31
+msgid "Permission"
+msgstr "Permissions"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:38
+msgid "Allow this domain to access your camera and microphone?"
+msgstr "Autoriser ce domaine à accéder à votre caméra et à votre microphone ?"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:39
+msgid "Allow this domain to access your camera?"
+msgstr "Autoriser ce domaine à accéder à votre caméra ?"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:40
+msgid "Allow this domain to access your microphone?"
+msgstr "Autoriser ce domaine à accéder à votre microphone ?"
+
+#. TRANSLATORS: %1 is the URL of the site requesting access to camera and/or microphone and %2 is the URL of the site that embeds it
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:48
+#, qt-format
+msgid "%1 (embedded in %2)"
+msgstr "%1 (intégré dans %2)"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:72
+msgid "Yes"
+msgstr "Oui"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:83
+msgid "No"
+msgstr "Non"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:27
+msgid "Oops, something went wrong."
+msgstr "Oups, un problème s'est produit."
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:33
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:119
+msgid "Reload"
+msgstr "Actualiser"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:41
+msgid "Style"
+msgstr "Style"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:60
+msgid "This will take effect after you restart the app"
+msgstr "Ceci prendra effet après le redémarrage de l'application"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:69
+msgid "Hide site header"
+msgstr "Masquer l'en-tête du site"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:84
+msgid "Refresh the page to take effect"
+msgstr "Actualisez la page pour appliquer"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:96
+msgid "Home Site"
+msgstr "Site d'accueil"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:108
+msgid "Push notification"
+msgstr "Notifications"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:108
+msgid "Prevent app suspension to enable"
+msgstr "Empêcher l'activation de la suspension de l'application"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:136
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:164
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:192
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:220
+msgid "Sound"
+msgstr "Son"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:178
+msgid "Friend requests"
+msgstr "Demandes d'ami"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:74
+msgid "Test"
+msgstr "Test"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:84
+msgid "Test 2"
+msgstr "Test 2"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:97
+msgid "Forward"
+msgstr "Suivant"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:108
+msgid "Home"
+msgstr "Accueil"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:130
+msgid "Go to top"
+msgstr "Retour au début"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:141
+msgid "Reset Header"
+msgstr "Réinitialiser l'en-tête"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:141
+msgid "Reach Header"
+msgstr "Accéder à l'en-tête"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:208
+msgid "New Facebook notification"
+msgid_plural "New Facebook notifications"
+msgstr[0] "Nouvelle notification de Facebook"
+msgstr[1] "Nouvelles notifications de Facebook"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:209
+msgid "notification"
+msgid_plural "notifications"
+msgstr[0] "notification"
+msgstr[1] "notifications"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:219
+msgid "New Facebook message"
+msgid_plural "New Facebook messages"
+msgstr[0] "Nouveau message de Facebook"
+msgstr[1] "Nouveaux messages de Facebook"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:220
+msgid "message"
+msgid_plural "messages"
+msgstr[0] "message"
+msgstr[1] "messages"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:230
+msgid "New items in your Facebook feeds"
+msgstr "Nouveaux éléments dans votre flux Facebook"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:231
+msgid "feed"
+msgid_plural "feeds"
+msgstr[0] "flux"
+msgstr[1] "flux"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:241
+msgid "New Facebook friend request"
+msgid_plural "New Facebook friend requests"
+msgstr[0] "Nouvelle demande d'ami de Facebook"
+msgstr[1] "Nouvelles demandes d'ami de Facebook"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:242
+msgid "friend request"
+msgid_plural "friend requests"
+msgstr[0] "demande d'ami"
+msgstr[1] "demandes d'ami"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:253
+#, qt-format
+msgid "You have %2 new %1"
+msgid_plural "You have %2 new %1"
+msgstr[0] "Vous avez %2 nouveau %1"
+msgstr[1] "Vous avez %2 nouveaux %1"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/Copy.qml:22
+msgid "Copy"
+msgstr "Copier"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/CopyImage.qml:22
+msgid "Copy image"
+msgstr "Copier l'image"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/CopyLink.qml:22
+msgid "Copy link"
+msgstr "Copier le lien"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/SaveImage.qml:22
+msgid "Save image"
+msgstr "Enregistrer l'image"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/ShareLink.qml:22
+msgid "Share…"
+msgstr "Partager…"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/BottomEdgeHint.qml:28
+msgid ""
+"You can swipe from either side of the bottom edge to activate the actions in "
+"the header. \n"
+" Try it now!"
+msgstr ""
+"Vous pouvez faire glisser votre doigt de n'importe quel côté du bord inférieur pour activer les actions dans "
+"l'en-tête. \n"
+"Essayez maintenant !"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/BottomEdgeHint.qml:37
+msgid "Okay"
+msgstr "D'accord"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/aboutpage/ExternalDialog.qml:10
+msgid "Open external link"
+msgstr "Ouvrir un lien externe"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/aboutpage/ExternalDialog.qml:25
+msgid "You are about to open an external link. Do you wish to continue?"
+msgstr "Vous êtes sur le point d'ouvrir un lien externe. Souhaitez-vous continuer ?"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/aboutpage/IconComponent.qml:32
+msgid "Version"
+msgstr "Version"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/aboutpage/IconComponent.qml:41
+msgid "Released under license"
+msgstr "Distribué sous licence"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/settingspage/SpinRange.qml:11
+msgid "Zoom factor"
+msgstr "Facteur de zoom"
+
+#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/build/pesbuk/pesbuk.desktop.h:1
+msgid "Pesbuk"
+msgstr "Pesbuk"

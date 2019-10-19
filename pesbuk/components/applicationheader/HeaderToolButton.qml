@@ -21,17 +21,17 @@ ToolButton {
         implicitWidth: 30
         implicitHeight: implicitWidth
         color: headerTitle.color
-    }
-    
-    NotificationIndicator{
-        id: notification
         
-        indicatorOnly: true
-        anchors{
-            right: parent.right
-            rightMargin: 5
-            top: parent.top
-            topMargin: 5
+        NotificationIndicator{
+            id: notification
+            
+            indicatorOnly: true
+            anchors{
+                right: parent.right
+                rightMargin: -5
+                top: parent.top
+                topMargin: -3
+            }
         }
     }
 }

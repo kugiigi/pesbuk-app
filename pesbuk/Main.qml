@@ -7,8 +7,10 @@ import "components"
 ApplicationWindow {
     id: mainView
     
-    readonly property string version: "1.1"
+    readonly property string version: "1.2"
     readonly property QtObject drawer: drawerLoader.item
+    
+    property string displayMode: "Phone" //"Desktop" //"Phone" //"Tablet"
     
     property alias webview: webViewPage.webView
     property alias leftSwipeArea: leftSwipeAreaLoader.item
@@ -23,6 +25,42 @@ ApplicationWindow {
     objectName: "mainView"  
     visible: true
     title: "Pesbuk"
+    
+    width: switch (displayMode) {
+           case "Phone":
+               units.gu(50)
+               break
+           case "Tablet":
+               units.gu(100)
+               break
+           case "Desktop":
+               units.gu(120)
+               break
+           default:
+               units.gu(120)
+               break
+           }
+    height: switch (displayMode) {
+            case "Phone":
+                units.gu(89)
+                break
+            case "Tablet":
+                units.gu(56)
+                break
+            case "Desktop":
+                units.gu(68)
+                break
+            default:
+                units.gu(68)
+                break
+            }
+    
+    MainView{
+        //Only for making translation work
+        id: dummyMainView
+        applicationName: "pesbuk.kugiigi"
+        visible: false
+    }
     
     header: ApplicationHeader{
         id: applicationHeader

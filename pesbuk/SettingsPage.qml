@@ -38,7 +38,7 @@ BasePage {
                         
                 property int styleIndex: -1
                 
-                text: i18n.tr("Style") + ":"
+                text: i18n.tr("Style")
                 model: availableStyles
                 currentIndex: styleIndex
                 

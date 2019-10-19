@@ -41,7 +41,7 @@ BasePage {
     
     title: webview.title
 //~     headerRightActions: [testAction, testAction2, homeAction, reloadAction, forwardAction, backAction]
-    headerRightActions: [homeAction, reloadAction, forwardAction, backAction]
+    headerRightActions: [toggleFBHeader, homeAction, reloadAction, forwardAction, backAction]
     
     BaseHeaderAction{
         id: backAction
@@ -136,6 +136,18 @@ BasePage {
     }
     
     BaseHeaderAction{
+        id: toggleFBHeader
+        
+        text: appSettings.hideHeader ? i18n.tr("Show header") : i18n.tr("Hide header")
+        iconName: appSettings.hideHeader ? "view-on" : "view-off"
+    
+        onTrigger:{
+           appSettings.hideHeader = !appSettings.hideHeader;
+           webview.runJavaScript("toggleHeader(" + !appSettings.hideHeader + ");")
+        }
+    }
+    
+    BaseHeaderAction{
         id: headerExpandAction
         
         text: applicationHeader.expanded ? i18n.tr("Reset Header") : i18n.tr("Reach Header")
@@ -157,7 +169,7 @@ BasePage {
         zoomFactor: appSettings.zoomFactor
         url: page.home
 
-        userScripts: appSettings.hideHeader ? [fbNoBanner, noHeader, notifier] : [fbNoBanner, notifier]
+        userScripts: [fbNoBanner, noHeader, notifier]
         WebEngineScript {
             id: fbNoBanner
             name: "oxide://fb-no-appbanner/"
@@ -170,6 +182,7 @@ BasePage {
             sourceUrl: Qt.resolvedUrl("js/fb-no-header.js")
             injectionPoint: WebEngineScript.DocumentReady
             runOnSubframes: true
+            worldId: WebEngineScript.MainWorld
         }
         WebEngineScript {
             id: notifier
@@ -184,6 +197,12 @@ BasePage {
         
         function goToBottom(){
             runJavaScript("window.scrollTo(0, " + webview.contentsSize.height +"); ")
+        }
+        
+        onLoadingChanged: {
+            if (!loading) {
+                runJavaScript("toggleHeader(" + !appSettings.hideHeader + ")")
+            }
         }
         
         onJavaScriptConsoleMessage: {

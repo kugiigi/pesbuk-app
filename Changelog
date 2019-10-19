@@ -1,3 +1,8 @@
+v1.2
+ - Translations are now working properly
+ - Fixed #5: Quick and real-time toggling of Facebook's header
+ - Fixed notification badge layout in all styles
+ - Added initial window width and height
 v1.1
  - Implemented push notification
  - Set "Material" as the default style

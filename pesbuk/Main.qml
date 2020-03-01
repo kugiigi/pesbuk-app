@@ -7,7 +7,7 @@ import "components"
 ApplicationWindow {
     id: mainView
     
-    readonly property string version: "1.2"
+    readonly property string version: "1.3"
     readonly property QtObject drawer: drawerLoader.item
     
     property string displayMode: "Phone" //"Desktop" //"Phone" //"Tablet"

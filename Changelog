@@ -1,3 +1,5 @@
+v1.3
+ - arm64 support
 v1.2
  - Translations are now working properly
  - Fixed #5: Quick and real-time toggling of Facebook's header

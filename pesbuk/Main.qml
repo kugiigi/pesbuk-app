@@ -7,8 +7,17 @@ import "components"
 ApplicationWindow {
     id: mainView
     
-    readonly property string version: "1.3"
+    readonly property string version: "1.4"
     readonly property QtObject drawer: drawerLoader.item
+    readonly property string siteMode: switch (true) {
+                                case width >= units.gu(120):
+                                    "Desktop"
+                                    break
+                                default:
+                                    "Phone"
+                                    break
+                            }
+    readonly property bool desktopMode: appSettings.baseSite === 2 || (appSettings.baseSite === 3 && mainView.siteMode === "Desktop")
     
     property string displayMode: "Phone" //"Desktop" //"Phone" //"Tablet"
     

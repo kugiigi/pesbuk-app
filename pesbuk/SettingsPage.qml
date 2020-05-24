@@ -66,6 +66,7 @@ BasePage {
             }
             
             CheckBoxItem{
+                visible: !mainView.desktopMode
                 text: i18n.tr("Hide site header")
                 Component.onCompleted: {
                     checked = appSettings.hideHeader
@@ -94,7 +95,7 @@ BasePage {
                 id: homeSiteSettings
                 
                 text: i18n.tr("Home Site")
-                model: ["touch.facebook.com", "m.facebook.com"]
+                model: ["touch.facebook.com", "m.facebook.com", "Desktop", "Auto"]
                 currentIndex: appSettings.baseSite
                 
                 onCurrentIndexChanged: {
@@ -109,7 +110,20 @@ BasePage {
                 verticalAlignment: Label.AlignVCenter
             }
             
+            Label {
+                visible: mainView.desktopMode
+                text: i18n.tr("Notifications are not working when using the desktop site")
+                verticalAlignment: Label.AlignVCenter
+                anchors{
+                    left: parent.left
+                    right: parent.right
+                }
+                color: "#ED3146"
+                wrapMode: Text.WordWrap
+            }
+            
             GroupBox{
+                visible: !mainView.desktopMode
                 anchors{
                     left: parent.left
                     right: parent.right

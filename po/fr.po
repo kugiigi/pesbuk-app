@@ -230,7 +230,7 @@ msgstr "Empêcher l'activation de la suspension de l'application"
 
 #: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:115
 msgid "Notifications are not working when using the desktop site"
-msgstr ""
+msgstr "Les notifications ne fonctionnent pas lors de l'utilisation de la version pour ordinateur du site"
 
 #: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:150
 #: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:178

@@ -2,15 +2,5 @@
     "source": [
         "pictures",
         "links"
-    ],
-    "share": [
-        "pictures",
-        "links",
-        "text"
-    ],
-    "destination": [
-        "pictures",
-        "links",
-        "text"
     ]
 }

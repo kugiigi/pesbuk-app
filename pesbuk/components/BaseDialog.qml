@@ -16,12 +16,12 @@ Dialog {
     standardButtons: Dialog.Ok | Dialog.Cancel
     
     function openBottom(){
-        y = (parent.height - height - 20)
+        y = Qt.binding(function(){return (parent.height - height - 20)})
         open()
     }
     
     function openNormal(){
-        y = (parent.height - height) / 2
+        y = Qt.binding(function(){return (parent.height - height) / 2})
         open()
     }
 }

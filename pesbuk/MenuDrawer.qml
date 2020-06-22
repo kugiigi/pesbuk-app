@@ -13,7 +13,7 @@ Drawer {
     readonly property real preferredWidth: mainView.width * 0.25
     
     width: preferredWidth < minimumWidth ? minimumWidth : preferredWidth
-    height: mainView.height
+    height: appWindow.height
     interactive: stackView.depth === 1
     dragMargin: 0
     

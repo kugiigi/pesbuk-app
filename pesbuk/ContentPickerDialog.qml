@@ -1,114 +1,148 @@
-import QtQuick 2.4
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3 as Popups
+import QtQuick 2.9
+//~ import Ubuntu.Components 1.3 as UITK
 import Ubuntu.Content 1.3
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.3
 import "MimeTypeMapper.js" as MimeTypeMapper
 import "."
+import "components"
 
-//Component {
-    Popups.PopupBase {
-        id: picker
-        objectName: "contentPickerDialog"
+Dialog {
+    id: picker
+    objectName: "contentPickerDialog"
 
-        // Set the parent at construction time, instead of letting show()
-        // set it later on, which for some reason results in the size of
-        // the dialog not being updated.
-        parent: QuickUtils.rootItem(this)
 
-        property var activeTransfer
-        property bool allowMultipleFiles
+    property var request
+    property var activeTransfer
+    property bool allowMultipleFiles
+    
+    property real maximumWidth: 500
+    property real preferredWidth: appWindow.width
+    
+    property real maximumHeight: 500
+    property real preferredHeight: appWindow.height > 500 ? appWindow.height / 2 : appWindow.height
+    
+    width: preferredWidth > maximumWidth ? maximumWidth : preferredWidth
+    height: preferredHeight > maximumHeight ? maximumHeight : preferredHeight
+
+    x: (appWindow.width - width) / 2
+    parent: ApplicationWindow.overlay
+    padding: 0
+    topPadding: 0
+    
+    closePolicy: transferInprogress.visible ? Popup.NoAutoClose : Popup.CloseOnEscape | Popup.CloseOnPressOutside
+
+    modal: true
+    
+    signal fileAccept(var files)
+
+    onFileAccept: accept()
+
+    onAboutToShow: {
+        var mimeTypes = request.acceptedMimeTypes
         
-        signal accept(var files)
-        signal reject()
-
-        onAccept: hide()
-        onReject: hide()
-
-        Rectangle {
-            anchors.fill: parent
-
-            ContentTransferHint {
-                anchors.fill: parent
-                activeTransfer: picker.activeTransfer
-            }
-
-            ContentPeerPicker {
-                id: peerPicker
-                anchors.fill: parent
-                visible: true
-                contentType: ContentType.All
-                handler: ContentHandler.Source
-
-                onPeerSelected: {
+        console.log("Requesting for: " + mimeTypes)
+        peerPicker.contentType = ContentType.All
+        if(mimeTypes) {
+            var arrayLength = mimeTypes.length
+            if(arrayLength > 0) {
+                var contentType
+                var prevContentType
+                for (var i = 0; i < arrayLength; i++) {
+                    contentType = MimeTypeMapper.mimeTypeToContentType(mimeTypes[i])
                     
-                    /*
-                    if (peer.appId == "morph-browser") {
-                        // If we're inside the browser and the user has
-                        // requested content from the browser then we
-                        // need to handle the transfer internally
-                        var downloadsPage = picker.WebView.view.showDownloadsPage()
-                        downloadsPage.mimetypeFilter = MimeTypeMapper.mimeTypeRegexForContentType(contentType)
-                        downloadsPage.multiSelect = model.allowMultipleFiles
-                        downloadsPage.selectMode = false
-                        downloadsPage.pickingMode = true
-                        downloadsPage.internalFilePicker = model
-                        Popups.PopupUtils.close(picker)
-                    } else {
-                    */
-                        if (allowMultipleFiles) {
-                            peer.selectionType = ContentTransfer.Multiple
-                        } else {
-                            peer.selectionType = ContentTransfer.Single
-                        }
-                        picker.activeTransfer = peer.request()
-                        stateChangeConnection.target = picker.activeTransfer
-                    
-                     /*
-                      }
-                     */
-                }
-
-                onCancelPressed: {
-                    reject()
-                }
-            }
-        }
-
-        Connections {
-            id: stateChangeConnection
-            target: null
-            onStateChanged: {
-                if (picker.activeTransfer.state === ContentTransfer.Charged) {
-                    var selectedItems = []
-                    for(var i in picker.activeTransfer.items) {
-                        
-                        // ContentTransfer.Single seems not to be handled properly, e.g. selected items with file manager
-                        // -> only select the first item
-                        if ((i > 0) && ! allowMultipleFiles)
-                        {
-                            break;
-                        }
-                        
-                        selectedItems.push(String(picker.activeTransfer.items[i].url).replace("file://", ""))
+                    if (prevContentType && (contentType != prevContentType || contentType == ContentType.Unknown)){
+                        contentType = ContentType.All
+                        break;
                     }
-                    accept(selectedItems)
-                }
-            }
-        }
-
-        Component.onCompleted: {
-            if(acceptTypes.length === 1) {
-                var contentType = MimeTypeMapper.mimeTypeToContentType(acceptTypes[0])
-                if(contentType == ContentType.Unknown) {
-                    // If we don't recognise the type, allow uploads from any app
-                    contentType = ContentType.All
+                    
+                    prevContentType = contentType
                 }
                 peerPicker.contentType = contentType
-            } else {
-                peerPicker.contentType = ContentType.All
             }
-            show()
         }
     }
-//}
+
+    function openDialog(){
+        y = Qt.binding(function(){return appWindow.width > 500 ? (appWindow.height - height) / 2 : (appWindow.height - height)})
+        open()
+    }
+
+    Rectangle {
+        anchors.fill: parent
+        
+        ColumnLayout {
+            id: transferInprogress
+            
+            anchors.centerIn: parent
+            spacing: 20
+            
+            visible: picker.activeTransfer ? picker.activeTransfer.state === ContentTransfer.InProgress || picker.activeTransfer.state === ContentTransfer.Initiated : false
+            
+            Label {
+                text: i18n.tr("Transfer in progress")
+                font.pixelSize: 20
+                horizontalAlignment: Text.AlignHCenter
+                Layout.fillWidth: true
+                    
+            }
+            
+            BusyIndicator {
+                id: indicator
+                
+                running: true
+                Layout.alignment: Qt.AlignHCenter
+            }
+            
+            Button {
+                id: cancelTransfer
+
+                text: i18n.tr("Cancel")
+                Layout.alignment: Qt.AlignHCenter
+                
+                onClicked: {
+                    picker.activeTransfer.state = ContentTransfer.Aborted
+                }
+            }
+        }
+
+        ContentPeerPicker {
+            id: peerPicker
+            
+            headerText: i18n.tr("Upload from")
+            anchors.fill: parent
+            visible: !transferInprogress.visible
+            contentType: ContentType.All
+            handler: ContentHandler.Source
+
+            onPeerSelected: {
+                if (allowMultipleFiles) {
+                    peer.selectionType = ContentTransfer.Multiple
+                } else {
+                    peer.selectionType = ContentTransfer.Single
+                }
+                picker.activeTransfer = peer.request()
+                stateChangeConnection.target = picker.activeTransfer
+            }
+
+            onCancelPressed: {
+                reject()
+            }
+        }
+    }
+
+    Connections {
+        id: stateChangeConnection
+        target: null
+        onStateChanged: {
+            if (picker.activeTransfer.state === ContentTransfer.Charged) {
+                var selectedItems = []
+                for(var i in picker.activeTransfer.items) {
+                    selectedItems.push(String(picker.activeTransfer.items[i].url).replace("file://", ""))
+                }
+                fileAccept(selectedItems)
+            }
+        }
+    }
+}
 

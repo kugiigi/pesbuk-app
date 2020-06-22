@@ -388,18 +388,20 @@ BasePage {
             {
                 case FileDialogRequest.FileModeOpen:
                     request.accepted = true;
-                    var fileDialogSingle = PopupUtils.open(Qt.resolvedUrl("ContentPickerDialog.qml"));
-                    fileDialogSingle.allowMultipleFiles = false;
-                    fileDialogSingle.accept.connect(request.dialogAccept);
-                    fileDialogSingle.reject.connect(request.dialogReject);
+                    filePickerLoader.item.request = request;
+                    filePickerLoader.item.allowMultipleFiles = false;
+                    filePickerLoader.item.fileAccept.connect(request.dialogAccept);
+                    filePickerLoader.item.rejected.connect(request.dialogReject);
+                    filePickerLoader.item.openDialog()
                     break;
     
                 case FileDialogRequest.FileModeOpenMultiple:
                     request.accepted = true;
-                    var fileDialogMultiple = PopupUtils.open(Qt.resolvedUrl("ContentPickerDialog.qml"));
-                    fileDialogMultiple.allowMultipleFiles = true;
-                    fileDialogMultiple.accept.connect(request.dialogAccept);
-                    fileDialogMultiple.reject.connect(request.dialogReject);
+                    filePickerLoader.item.request = request;
+                    filePickerLoader.item.allowMultipleFiles = true;
+                    filePickerLoader.item.fileAccept.connect(request.dialogAccept);
+                    filePickerLoader.item.rejected.connect(request.dialogReject);
+                    filePickerLoader.item.openDialog()
                     break;
     
                 case FilealogRequest.FileModeUploadFolder:

@@ -9,5 +9,9 @@
     {
         "protocol": "https",
         "domain-suffix": "m.facebook.com"
+    },
+    {
+        "protocol": "https",
+        "domain-suffix": "facebook.com"
     }
 ]

@@ -10,7 +10,7 @@ ToolBar {
     id: applicationHeader
     
     readonly property real defaultHeight: 50
-    readonly property real maxHeight:  mainView.height * 0.4
+    readonly property real maxHeight:  appWindow.height * 0.4
     readonly property real expansionThreshold:  maxHeight * 0.50
     
     property list<BaseHeaderAction> leftActions

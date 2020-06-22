@@ -12,8 +12,39 @@ ApplicationWindow {
     property alias leftSwipeArea: leftSwipeAreaLoader.item
     property alias rightSwipeArea: rightSwipeAreaLoader.item
     
+    property string displayMode: "Phone" //"Desktop" //"Phone" //"Tablet"
+    
     visible: true
     title: "Pesbuk"
+    
+    width: switch (displayMode) {
+               case "Phone":
+                   units.gu(50)
+                   break
+               case "Tablet":
+                   units.gu(100)
+                   break
+               case "Desktop":
+                   units.gu(120)
+                   break
+               default:
+                   units.gu(120)
+                   break
+               }
+        height: switch (displayMode) {
+                case "Phone":
+                    units.gu(89)
+                    break
+                case "Tablet":
+                    units.gu(56)
+                    break
+                case "Desktop":
+                    units.gu(68)
+                    break
+                default:
+                    units.gu(68)
+                    break
+                }
     
     header: ApplicationHeader{
             id: applicationHeader
@@ -42,45 +73,12 @@ ApplicationWindow {
                                 }
         readonly property bool desktopMode: appSettings.baseSite === 2 || (appSettings.baseSite === 3 && mainView.siteMode === "Desktop")
         
-        property string displayMode: "Phone" //"Desktop" //"Phone" //"Tablet"
-        
-        
-        
         property bool blockOpenExternalUrls: false
         property bool runningLocalApplication: false
         property bool openExternalUrlInOverlay: false
         property bool popupBlockerEnabled: true
         property bool fullscreen: false
         
-        
-        width: switch (displayMode) {
-               case "Phone":
-                   units.gu(50)
-                   break
-               case "Tablet":
-                   units.gu(100)
-                   break
-               case "Desktop":
-                   units.gu(120)
-                   break
-               default:
-                   units.gu(120)
-                   break
-               }
-        height: switch (displayMode) {
-                case "Phone":
-                    units.gu(89)
-                    break
-                case "Tablet":
-                    units.gu(56)
-                    break
-                case "Desktop":
-                    units.gu(68)
-                    break
-                default:
-                    units.gu(68)
-                    break
-                }
         
         BaseHeaderAction{
             id: menuAction

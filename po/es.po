@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pesbuk 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-22 17:16+0800\n"
+"POT-Creation-Date: 2020-06-22 16:00+0000\n"
 "PO-Revision-Date: 2019-01-07 17:10+0100\n"
 "Last-Translator: Josu\n"
 "Language-Team: Ubports Spanish Team\n"
@@ -18,352 +18,352 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:8
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:277
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:8
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:275
 msgid "About"
 msgstr "Acerca de"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:71
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:72
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:73
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:74
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:75
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:76
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:71
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:72
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:73
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:74
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:75
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:76
 msgid "Support"
 msgstr "Soporte"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:71
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:71
 msgid "Report a bug"
 msgstr "Informar de un fallo"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:72
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:72
 msgid "Contact Developer"
 msgstr "Contactar con el desarrollador"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:73
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:73
 msgid "View source"
 msgstr "Ver código fuente"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:74
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:74
 msgid "Donate"
 msgstr "Donar"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:75
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:75
 msgid "View in OpenStore"
 msgstr "Ver en OpenStore"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:76
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:76
 msgid "Other apps by the developer"
 msgstr "Otras aplicaciones del desarrollador"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:77
 msgid "Developers"
 msgstr "Desarrolladores"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:77
 msgid "Main developer"
 msgstr "Desarrollador principal"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentDownloadDialog.qml:63
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/ContentDownloadDialog.qml:63
 msgid ""
 "Choose an application to open this file or add it to the downloads folder."
 msgstr ""
 "Elegir una aplicación para abrir este fichero o añadirlo a la carpeta de "
 "descargas."
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentDownloadDialog.qml:69
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/ContentDownloadDialog.qml:69
 msgid "Choose an application"
 msgstr "Elegir una aplicación"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentDownloadDialog.qml:82
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/ContentDownloadDialog.qml:82
 msgid "Download"
 msgstr "Descargar"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentDownloadDialog.qml:94
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentPickerDialog.qml:100
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/ContentDownloadDialog.qml:94
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/ContentPickerDialog.qml:100
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentPickerDialog.qml:83
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/ContentPickerDialog.qml:83
 msgid "Transfer in progress"
 msgstr ""
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/ContentPickerDialog.qml:112
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/ContentPickerDialog.qml:112
 msgid "Upload from"
 msgstr ""
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:89
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:56
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:87
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:56
 msgid "Back"
 msgstr "Volver"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:89
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:274
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:87
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:272
 msgid "Menu"
 msgstr "Menú"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:252
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:250
 msgid "View Profile"
 msgstr "Ver perfil"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:253
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:251
 msgid "Marketplace"
 msgstr "Marketplace"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:254
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:252
 msgid "Pages"
 msgstr "Páginas"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:255
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:253
 msgid "Saved"
 msgstr "Guardado"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:256
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:254
 msgid "Groups"
 msgstr "Grupo"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:257
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:255
 msgid "Events"
 msgstr "Eventos"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:258
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:256
 msgid "On This Day"
 msgstr "Recuerdos"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:259
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:257
 msgid "Buy and Sell Groups"
 msgstr "Grupos de compraventa"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:260
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:258
 msgid "Jobs"
 msgstr "Empleos"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:269
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:136
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:267
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:136
 msgid "Notifications"
 msgstr "Notificaciones"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:270
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:164
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:268
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:164
 msgid "Messages"
 msgstr "Mensajes"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:271
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:220
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:269
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:220
 msgid "Feeds"
 msgstr "Noticias"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:272
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:270
 msgid "Friends"
 msgstr "Amigos"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:273
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:271
 msgid "Search"
 msgstr "Buscar"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:275
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:273
 msgid "More"
 msgstr "Mas"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/Main.qml:276
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:9
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:274
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:9
 msgid "Settings"
 msgstr "Configuración"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:31
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/MediaAccessDialog.qml:31
 msgid "Permission"
 msgstr "Permiso"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:38
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/MediaAccessDialog.qml:38
 msgid "Allow this domain to access your camera and microphone?"
 msgstr "¿Permitir a este dominio acceder a su cámara y su micrófono?"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:39
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/MediaAccessDialog.qml:39
 msgid "Allow this domain to access your camera?"
 msgstr "¿Permitir a este dominio acceder a su cámara?"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:40
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/MediaAccessDialog.qml:40
 msgid "Allow this domain to access your microphone?"
 msgstr "¿Permitir a este dominio acceder a su micrófono?"
 
 #. TRANSLATORS: %1 is the URL of the site requesting access to camera and/or microphone and %2 is the URL of the site that embeds it
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:48
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/MediaAccessDialog.qml:48
 #, qt-format
 msgid "%1 (embedded in %2)"
 msgstr "%1 (integrado en %2)"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:72
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/MediaAccessDialog.qml:72
 msgid "Yes"
 msgstr "Sí"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/MediaAccessDialog.qml:83
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/MediaAccessDialog.qml:83
 msgid "No"
 msgstr "No"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:27
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SadPage.qml:27
 msgid "Oops, something went wrong."
 msgstr "Vaya,, algo salió mal."
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:33
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:125
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SadPage.qml:33
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:125
 msgid "Reload"
 msgstr "Recargar"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:41
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:41
 msgid "Style"
 msgstr "Estilo"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:60
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:60
 msgid "This will take effect after you restart the app"
 msgstr "Esto tendrá efecto después de reiniciar la aplicación"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:70
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:70
 msgid "Hide site header"
 msgstr "Ocultar cabecera del sitio"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:85
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:85
 msgid "Refresh the page to take effect"
 msgstr "Recargar la página para que tenga efecto"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:97
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:97
 msgid "Home Site"
 msgstr "Página de acceso"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:109
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:109
 msgid "Push notification"
 msgstr "Notificaciones"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:109
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:109
 msgid "Prevent app suspension to enable"
 msgstr "Para habilitarlas prevenir la suspensión de la aplicación"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:115
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:115
 msgid "Notifications are not working when using the desktop site"
 msgstr ""
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:150
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:178
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:206
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:234
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:150
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:178
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:206
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:234
 msgid "Sound"
 msgstr "Sonido"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:192
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:192
 msgid "Friend requests"
 msgstr "Solicitudes de amistad"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:80
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:80
 msgid "Test"
 msgstr "Prueba"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:90
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:90
 msgid "Test 2"
 msgstr "Prueba 2"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:103
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:103
 msgid "Forward"
 msgstr "Adelante"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:114
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:114
 msgid "Home"
 msgstr "Inicio"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:136
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:136
 msgid "Go to top"
 msgstr "Ir arriba"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:148
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:148
 #, fuzzy
 msgid "Show header"
 msgstr "Alcanzar cabecera"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:148
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:148
 #, fuzzy
 msgid "Hide header"
 msgstr "Ocultar cabecera del sitio"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:160
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:160
 msgid "Reset Header"
 msgstr "Restablecer cabecera"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:160
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:160
 msgid "Reach Header"
 msgstr "Alcanzar cabecera"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:234
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:234
 msgid "New Facebook notification"
 msgid_plural "New Facebook notifications"
 msgstr[0] "Nueva notificación de Facebook"
 msgstr[1] "Nuevas notificaciones de Facebook"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:235
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:235
 msgid "notification"
 msgid_plural "notifications"
 msgstr[0] "notificación"
 msgstr[1] "notificaciones"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:245
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:245
 msgid "New Facebook message"
 msgid_plural "New Facebook messages"
 msgstr[0] "Nuevo mensaje en Facebook"
 msgstr[1] "Nuevos mensajes en Facebook"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:246
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:246
 msgid "message"
 msgid_plural "messages"
 msgstr[0] "mensaje"
 msgstr[1] "mensajes"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:256
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:256
 msgid "New items in your Facebook feeds"
 msgstr "Nuevas noticias en tu página de Facebook"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:257
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:257
 msgid "feed"
 msgid_plural "feeds"
 msgstr[0] "noticia"
 msgstr[1] "noticias"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:267
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:267
 msgid "New Facebook friend request"
 msgid_plural "New Facebook friend requests"
 msgstr[0] "Nueva solicitud de amistad en Facebook"
 msgstr[1] "Nuevas solicitudes de amistad en Facebook"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:268
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:268
 msgid "friend request"
 msgid_plural "friend requests"
 msgstr[0] "solicitud de amistad"
 msgstr[1] "solicitudes de amistad"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:279
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:279
 #, qt-format
 msgid "You have %2 new %1"
 msgid_plural "You have %2 new %1"
 msgstr[0] "Tienes %2 nueva %1"
 msgstr[1] "Tienes %2 nuevas %1"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/Copy.qml:22
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/actions/Copy.qml:22
 msgid "Copy"
 msgstr "Copiar"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/CopyImage.qml:22
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/actions/CopyImage.qml:22
 msgid "Copy image"
 msgstr "Copiar imagen"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/CopyLink.qml:22
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/actions/CopyLink.qml:22
 msgid "Copy link"
 msgstr "Copiar enlace"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/SaveImage.qml:22
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/actions/SaveImage.qml:22
 msgid "Save image"
 msgstr "Guardar imagen"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/actions/ShareLink.qml:22
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/actions/ShareLink.qml:22
 msgid "Share…"
 msgstr "Compartir…"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/BottomEdgeHint.qml:28
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/components/BottomEdgeHint.qml:28
 msgid ""
 "You can swipe from either side of the bottom edge to activate the actions in "
 "the header. \n"
@@ -373,30 +373,30 @@ msgstr ""
 "acciones de la cabecera.\n"
 "¡Pruébelo ahora!"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/BottomEdgeHint.qml:37
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/components/BottomEdgeHint.qml:37
 msgid "Okay"
 msgstr "Vale"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/aboutpage/ExternalDialog.qml:10
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/components/aboutpage/ExternalDialog.qml:10
 msgid "Open external link"
 msgstr "Abrir enlace externo"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/aboutpage/ExternalDialog.qml:25
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/components/aboutpage/ExternalDialog.qml:25
 msgid "You are about to open an external link. Do you wish to continue?"
 msgstr "Está a punto de abrir un enlace externo ¿Desea continuar?"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/aboutpage/IconComponent.qml:32
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/components/aboutpage/IconComponent.qml:32
 msgid "Version"
 msgstr "Versión"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/aboutpage/IconComponent.qml:41
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/components/aboutpage/IconComponent.qml:41
 msgid "Released under license"
 msgstr "Publicado bajo la licencia"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/pesbuk/components/settingspage/SpinRange.qml:11
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/components/settingspage/SpinRange.qml:11
 msgid "Zoom factor"
 msgstr "Factor de escala"
 
-#: /home/phablet/Documents/Projects/Pesbuk/pesbuk-app/build/arm-linux-gnueabihf/app/pesbuk/pesbuk.desktop.h:1
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/build/aarch64-linux-gnu/app/pesbuk/pesbuk.desktop.h:1
 msgid "Pesbuk"
 msgstr "Pesbuk"

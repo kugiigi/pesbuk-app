@@ -20,7 +20,7 @@ Dialog {
     property real preferredWidth: appWindow.width
     
     property real maximumHeight: 500
-    property real preferredHeight: appWindow.height > 500 ? appWindow.height / 2 : appWindow.height
+    property real preferredHeight: appWindow.height > 600 ? appWindow.height / 2 : appWindow.height - 20
     
     width: preferredWidth > maximumWidth ? maximumWidth : preferredWidth
     height: preferredHeight > maximumHeight ? maximumHeight : preferredHeight

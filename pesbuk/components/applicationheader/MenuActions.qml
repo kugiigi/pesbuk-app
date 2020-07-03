@@ -10,7 +10,7 @@ Menu {
     property bool isBottom: false
     
     function openBottom(){
-        y = mainView.height - height
+        y = appWindow.height - height
         isBottom = true
         open()
     }

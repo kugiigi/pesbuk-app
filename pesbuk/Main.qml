@@ -61,7 +61,7 @@ ApplicationWindow {
         anchors.fill: parent
         objectName: "mainView"  
         
-        readonly property string version: "1.5"
+        readonly property string version: "1.6"
         
         readonly property string siteMode: switch (true) {
                                     case width >= units.gu(120):
@@ -163,7 +163,7 @@ ApplicationWindow {
         
                 if (uris.length > 0) {
                     console.log('Incoming notification from UriHandler ' + uris[0]);
-                    processURI(uris[0])
+                    mainView.processURI(uris[0])
                 }
             }
         }

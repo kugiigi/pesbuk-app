@@ -46,6 +46,7 @@ BasePage {
     property int notifyCount: parseInt(messagesCount ? messagesCount : 0) + parseInt(notificationsCount ? notificationsCount : 0) + parseInt(requestsCount ? requestsCount : 0) + parseInt(feedsCount ? feedsCount : 0)
     
     title: webview.title
+    /* For testing only */
 //~     headerRightActions: [testAction, testAction2, homeAction, reloadAction, forwardAction, backAction]
     headerRightActions: [toggleFBHeader, homeAction, reloadAction, forwardAction, backAction]
     
@@ -213,7 +214,6 @@ BasePage {
         }
         
         onJavaScriptConsoleMessage: {
-//~             console.log(message + " - " + lineNumber + " - " + sourceID)
             var parsedData = JSON.parse(message)
             var notifyEnabled
             var notifyTitle
@@ -272,7 +272,6 @@ BasePage {
                             break
                         }
                         if(!parsedValue){
-//~                             console.log("clear Persistent")
                             pushClient.clearPersistent([parsedData.name.toLowerCase()]);
                         }
                         if(parsedValue && parsedData.push && notifyEnabled){
@@ -335,9 +334,6 @@ BasePage {
             property alias dataPath: webContext.persistentStoragePath
 
             dataPath: dataLocation
-
-//~             userAgent: "Mozilla/5.0 (Linux; U; Android 4.1.1; es-; AVA-V470 Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
-//~             userAgent: "Mozilla/5.0 (Linux; Ubuntu 16.04; Android 5.0; Nexus 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${CHROMIUM_VERSION} Mobile Safari/537.36"
 
             persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
 

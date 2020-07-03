@@ -1,3 +1,8 @@
+v1.6
+ - Fixed #13: URI handling does not work
+ - Fixed #15: Action menu popup has gap at the bottom when opened from the bottom
+ - Dutch translation support
+
 v1.5
  - Updated content hub configurations and UI
  - French translation updates

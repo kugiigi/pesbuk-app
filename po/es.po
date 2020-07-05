@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pesbuk 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-03 18:54+0000\n"
+"POT-Creation-Date: 2020-07-05 16:08+0000\n"
 "PO-Revision-Date: 2019-01-07 17:10+0100\n"
 "Last-Translator: Josu\n"
 "Language-Team: Ubports Spanish Team\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/AboutPage.qml:8
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:275
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:276
 msgid "About"
 msgstr "Acerca de"
 
@@ -92,80 +92,80 @@ msgstr ""
 msgid "Upload from"
 msgstr ""
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:87
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:88
 #: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/WebViewPage.qml:57
 msgid "Back"
 msgstr "Volver"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:87
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:272
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:88
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:273
 msgid "Menu"
 msgstr "Menú"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:250
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:251
 msgid "View Profile"
 msgstr "Ver perfil"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:251
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:252
 msgid "Marketplace"
 msgstr "Marketplace"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:252
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:253
 msgid "Pages"
 msgstr "Páginas"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:253
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:254
 msgid "Saved"
 msgstr "Guardado"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:254
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:255
 msgid "Groups"
 msgstr "Grupo"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:255
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:256
 msgid "Events"
 msgstr "Eventos"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:256
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:257
 msgid "On This Day"
 msgstr "Recuerdos"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:257
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:258
 msgid "Buy and Sell Groups"
 msgstr "Grupos de compraventa"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:258
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:259
 msgid "Jobs"
 msgstr "Empleos"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:267
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:268
 #: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:136
 msgid "Notifications"
 msgstr "Notificaciones"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:268
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:269
 #: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:164
 msgid "Messages"
 msgstr "Mensajes"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:269
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:270
 #: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:220
 msgid "Feeds"
 msgstr "Noticias"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:270
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:271
 msgid "Friends"
 msgstr "Amigos"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:271
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:272
 msgid "Search"
 msgstr "Buscar"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:273
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:274
 msgid "More"
 msgstr "Mas"
 
-#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:274
+#: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/Main.qml:275
 #: /home/kugi/Nextcloud/UbuntuHomeDesktop/Developments/Pesbuk/GeanyProject/pesbuk-app/pesbuk/SettingsPage.qml:9
 msgid "Settings"
 msgstr "Configuración"

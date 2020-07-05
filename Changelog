@@ -1,3 +1,8 @@
+v1.7
+ - French translation updates
+ - Fixed icons when in SuruDark theme
+ - Fixed push notification
+ 
 v1.6
  - Fixed #13: URI handling does not work
  - Fixed #15: Action menu popup has gap at the bottom when opened from the bottom

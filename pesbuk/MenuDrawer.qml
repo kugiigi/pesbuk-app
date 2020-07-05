@@ -76,7 +76,7 @@ Drawer {
                  anchors.leftMargin: 10
                  anchors.verticalCenter: parent.verticalCenter
                  name: modelData ? modelData.iconName : ""
-                 color: UT.UbuntuColors.jet
+                 color: theme.palette.normal.backgroundText
              }
              leftPadding: iconMenu.implicitWidth + (iconMenu.anchors.leftMargin * 2)
             

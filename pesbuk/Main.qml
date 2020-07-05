@@ -61,7 +61,7 @@ ApplicationWindow {
         anchors.fill: parent
         objectName: "mainView"  
         
-        readonly property string version: "1.6"
+        readonly property string version: "1.7"
         
         readonly property string siteMode: switch (true) {
                                     case width >= units.gu(120):
@@ -79,6 +79,7 @@ ApplicationWindow {
         property bool popupBlockerEnabled: true
         property bool fullscreen: false
         
+        theme.name: appSettings.style === "Suru" ? "" : "Ubuntu.Components.Themes.Ambiance"
         
         BaseHeaderAction{
             id: menuAction
@@ -202,7 +203,7 @@ ApplicationWindow {
             onCountChanged: console.log("count: " + count)
             
             function sendPush(tag, title, body, iconName, url, sound){
-                if(!mainView.active){
+                if(!appWindow.active){
                     var req = new XMLHttpRequest();
                     req.open("post", "https://push.ubports.com/notify", true);
                     req.setRequestHeader("Content-type", "application/json");

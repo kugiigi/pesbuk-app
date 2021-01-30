@@ -52,6 +52,33 @@ ApplicationWindow {
             flickable: stackView.currentItem.flickable
             leftActions: [menuAction]
             rightActions: stackView.currentItem ? stackView.currentItem.headerRightActions : 0
+            expandable: appSettings.headerExpand
+            
+            Connections {
+                enabled: webViewPage.webView
+                target: webViewPage.webView
+                onScrollPositionChanged: {
+                    if (target.loadProgress == 100) {
+                        timer.restart()
+                    }
+                }
+            }
+            
+            Timer {
+                id: timer
+
+                running: false
+                interval: 400
+                onTriggered: {
+                    if (!applicationHeader.expanded) {
+                        if (webViewPage.scrollDirection == "Downwards" && webViewPage.webView.scrollPosition.y > 2 && appSettings.headerAutoHide) {
+                            applicationHeader.state = "Hidden"
+                        } else {
+                            applicationHeader.state = "Default"
+                        }
+                    }
+                }
+            }
         }
     
     MainView{
@@ -61,7 +88,7 @@ ApplicationWindow {
         anchors.fill: parent
         objectName: "mainView"  
         
-        readonly property string version: "1.7"
+        readonly property string version: "1.8"
         
         readonly property string siteMode: switch (true) {
                                     case width >= units.gu(120):
@@ -88,7 +115,7 @@ ApplicationWindow {
             text: stackView.depth > 1 ? i18n.tr("Back") : i18n.tr("Menu")
             iconName: stackView.depth > 1 ? "back" : "navigation-menu"
             notifText: stackView.depth === 1 ? webViewPage.notificationExists : ""
-            
+            shortcut: stackView.depth > 1 ? StandardKey.Cancel : "Menu"
             onTrigger:{
                 if (stackView.depth > 1) {
                         stackView.pop()
@@ -183,7 +210,9 @@ ApplicationWindow {
                 right: parent.right
                 top: parent.top
                 bottom: keyboardRec.top
-            }  
+            }
+            
+            onDepthChanged: if (depth > 1) applicationHeader.state = "Default"
         }
        
         SettingsComponent{
@@ -266,9 +295,9 @@ ApplicationWindow {
                      
                      model:  [
                         { title: i18n.tr("Notifications"), type: "URL" ,url: webViewPage.baseURL + "/notifications", iconName: "notification", notifyText: webViewPage.notificationsCount }
-                        ,{ title: i18n.tr("Messages"), type: "URL",url: webViewPage.baseURL + "/messages", iconName: "message", notifyText: webViewPage.messagesCount }
+                        ,{ title: i18n.tr("Messages"), type: "URL",url: (appSettings.messengerDesktop ? "https://www.facebook.com" : webViewPage.baseURL) + "/messages", iconName: "message", notifyText: webViewPage.messagesCount }
                         ,{ title: i18n.tr("Feeds"), type: "JS",url: "var button = document.querySelector('a[name=" + "\"News Feed\"" + "].touchable'); if(button){button.click()}", iconName: "rssreader-app-symbolic", notifyText: webViewPage.feedsCount }
-                        ,{ title: i18n.tr("Friends"), type: "URL",url: webViewPage.baseURL + "/friends", iconName: "contact", notifyText: webViewPage.requestsCount }
+                        ,{ title: i18n.tr("Friends"), type: "URL",url: webViewPage.baseURL + "/friends" + (!mainView.desktopMode ? "/center/requests/" : ""), iconName: "contact", notifyText: webViewPage.requestsCount }
                         ,{ title: i18n.tr("Search"), type: "JS",url: "var button = document.querySelector('a[name=Search].touchable'); if(button){button.click()}", iconName: "find" }
                         ,{ title: i18n.tr("Menu"), type: "JS",url: "var button = document.querySelector('a[name=More].touchable'); if(button){button.click()};", iconName: "navigation-menu" }
                         ,{ title: i18n.tr("More"), type: "Menu",url: moreActions, iconName: "other-actions" }
@@ -329,6 +358,43 @@ ApplicationWindow {
                 fill: parent
             }
         } 
+
+        // F5 or Ctrl+R: Reload current Tab
+        Shortcut {
+            sequence: "Ctrl+r"
+            enabled: webViewPage.webView
+            onActivated: webViewPage.webView.reload()
+        }
+        Shortcut {
+            sequence: "F5"
+            enabled: webViewPage.webView
+            onActivated: webViewPage.webView.reload()
+        }
+
+        // Alt+← or Backspace: Goes to the previous page
+        Shortcut {
+            sequence: StandardKey.Back
+            enabled: webViewPage.webView && webViewPage.webView.canGoBack
+            onActivated: webViewPage.webView.goBack()
+        }
+
+        // Alt+→ or Shift+Backspace: Goes to the next page
+        Shortcut {
+            sequence: StandardKey.Forward
+            enabled: webViewPage.webView && webViewPage.webView.canGoForward
+            onActivated: webViewPage.webView.goForward()
+        }
+
+        Shortcut {
+            sequence: StandardKey.Cancel
+            enabled: stackView.depth > 1
+            onActivated: menuAction.trigger(false)
+        }
+        Shortcut {
+            sequence: "Menu"
+            enabled: stackView.depth <= 1
+            onActivated: menuAction.trigger(false)
+        }
     }
    
  }   

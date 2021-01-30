@@ -11,6 +11,10 @@ Item{
     property alias hideHeader: settings.hideHeader
     property alias pushToken: settings.pushToken
     property alias baseSite: settings.baseSite
+    property alias messengerDesktop: settings.messengerDesktop
+    property alias messengerZoomFactor: settings.messengerZoomFactor
+    property alias headerExpand: settings.headerExpand
+    property alias headerAutoHide: settings.headerAutoHide
     
     property alias pushFeed: settings.pushFeed
     property alias pushNotification: settings.pushNotification
@@ -28,6 +32,10 @@ Item{
         property real zoomFactor: 1
         property bool hideHeader: true
         property int baseSite: 0
+        property bool messengerDesktop: false
+        property real messengerZoomFactor: 1
+        property bool headerExpand: true
+        property bool headerAutoHide: false
         
         property var pushFeed: {"enable": false, "sound": false}
         property var pushNotification: {"enable": true, "sound": false}

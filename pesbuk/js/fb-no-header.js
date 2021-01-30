@@ -20,7 +20,7 @@ toggleHeader = function (show) {
             topMargin = header.offsetHeight
             noHeaderCSS.innerText += "div#rootcontainer{top: -44px; position: relative; z-index: 2}"
         }
-        
+
         document.head.appendChild(noHeaderCSS);
     }
 }

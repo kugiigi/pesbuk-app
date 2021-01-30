@@ -4,7 +4,6 @@ import Morph.Web 0.1
 import QtWebEngine 1.7
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
-import Ubuntu.UnityWebApps 0.1 as UnityWebApps
 import Ubuntu.Content 1.1
 import QtMultimedia 5.8
 import QtSystemInfo 5.0
@@ -34,6 +33,7 @@ BasePage {
                                 
                             }
     readonly property string home: baseURL + "/home.php?sk="
+    readonly property alias scrollDirection: scrollPositioner.scrollDirection
     
     property alias webView: webview
     
@@ -58,19 +58,6 @@ BasePage {
         iconName: "back"
         
         onTrigger:{
-            //Disabled because the built-in back button doesn't retain scroll position
-//~             webview.runJavaScript("var button = document.querySelector('div#MBackNavBar'), style = window.getComputedStyle(button), display = style.getPropertyValue('display'); display"
-//~                     , function(result){goBack(result)})
-                    
-//~             function goBack(result){
-//~                 if(result === "none"){
-//~                     console.log("goBack")
-//~                     webview.goBack()
-//~                 }else{
-//~                     console.log("runJavaScript")
-//~                     webview.runJavaScript("var button = document.querySelector('div#MBackNavBar'); if(button){button.click()}")
-//~                 }
-//~             }
             webview.goBack()
         }
     }
@@ -154,17 +141,6 @@ BasePage {
            webview.runJavaScript("toggleHeader(" + !appSettings.hideHeader + ");")
         }
     }
-    
-    BaseHeaderAction{
-        id: headerExpandAction
-        
-        text: applicationHeader.expanded ? i18n.tr("Reset Header") : i18n.tr("Reach Header")
-        iconName: applicationHeader.expanded ? "up" : "down"
-    
-        onTrigger:{
-            applicationHeader.expanded = !applicationHeader.expanded
-        }
-    }
 
     WebEngineView {
         id: webview
@@ -174,7 +150,7 @@ BasePage {
         settings.fullScreenSupportEnabled: false
 
         anchors.fill: parent
-        zoomFactor: appSettings.zoomFactor
+        zoomFactor: appSettings.messengerDesktop && String(webview.url).indexOf("https://www.facebook.com/messages") >= 0 ? appSettings.messengerZoomFactor : appSettings.zoomFactor
         url: page.home
 
         userScripts: [fbNoBanner, noHeader, notifier]
@@ -297,14 +273,14 @@ BasePage {
             readonly property real expansionThreshold: applicationHeader.maxHeight
             
             direction: SwipeArea.Downwards
-            enabled: webview.scrollPosition === Qt.point(0,0)
+            enabled: webview.scrollPosition === Qt.point(0,0) && applicationHeader.expandable && String(webview.url).indexOf("/messages") < 0
             z: 1
             anchors.fill: parent
             grabGesture: false
             onDistanceChanged: {
                 if(distance > 0){
                     if((distance + applicationHeader.height) >= expansionThreshold){
-                        applicationHeader.expanded = true
+                        applicationHeader.state = "Expanded"
                     }
                 }	
             }
@@ -320,12 +296,17 @@ BasePage {
             grabGesture: false
             onDraggingChanged:{
                 if(dragging){
-                    applicationHeader.expanded = false
+                    applicationHeader.state = "Default"
                 }
             }
         }
-        
-        ScrollPositioner{z: 5; mode: "Down";}
+
+        ScrollPositioner{
+            id: scrollPositioner
+
+            z: 5
+            mode: "Down"
+        }
             
         WebEngineProfile {
             id: webContext 

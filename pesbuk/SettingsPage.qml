@@ -68,6 +68,12 @@ BasePage {
             CheckBoxItem{
                 visible: !mainView.desktopMode
                 text: i18n.tr("Hide site header")
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+
                 Component.onCompleted: {
                     checked = appSettings.hideHeader
                 }
@@ -75,6 +81,38 @@ BasePage {
                     appSettings.hideHeader = checked
                 }
                 onClicked: refreshLabel.visible = true
+            }
+            
+            CheckBoxItem{
+                text: i18n.tr("Expand header on down swipe")
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+
+                Component.onCompleted: {
+                    checked = appSettings.headerExpand
+                }
+                onCheckedChanged: {
+                    appSettings.headerExpand = checked
+                }
+            }
+            
+            CheckBoxItem{
+                text: i18n.tr("Hide header on scroll down")
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+
+                Component.onCompleted: {
+                    checked = appSettings.headerAutoHide
+                }
+                onCheckedChanged: {
+                    appSettings.headerAutoHide = checked
+                }
             }
             
             Label {
@@ -89,6 +127,13 @@ BasePage {
             
             SpinRange{
                 id: zoomFactor
+                
+                title: i18n.tr("Zoom factor") + ":"
+                valueRatio: 100
+                value: appSettings.zoomFactor
+                onValueModified: {
+                    appSettings.zoomFactor = newValue
+                }
             }
             
             RadioButtonsItem{
@@ -100,6 +145,40 @@ BasePage {
                 
                 onCurrentIndexChanged: {
                     appSettings.baseSite = currentIndex
+                }
+            }
+
+            Label {
+                id: messengerLabel
+                
+                text: i18n.tr("Messenger")
+                verticalAlignment: Label.AlignVCenter
+            }
+            
+            GroupBox{
+                anchors{
+                    left: parent.left
+                    right: parent.right
+                }
+                ColumnLayout{
+                    Switch{
+                        text: i18n.tr("Desktop version")
+                        Component.onCompleted: {
+                            checked = appSettings.messengerDesktop
+                        }
+                        onCheckedChanged: {
+                            appSettings.messengerDesktop = checked
+                        }
+                    }
+                    
+                    SpinRange{
+                        title: i18n.tr("Zoom factor") + ":"
+                        valueRatio: 100
+                        value: appSettings.messengerZoomFactor
+                        onValueModified: {
+                            appSettings.messengerZoomFactor = newValue
+                        }
+                    }
                 }
             }
             
@@ -121,7 +200,7 @@ BasePage {
                 color: "#ED3146"
                 wrapMode: Text.WordWrap
             }
-            
+
             GroupBox{
                 visible: !mainView.desktopMode
                 anchors{

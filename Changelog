@@ -1,10 +1,10 @@
 v1.8
- - Updated to 16.04.5 framework (OTA-16)
+ - Updated framework to 16.04.4
  - Updated splash screen
  - Removed Oxide imports and references
  - Add option to use desktop version of messenger
  - Add option to automatically hide app header when scrolling (Experimental)
- - Added option to disable header expansion whhen swiping down
+ - Added option to disable header expansion when swiping down
  - Added common keyboard shortcuts (i.e. Alt + Left to go back)
  - Fixed #22: Friend requests hidden
  - Fixed #21: Drag down extends the header of the apl to half screen

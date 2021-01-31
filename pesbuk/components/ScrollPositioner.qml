@@ -7,10 +7,10 @@ RoundButton {
 
     readonly property int timeout: 500
     
-    property string scrollDirection
+    property string scrollDirection: "Upwards"
     property real previousScrollPosition: 0
     
-    property string mode: "Down"
+    property string mode: "Up"
     property bool hide: false
     
     width: 65
@@ -46,7 +46,10 @@ RoundButton {
             }else{
                 root.scrollDirection = "Upwards"
             }
-            root.previousScrollPosition = target.scrollPosition.y
+
+            if (Math.abs(target.scrollPosition.y - root.previousScrollPosition) > 100) {
+                root.previousScrollPosition = target.scrollPosition.y
+            }
             
             root.hide = false
             timer.restart()

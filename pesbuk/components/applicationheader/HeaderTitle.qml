@@ -8,7 +8,6 @@ Label {
     elide: Label.ElideRight
     fontSizeMode: Text.HorizontalFit
     minimumPixelSize: 10
-    anchors.verticalCenter: parent.verticalCenter
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
 }

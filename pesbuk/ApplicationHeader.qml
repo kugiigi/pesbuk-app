@@ -15,11 +15,45 @@ ToolBar {
     
     property list<BaseHeaderAction> leftActions
     property list<BaseHeaderAction> rightActions
+    property bool expandable: true
     property Flickable flickable
-    property bool expanded: false
+    readonly property bool expanded: state == "Expanded"
+    readonly property bool hidden: state == "Hidden"
     
+    Behavior on height {
+        enabled: !flickableLoader.item || (flickableLoader.item && flickableLoader.item.target.verticalOvershoot == 0) || expanded
+        UT.UbuntuNumberAnimation { 
+            easing: UT.UbuntuAnimation.StandardEasing
+            duration: UT.UbuntuAnimation.BriskDuration
+        }
+    }
+
+    Behavior on opacity {
+        UT.UbuntuNumberAnimation { 
+            easing: UT.UbuntuAnimation.StandardEasing
+            duration: UT.UbuntuAnimation.SnapDuration
+        }
+    }
+
     //WORKAROUND: Label "HorizontalFit" still uses the height of the unadjusted font size.
     implicitHeight: defaultHeight
+    
+    state: "Default"
+    
+    states: [
+        State {
+            name: "Default"
+            PropertyChanges { target: applicationHeader; height: defaultHeight; opacity: 1 }
+        }
+        ,State {
+            name: "Hidden"
+            PropertyChanges { target: applicationHeader; height: 0; opacity: 0 }
+        }
+        ,State {
+            name: "Expanded"
+            PropertyChanges { target: applicationHeader; height: maxHeight; opacity: 1 }
+        }
+    ]
     
     function triggerRight(fromBottom){
         if(rightActions.length > 0){
@@ -39,7 +73,7 @@ ToolBar {
     
     function resetHeight(){
         if(height !== defaultHeight){
-            expanded = false
+            state = "Default"
         }
     }
     
@@ -52,13 +86,15 @@ ToolBar {
             target: flickable
             
             onVerticalOvershootChanged: {
-                if(target.verticalOvershoot < 0){
-                    if(applicationHeader.height < expansionThreshold){
-                        applicationHeader.height = 50 - target.verticalOvershoot
-                    }
-                    
-                    if(applicationHeader.height >= expansionThreshold){
-                        expanded = true
+                if (applicationHeader.expandable) {
+                    if(target.verticalOvershoot < 0){
+                        if(applicationHeader.height < expansionThreshold){
+                            applicationHeader.height = 50 - target.verticalOvershoot
+                        }
+                        
+                        if(applicationHeader.height >= expansionThreshold){
+                            applicationHeader.state = "Expanded"
+                        }
                     }
                 }
             }
@@ -69,31 +105,7 @@ ToolBar {
                 }
             }
         }
-    }  
-    
-    UT.UbuntuNumberAnimation on height{
-        id: expandAnimation
-        
-        running: expanded
-        from: height
-        to: maxHeight
-        easing: UT.UbuntuAnimation.StandardEasing
-        duration: UT.UbuntuAnimation.BriskDuration
     }
-    
-    
-    UT.UbuntuNumberAnimation on height{
-        id: collapseAnimation
-        
-        running: !expanded
-        from: height
-        to: defaultHeight
-        easing: UT.UbuntuAnimation.StandardEasing
-        duration: UT.UbuntuAnimation.BriskDuration
-        
-        onRunningChanged: if(!running) expanded = false
-    }
-    
     
     RowLayout {
         id: rowLayout
@@ -105,6 +117,7 @@ ToolBar {
             id: leftHeaderActions
             
             model: leftActions
+            Layout.fillHeight: true
         }
         
         HeaderTitle{
@@ -118,7 +131,8 @@ ToolBar {
             id: rightHeaderActions
             
             model: rightActions.length === 1 ? rightActions : 0
-            
+            Layout.fillHeight: true
+
             HeaderToolButton {
                 id: overflowRightButton
                 
@@ -161,10 +175,5 @@ ToolBar {
                 duration: UT.UbuntuAnimation.SleepyDuration
             }
         }
-    }
-
-    Shortcut {
-        sequence: "Menu"
-        onActivated: triggerLeft(false)
     }
 }

@@ -8,11 +8,6 @@ Row{
 	
 	spacing: 5
 	
-	anchors{
-		top: parent.top
-		bottom: parent.bottom
-	}
-	
 	Repeater {
 		id: repeater
 		

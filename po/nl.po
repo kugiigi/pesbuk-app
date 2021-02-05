@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-31 16:35+0000\n"
-"PO-Revision-Date: 2020-07-03 17:06+0200\n"
+"PO-Revision-Date: 2021-02-05 13:53+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:8
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:305
@@ -223,11 +223,11 @@ msgstr "Websitekop verbergen"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:87
 msgid "Expand header on down swipe"
-msgstr ""
+msgstr "Kop uitklappen door omlaag te vegen"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:103
 msgid "Hide header on scroll down"
-msgstr ""
+msgstr "Kop verbergen door omlaag te scrollen"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:123
 msgid "Refresh the page to take effect"
@@ -243,13 +243,12 @@ msgid "Home Site"
 msgstr "Startpagina"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:154
-#, fuzzy
 msgid "Messenger"
-msgstr "Berichten"
+msgstr "Messenger"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:165
 msgid "Desktop version"
-msgstr ""
+msgstr "Volledige website"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:188
 msgid "Push notification"
@@ -381,9 +380,9 @@ msgid ""
 "the header. \n"
 " Try it now!"
 msgstr ""
-"Veeg vanaf de onderzijde van het scherm omhoog om de werkbalkacties te "
-"activeren.\n"
-" Probeer het eens!"
+"Veeg vanaf de onderkant van het scherm omhoog om de werkbalkacties te "
+"tonen.\n"
+" Probeer maar!"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/components/BottomEdgeHint.qml:37
 msgid "Okay"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-31 16:35+0000\n"
-"PO-Revision-Date: 2020-07-04 18:49+0200\n"
+"PO-Revision-Date: 2021-02-09 21:48+0100\n"
 "Last-Translator: Anne017\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -222,11 +222,11 @@ msgstr "Masquer l'en-tête du site"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:87
 msgid "Expand header on down swipe"
-msgstr ""
+msgstr "Agrandir l'en-tête lors d'un balayage vers le bas"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:103
 msgid "Hide header on scroll down"
-msgstr ""
+msgstr "Masquer l'en-tête lors d'un défilement vers le bas"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:123
 msgid "Refresh the page to take effect"
@@ -242,13 +242,12 @@ msgid "Home Site"
 msgstr "Site d'accueil"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:154
-#, fuzzy
 msgid "Messenger"
-msgstr "Messages"
+msgstr "Messenger"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:165
 msgid "Desktop version"
-msgstr ""
+msgstr "Version pour ordinateur"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:188
 msgid "Push notification"

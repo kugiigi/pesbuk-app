@@ -15,7 +15,7 @@
             "push-helper": "push/push.json"
         }
     },
-    "version": "1.8",
+    "version": "1.9",
     "maintainer": "Kugi Eusebio <kugi_eusebio@protonmail.com>",
     "framework": "ubuntu-sdk-16.04.4"
 }

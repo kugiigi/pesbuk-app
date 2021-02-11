@@ -1,3 +1,9 @@
+v1.9
+ - Updated French translations
+ - Added LibrePay link in About page
+ - Updated splashscreen (again)
+ - Removed delay in header hiding/showing
+
 v1.8
  - Updated framework to 16.04.4
  - Updated splash screen

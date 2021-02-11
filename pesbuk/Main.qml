@@ -68,7 +68,7 @@ ApplicationWindow {
                 id: timer
 
                 running: false
-                interval: 400
+                interval: 1
                 onTriggered: {
                     if (!applicationHeader.expanded) {
                         if (webViewPage.scrollDirection == "Downwards" && webViewPage.webView.scrollPosition.y > 2 && appSettings.headerAutoHide) {
@@ -88,7 +88,7 @@ ApplicationWindow {
         anchors.fill: parent
         objectName: "mainView"  
         
-        readonly property string version: "1.8"
+        readonly property string version: "1.9"
         
         readonly property string siteMode: switch (true) {
                                     case width >= units.gu(120):

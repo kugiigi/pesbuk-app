@@ -136,6 +136,17 @@
        x2="174.7892"
        y2="128.11043"
        gradientUnits="userSpaceOnUse" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath870">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g866"
+         id="use872"
+         width="100%"
+         height="100%" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -144,9 +155,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="715.5792"
-     inkscape:cy="427.87338"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="795.1223"
+     inkscape:cy="407.42915"
      inkscape:document-units="px"
      inkscape:current-layer="layer11"
      showgrid="false"
@@ -162,7 +173,8 @@
      inkscape:snap-to-guides="true"
      inkscape:snap-global="false"
      inkscape:snap-others="true"
-     inkscape:snap-bbox="false" />
+     inkscape:snap-bbox="false"
+     inkscape:pagecheckerboard="true" />
   <metadata
      id="metadata5228">
     <rdf:RDF>
@@ -171,7 +183,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -304,50 +316,51 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-28.36222)"
-     style="display:inline">
-    <rect
-       y="36.727531"
-       x="-3.0304577"
-       height="1023.7159"
-       width="1023.7159"
-       id="rect2985-57-3-2"
-       style="display:inline;opacity:1;fill:#3b5998;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.9988904" />
-  </g>
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer11"
      inkscape:label="Layer 2"
      style="display:inline"
      transform="translate(0,768)">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1066.66662598px;line-height:0%;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="468.97073"
-       y="-24.346285"
-       id="text8872"><tspan
-         sodipodi:role="line"
-         id="tspan4191"
-         x="468.97073"
-         y="-24.346285"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1066.66662598px;line-height:1.20000005;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">p</tspan></text>
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4217"
-       width="88.275681"
-       height="198.05713"
-       x="544.72559"
-       y="96.782127"
-       ry="0" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4219"
-       width="210.72105"
-       height="75.835266"
-       x="131.74146"
-       y="-498.49548"
-       ry="0"
-       inkscape:transform-center-x="-9.9737296"
-       inkscape:transform-center-y="-0.44158855"
-       transform="matrix(0.77292347,0.63449925,-0.66852008,0.74369409,0,0)" />
+    <g
+       id="g868"
+       clip-path="url(#clipPath870)"
+       transform="matrix(0.62522781,0,0,0.62522781,91.84057,-182.50228)">
+      <g
+         inkscape:label="Clip"
+         id="g866">
+        <text
+           id="text8872"
+           y="-24.346285"
+           x="468.97073"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1066.66662598px;line-height:0%;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1066.66662598px;line-height:1.20000005;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
+             y="-24.346285"
+             x="468.97073"
+             id="tspan4191"
+             sodipodi:role="line">p</tspan></text>
+        <rect
+           ry="0"
+           y="96.782127"
+           x="544.72559"
+           height="198.05713"
+           width="88.275681"
+           id="rect4217"
+           style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <rect
+           transform="matrix(0.77292347,0.63449925,-0.66852008,0.74369409,0,0)"
+           inkscape:transform-center-y="-0.44158855"
+           inkscape:transform-center-x="-9.9737296"
+           ry="0"
+           y="-498.49548"
+           x="131.74146"
+           height="75.835266"
+           width="210.72105"
+           id="rect4219"
+           style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+    </g>
   </g>
 </svg>

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 16:35+0000\n"
+"POT-Creation-Date: 2021-02-11 07:20+0000\n"
 "PO-Revision-Date: 2021-02-05 13:53+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: \n"
@@ -29,6 +29,7 @@ msgstr "Over"
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:74
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:75
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:76
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
 msgid "Support"
 msgstr "Ondersteuning"
 
@@ -45,22 +46,26 @@ msgid "View source"
 msgstr "Broncode bekijken"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:74
-msgid "Donate"
-msgstr "Doneren"
+msgid "Donate via PayPal"
+msgstr ""
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:75
+msgid "Donate via LibrePay"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:76
 msgid "View in OpenStore"
 msgstr "Openen in OpenStore"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:76
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
 msgid "Other apps by the developer"
 msgstr "Andere apps van deze ontwikkelaar"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:78
 msgid "Developers"
 msgstr "Ontwikkelaars"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:78
 msgid "Main developer"
 msgstr "Hoofdontwikkelaar"
 
@@ -407,6 +412,9 @@ msgstr "Uitgebracht onder de licentie"
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/build/aarch64-linux-gnu/app/pesbuk/pesbuk.desktop.h:1
 msgid "Pesbuk"
 msgstr "Pesbuk"
+
+#~ msgid "Donate"
+#~ msgstr "Doneren"
 
 #~ msgid "Reset Header"
 #~ msgstr "Standaardwaarde"

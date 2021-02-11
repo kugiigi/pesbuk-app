@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 16:35+0000\n"
+"POT-Creation-Date: 2021-02-11 07:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,7 @@ msgstr ""
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:74
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:75
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:76
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
 msgid "Support"
 msgstr ""
 
@@ -45,22 +46,26 @@ msgid "View source"
 msgstr ""
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:74
-msgid "Donate"
+msgid "Donate via PayPal"
 msgstr ""
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:75
-msgid "View in OpenStore"
+msgid "Donate via LibrePay"
 msgstr ""
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:76
+msgid "View in OpenStore"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
 msgid "Other apps by the developer"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:78
 msgid "Developers"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:77
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:78
 msgid "Main developer"
 msgstr ""
 

@@ -298,7 +298,7 @@ ApplicationWindow {
                         ,{ title: i18n.tr("Messages"), type: "URL",url: (appSettings.messengerDesktop ? "https://www.facebook.com" : webViewPage.baseURL) + "/messages", iconName: "message", notifyText: webViewPage.messagesCount }
                         ,{ title: i18n.tr("Feeds"), type: "JS",url: "var button = document.querySelector('a[name=" + "\"News Feed\"" + "].touchable'); if(button){button.click()}", iconName: "rssreader-app-symbolic", notifyText: webViewPage.feedsCount }
                         ,{ title: i18n.tr("Friends"), type: "URL",url: webViewPage.baseURL + "/friends" + (!mainView.desktopMode ? "/center/requests/" : ""), iconName: "contact", notifyText: webViewPage.requestsCount }
-                        ,{ title: i18n.tr("Search"), type: "JS",url: "var button = document.querySelector('a[name=Search].touchable'); if(button){button.click()}", iconName: "find" }
+                        ,{ title: i18n.tr("Search"), type: "JS",url: "var button = document.querySelector('a[name=Search ]') || document.querySelector('input[type=search ]'); if(button){button.click()}", iconName: "find" }
                         ,{ title: i18n.tr("Menu"), type: "JS",url: "var button = document.querySelector('a[name=More].touchable'); if(button){button.click()};", iconName: "navigation-menu" }
                         ,{ title: i18n.tr("More"), type: "Menu",url: moreActions, iconName: "other-actions" }
                         ,{ title: i18n.tr("Settings"), type: "PAGE",url: Qt.resolvedUrl("SettingsPage.qml"), iconName: "settings" }

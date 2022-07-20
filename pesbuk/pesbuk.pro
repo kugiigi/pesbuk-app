@@ -5,6 +5,7 @@ load(ubuntu-click)
 
 CONFIG += c++11
 
+
 QT += qml quick gui quickcontrols2
 
 SOURCES += main.cpp

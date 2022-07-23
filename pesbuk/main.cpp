@@ -24,6 +24,9 @@ int main(int argc, char *argv[])
         QQuickStyle::setStyle("Material");
     }
 
+    const auto chromiumFlags = qgetenv("QTWEBENGINE_CHROMIUM_FLAGS");
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", chromiumFlags + "--enable-features=OverlayScrollbar,OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter");
+
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("availableStyles", QQuickStyle::availableStyles());
     engine.load(QUrl(QStringLiteral("qrc:///Main.qml")));

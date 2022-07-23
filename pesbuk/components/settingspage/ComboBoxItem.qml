@@ -7,7 +7,6 @@ RowLayout {
 	
 	property string text
 	property alias currentIndex: comboBox.currentIndex
-//~ 	property alias textRole: comboBox.textRole
 	property alias model: comboBox.model
 	property alias currentText: comboBox.currentText
 	
@@ -20,7 +19,6 @@ RowLayout {
     
     function find(text, flags){
         var result = comboBox.find(text, flags)
-//~         console.log(text + " = " + result)
         return result
     }
 

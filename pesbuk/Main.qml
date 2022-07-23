@@ -1,6 +1,6 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
-import Ubuntu.Components 1.3
+import QtQuick 2.12
+import QtQuick.Controls 2.5
+import Ubuntu.Components 1.3 as UT
 import Ubuntu.PushNotifications 0.1
 import "components"
 
@@ -49,11 +49,15 @@ ApplicationWindow {
     header: ApplicationHeader{
             id: applicationHeader
             
+            timesOut: (appSettings.headerHide == 2 || alwaysHidden) && stackView.inWebView
+            alwaysHidden: appSettings.headerHide == 3
+            
             flickable: stackView.currentItem.flickable
             leftActions: [menuAction]
             rightActions: stackView.currentItem ? stackView.currentItem.headerRightActions : 0
-            expandable: appSettings.headerExpand
-            
+            expandable: appWindow.height > units.gu(60) && appSettings.headerExpand
+            floating: timesOut
+
             Connections {
                 enabled: webViewPage.webView
                 target: webViewPage.webView
@@ -70,8 +74,8 @@ ApplicationWindow {
                 running: false
                 interval: 1
                 onTriggered: {
-                    if (!applicationHeader.expanded) {
-                        if (webViewPage.scrollDirection == "Downwards" && webViewPage.webView.scrollPosition.y > 2 && appSettings.headerAutoHide) {
+                    if (!applicationHeader.expanded && appSettings.headerHide == 1) {
+                        if (webViewPage.scrollDirection == "Downwards" && webViewPage.webView.scrollPosition.y > 2) {
                             applicationHeader.state = "Hidden"
                         } else {
                             applicationHeader.state = "Default"
@@ -80,15 +84,71 @@ ApplicationWindow {
                 }
             }
         }
+
+    Item {
+        id: hoverShowHeader
+
+        z: 1000
+        visible: applicationHeader.timesOut && applicationHeader.state == "Hidden"
+        height: 10
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+        }
+
+        HoverHandler {
+            id: hoverHander
+
+            onHoveredChanged: {
+                if (hovered) {
+                    showHeaderOnHoverTimer.restart()
+                } else {
+                    showHeaderOnHoverTimer.stop()
+                }
+            }
+        }
+
+        Timer {
+            id: showHeaderOnHoverTimer
+            running: false
+            interval: 200
+            onTriggered: applicationHeader.state = "Default"
+        }
+    }
+
+    ProgressBar {
+        id: progressBar
+        
+        z: hoverShowHeader.z - 1
+        from: 0
+        to: 100
+        value: webview.loadProgress
+        visible: opacity !== 0
+        opacity: value !== to  &&  webview.loading ? 1 : 0
+        anchors {
+            top: parent.top
+            topMargin: applicationHeader.floating ? applicationHeader.height : 0
+            left: parent.left
+            right: parent.right
+        }
+        
+        Behavior on opacity{ 
+            UT.UbuntuNumberAnimation{
+                easing: UT.UbuntuAnimation.StandardEasing
+                duration: UT.UbuntuAnimation.SleepyDuration
+            }
+        }
+    }
     
-    MainView{
+    UT.MainView{
         id: mainView
         
         applicationName: "pesbuk.kugiigi"
         anchors.fill: parent
         objectName: "mainView"  
         
-        readonly property string version: "1.9"
+        readonly property string version: "2.0"
         
         readonly property string siteMode: switch (true) {
                                     case width >= units.gu(120):
@@ -172,10 +232,10 @@ ApplicationWindow {
             }
         }
         
-        Arguments {
+        UT.Arguments {
             id: args
         
-            Argument {
+            UT.Argument {
                 name: 'url'
                 help: i18n.tr('Facebook URL/Action')
                 required: false
@@ -184,7 +244,7 @@ ApplicationWindow {
         }
         
         Connections {
-            target: UriHandler
+            target: UT.UriHandler
         
             onOpened: {
                 console.log('Open from UriHandler')
@@ -202,17 +262,39 @@ ApplicationWindow {
        
         StackView {
             id: stackView
-            
+
+            readonly property bool inWebView: currentItem == webViewPage
+
             initialItem: webViewPage
             
             anchors{
                 left: parent.left
                 right: parent.right
+                
                 top: parent.top
                 bottom: keyboardRec.top
             }
-            
-            onDepthChanged: if (depth > 1) applicationHeader.state = "Default"
+
+            onDepthChanged: {
+                if (depth > 1) {
+                    applicationHeader.state = "Default"
+                } else {
+                    switch (appSettings.headerHide) {
+                        case 0:
+                        case 1:
+                            applicationHeader.timeOutTimer.stop()
+                            applicationHeader.state = "Default"
+                            break
+                        case 2:
+                            applicationHeader.state = "Default"
+                            applicationHeader.timeOutTimer.restart()
+                            break;
+                        case 3:
+                            applicationHeader.state = "Hidden"
+                            break
+                    }
+                }
+            }
         }
        
         SettingsComponent{
@@ -294,16 +376,20 @@ ApplicationWindow {
                     id: drawer
                      
                      model:  [
-                        { title: i18n.tr("Notifications"), type: "URL" ,url: webViewPage.baseURL + "/notifications", iconName: "notification", notifyText: webViewPage.notificationsCount }
-                        ,{ title: i18n.tr("Messages"), type: "URL",url: (appSettings.messengerDesktop ? "https://www.facebook.com" : webViewPage.baseURL) + "/messages", iconName: "message", notifyText: webViewPage.messagesCount }
-                        ,{ title: i18n.tr("Feeds"), type: "JS",url: "var button = document.querySelector('a[name=" + "\"News Feed\"" + "].touchable'); if(button){button.click()}", iconName: "rssreader-app-symbolic", notifyText: webViewPage.feedsCount }
-                        ,{ title: i18n.tr("Friends"), type: "URL",url: webViewPage.baseURL + "/friends" + (!mainView.desktopMode ? "/center/requests/" : ""), iconName: "contact", notifyText: webViewPage.requestsCount }
-                        ,{ title: i18n.tr("Search"), type: "JS",url: "var button = document.querySelector('a[name=Search ]') || document.querySelector('input[type=search ]'); if(button){button.click()}", iconName: "find" }
-                        ,{ title: i18n.tr("Menu"), type: "JS",url: "var button = document.querySelector('a[name=More].touchable'); if(button){button.click()};", iconName: "navigation-menu" }
-                        ,{ title: i18n.tr("More"), type: "Menu",url: moreActions, iconName: "other-actions" }
-                        ,{ title: i18n.tr("Settings"), type: "PAGE",url: Qt.resolvedUrl("SettingsPage.qml"), iconName: "settings" }
-                        ,{ title: i18n.tr("About"), type: "PAGE",url: Qt.resolvedUrl("AboutPage.qml"), iconName: "info" }
+                        { enabled: true, title: i18n.tr("Notifications"), type: "URL" ,url: webViewPage.baseURL + "/notifications", iconName: "notification", notifyText: webViewPage.notificationsCount }
+                        ,{ enabled: true, title: i18n.tr("Messages"), type: "URL",url: (appSettings.messengerDesktop ? "https://www.facebook.com" : webViewPage.baseURL) + "/messages", iconName: "message", notifyText: webViewPage.messagesCount }
+                        ,{ enabled: true, title: i18n.tr("Feeds"), type: "JS",url: "var button = document.querySelector('a[name=" + "\"News Feed\"" + "].touchable'); if(button){button.click()}", iconName: "rssreader-app-symbolic", notifyText: webViewPage.feedsCount }
+                        ,{ enabled: true, title: i18n.tr("Friends"), type: "URL",url: webViewPage.baseURL + "/friends" + (!mainView.desktopMode ? "/center/requests/" : ""), iconName: "contact", notifyText: webViewPage.requestsCount }
+                        ,{ enabled: true, title: i18n.tr("Search"), type: "JS",url: "var button = document.querySelector('a[name=Search ]') || document.querySelector('input[type=search ]'); if(button){button.click()}", iconName: "find" }
+                        ,{ enabled: true, title: i18n.tr("Menu"), type: "JS",url: "var button = document.querySelector('a[name=More].touchable'); if(button){button.click()};", iconName: "navigation-menu" }
+                        ,{ enabled: true, title: i18n.tr("More"), type: "Menu",url: moreActions, iconName: "other-actions" }
+                        ,{ enabled: appSettings.baseSite !== 2, title: i18n.tr("Desktop site"), type: "Toggle", url: "appSettings.forceDesktopVersion = !appSettings.forceDesktopVersion", iconName: "computer-symbolic", initialValue: appSettings.forceDesktopVersion }
+                        ,{ enabled: true, title: i18n.tr("Settings"), type: "PAGE",url: Qt.resolvedUrl("SettingsPage.qml"), iconName: "settings" }
+                        ,{ enabled: true, title: i18n.tr("About"), type: "PAGE",url: Qt.resolvedUrl("AboutPage.qml"), iconName: "info" }
                     ]
+
+                    onOpened: applicationHeader.holdTimeout = true
+                    onClosed: applicationHeader.holdTimeout = false
                 }
 
             visible: status == Loader.Ready

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-11 07:20+0000\n"
+"POT-Creation-Date: 2022-07-23 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:8
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:305
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:388
 msgid "About"
 msgstr ""
 
@@ -95,80 +95,84 @@ msgstr ""
 msgid "Upload from"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:115
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:175
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:57
 msgid "Back"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:115
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:302
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:175
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:384
 msgid "Menu"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:280
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:362
 msgid "View Profile"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:281
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:363
 msgid "Marketplace"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:282
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:364
 msgid "Pages"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:283
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:365
 msgid "Saved"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:284
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:366
 msgid "Groups"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:285
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:367
 msgid "Events"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:286
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:368
 msgid "On This Day"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:287
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:369
 msgid "Buy and Sell Groups"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:288
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:370
 msgid "Jobs"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:297
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:215
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:379
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:233
 msgid "Notifications"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:298
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:243
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:380
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:261
 msgid "Messages"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:299
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:299
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:381
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:317
 msgid "Feeds"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:300
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:382
 msgid "Friends"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:301
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:383
 msgid "Search"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:303
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:385
 msgid "More"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:304
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:386
+msgid "Desktop site"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:387
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:9
 msgid "Settings"
 msgstr ""
@@ -220,59 +224,83 @@ msgstr ""
 msgid "This will take effect after you restart the app"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:70
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:73
+msgid "Auto hide header"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:75
+msgid "Disabled"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:76
+msgid "On scroll down"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:77
+msgid "Times out"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:78
+msgid "Always hide"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:94
+msgid "Use bottom gestures\n"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:95
+msgid "Hover at the top to show header"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:104
 msgid "Hide site header"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:87
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:121
 msgid "Expand header on down swipe"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:103
-msgid "Hide header on scroll down"
-msgstr ""
-
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:123
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:141
 msgid "Refresh the page to take effect"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:131
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:175
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:149
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:193
 msgid "Zoom factor"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:142
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:160
 msgid "Home Site"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:154
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:172
 msgid "Messenger"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:165
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:183
 msgid "Desktop version"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:188
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:206
 msgid "Push notification"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:188
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:206
 msgid "Prevent app suspension to enable"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:194
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:212
 msgid "Notifications are not working when using the desktop site"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:229
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:257
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:285
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:313
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:247
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:275
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:303
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:331
 msgid "Sound"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:271
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:289
 msgid "Friend requests"
 msgstr ""
 

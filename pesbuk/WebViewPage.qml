@@ -16,16 +16,16 @@ BasePage {
     
     readonly property string baseURL: switch(appSettings.baseSite){
                                 case 0:
-                                    "https://touch.facebook.com"
+                                    appSettings.forceDesktopVersion ? "https://www.facebook.com" : "https://touch.facebook.com"
                                 break
                                 case 1: 
-                                    "https://m.facebook.com"
+                                    appSettings.forceDesktopVersion ? "https://www.facebook.com" : "https://m.facebook.com"
                                 break
                                 case 2: 
                                     "https://www.facebook.com"
                                 break
                                 case 3:
-                                    mainView.siteMode === "Phone" ? "https://touch.facebook.com" : "https://www.facebook.com"
+                                    mainView.siteMode === "Phone" && !appSettings.forceDesktopVersion ? "https://touch.facebook.com" : "https://www.facebook.com"
                                 break
                                 default:
                                     "https://touch.facebook.com"

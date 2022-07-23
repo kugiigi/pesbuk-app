@@ -45,47 +45,55 @@ Drawer {
             width: parent.width
             text: modelData.title
             highlighted: ListView.isCurrentItem
-            
+            visible: modelData.enabled
+            height: modelData.enabled ? implicitHeight : 0
+            checkable: modelData.type == "Toggle"
+            checked: modelData.initialValue ? modelData.initialValue : false
+
             function triggerAction(type, url){
                 switch(type){
                     case "PAGE":
                         stackView.push(url)
-                    break
+                        break
                     case "URL":
                         webview.url = url
-                    break
+                        break
                     case "JS":
                         webview.runJavaScript(url)
-                    break
+                        break
                     case "Menu":
                         if(menuLoader.item.visible){
                             menuLoader.item.close()
                         }else{
                             menuLoader.item.open()
                         }
-                    break
+                        break
+                    case "Toggle":
+                        checked = !checked
+                        eval(modelData.url)
+                        break
                 }
             }
-            
-            indicator: UT.Icon {
-                 id: iconMenu
-                 
-                 implicitWidth: 25
-                 implicitHeight: implicitWidth
-                 anchors.left: parent.left
-                 anchors.leftMargin: 10
-                 anchors.verticalCenter: parent.verticalCenter
-                 name: modelData ? modelData.iconName : ""
-                 color: theme.palette.normal.backgroundText
-             }
-             leftPadding: iconMenu.implicitWidth + (iconMenu.anchors.leftMargin * 2)
-            
+
+            icon.name: modelData ? modelData.iconName : ""
+            icon.color: theme.palette.normal.backgroundText
+            indicator: Switch {
+                id: switchDesktopSite
+
+                visible: modelData.type == "Toggle"
+                anchors.right: parent.right
+                anchors.rightMargin: 10
+                anchors.verticalCenter: parent.verticalCenter
+                checked: itemDelegate.checked
+                    onClicked: itemDelegate.clicked()
+            }
+
             onClicked: {
-                listView.currentIndex = index
-                triggerAction(modelData.type, modelData.url)
-                if(modelData.type !== "Menu"){
+                if (modelData.type !== "Menu") {
                     drawer.close()
                 }
+                listView.currentIndex = index
+                triggerAction(modelData.type, modelData.url)
             }
             
             NotificationIndicator{

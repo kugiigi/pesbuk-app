@@ -1,3 +1,4 @@
 {
   "builder": "qmake"
+  ,"qt_version": "5.12"
 }

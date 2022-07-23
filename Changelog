@@ -1,3 +1,11 @@
+v2.0
+ - Fixed "Search" from the drawer (Thanks nitanmarcel)
+ - Added options to always hide the application header and to automatically hide after a set time
+ - New scrollbar design
+ - Set Qt version requirement to 5.12
+ - Disable header expansion when height isn't tall enough
+ - Add Force Desktop site switch in the drawer
+
 v1.9
  - Updated French translations
  - Added LibrePay link in About page

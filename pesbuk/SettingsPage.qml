@@ -64,6 +64,40 @@ BasePage {
                 horizontalAlignment: Label.AlignRight
                 verticalAlignment: Label.AlignVCenter
             }
+
+            ComboBoxItem{       
+                id: headerHideSettings
+                        
+                property int settingIndex: -1
+                
+                text: i18n.tr("Auto hide header")
+                model: [
+                    i18n.tr("Disabled")
+                    ,i18n.tr("On scroll down")
+                    ,i18n.tr("Times out")
+                    ,i18n.tr("Always hide")
+                ]
+                currentIndex: settingIndex
+                
+                Component.onCompleted: {
+                    currentIndex = appSettings.headerHide
+                }
+                
+                onCurrentIndexChanged: {
+                    appSettings.headerHide = currentIndex
+                }
+            }
+            
+            Label {
+                id: autoHideNote
+                
+                text: "** " + (appSettings.headerHide == 2 ? i18n.tr("Use bottom gestures\n") : "")
+                            + i18n.tr("Hover at the top to show header")
+                height: visible ? font.pixelSize : 0
+                visible: appSettings.headerHide >= 2
+                verticalAlignment: Label.AlignVCenter
+                anchors.right: parent.right
+            }
             
             CheckBoxItem{
                 visible: !mainView.desktopMode
@@ -98,23 +132,7 @@ BasePage {
                     appSettings.headerExpand = checked
                 }
             }
-            
-            CheckBoxItem{
-                text: i18n.tr("Hide header on scroll down")
 
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
-
-                Component.onCompleted: {
-                    checked = appSettings.headerAutoHide
-                }
-                onCheckedChanged: {
-                    appSettings.headerAutoHide = checked
-                }
-            }
-            
             Label {
                 id: refreshLabel
                 

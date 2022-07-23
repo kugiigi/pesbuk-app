@@ -23,6 +23,10 @@ Item{
     
     //User data
     property alias firstRun: settings.firstRun
+
+    // New ones should be at the bottom
+    property alias headerHide: settings.headerHide
+    property alias forceDesktopVersion: settings.forceDesktopVersion
     
     Settings {
         id: settings
@@ -45,5 +49,15 @@ Item{
         //User data
         property bool firstRun: true
         property string pushToken
+        
+        // New ones should be at the bottom
+        property int headerHide: headerAutoHide ? 1 : 0 // Migrate headerAutoHide value
+        /*
+         0 - Disabled
+         1 - On scroll down
+         2 - Time out (Header shows when using bottom gestures)
+         3 - Always hidden
+        */
+        property bool forceDesktopVersion: false
     }
 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-26 06:43+0000\n"
+"POT-Creation-Date: 2023-01-26 07:22+0000\n"
 "PO-Revision-Date: 2021-02-09 21:48+0100\n"
 "Last-Translator: Anne017\n"
 "Language-Team: \n"
@@ -209,11 +209,20 @@ msgstr "Oui"
 msgid "No"
 msgstr "Non"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:27
-msgid "Oops, something went wrong."
-msgstr "Oups, un problème s'est produit."
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:40
+msgid "The rendering process has been closed."
+msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:33
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:49
+#, qt-format
+msgid "Something went wrong while displaying %1."
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:69
+msgid "Close tab"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:82
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:113
 msgid "Reload"
 msgstr "Actualiser"
@@ -442,9 +451,12 @@ msgstr "Version"
 msgid "Released under license"
 msgstr "Distribué sous licence"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/build/arm-linux-gnueabihf/app/pesbuk/pesbuk.desktop.h:1
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/build/x86_64-linux-gnu/app/pesbuk/pesbuk.desktop.h:1
 msgid "Pesbuk"
 msgstr "Pesbuk"
+
+#~ msgid "Oops, something went wrong."
+#~ msgstr "Oups, un problème s'est produit."
 
 #, fuzzy
 #~ msgid "Quick Settings"

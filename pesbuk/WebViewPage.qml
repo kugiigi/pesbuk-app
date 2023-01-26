@@ -415,22 +415,24 @@ BasePage {
         onNewViewRequested: function(request) {
             Qt.openUrlExternally(request.requestedUrl);
         }
+    }
 
     Loader {
-        anchors {
-            fill: webview
-        }
+        id: sadTabLoader
+
+        anchors.fill: webview
         active: webProcessMonitor.crashed || (webProcessMonitor.killed && !webview.currentWebview.loading)
-        sourceComponent: SadPage {
-            webview: webview
-            objectName: "overlaySadPage"
-        }
+        focus: active
+
+        Component.onCompleted: setSource("SadPage.qml", {
+                                             "webview": Qt.binding(function () {return webview.currentWebview})
+                                         })
         WebProcessMonitor {
             id: webProcessMonitor
-            webview: webview
+            webview: webview.currentWebview
         }
+
         asynchronous: true
-      }
     }
     
     Loader {

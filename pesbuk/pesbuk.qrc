@@ -28,6 +28,7 @@
         <file>components/HorizontalSwipeHandle.qml</file>
         <file>components/Haptics.qml</file>
         <file>components/ScrollPositioner.qml</file>
+        <file>components/WebviewSwipeHandler.qml</file>
         <file>components/ExternalDialog.qml</file>
         <file>components/NavHistoryPopup.qml</file>
         <file>components/NotificationIndicator.qml</file>

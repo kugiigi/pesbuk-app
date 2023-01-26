@@ -133,6 +133,14 @@ BasePage {
                 }
             }
 
+            Label {
+                text: i18n.tr("%1 Swipe up/down and hold to expand").arg (" **")
+                height: visible ? font.pixelSize : 0
+                visible: appSettings.headerExpand
+                verticalAlignment: Label.AlignVCenter
+                anchors.left: parent.left
+            }
+
             CheckBoxItem{
                 text: i18n.tr("Enable haptic feedback")
 

@@ -7,7 +7,7 @@ import Ubuntu.Components.Popups 1.3
 import Ubuntu.Content 1.1
 import QtMultimedia 5.8
 import QtSystemInfo 5.0
-import "components"
+import "components" as Common
 import "js/UrlUtils.js" as UrlUtils
 import "actions" as Actions
 import "."
@@ -57,7 +57,7 @@ BasePage {
         navHistPopup.show(fromBottom, caller)
     }
 
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: backAction
         
         enabled: webview.canGoBack
@@ -69,7 +69,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: testAction
         
         text: i18n.tr("Test")
@@ -79,7 +79,7 @@ BasePage {
             webview.runJavaScript("var test = document.querySelector('a[name=\"Notifications\"] span[data-sigil=count]'); test.innerHTML = \"" + Math.floor((Math.random() * 10) + 1) + '";')
         }
     }
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: testAction2
         
         text: i18n.tr("Test 2")
@@ -91,7 +91,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: forwardAction
         
         enabled: webview.canGoForward
@@ -102,8 +102,8 @@ BasePage {
             webview.goForward()
         }
     }
-    
-    BaseHeaderAction{
+
+    Common.BaseHeaderAction {
         id: homeAction
         
         text: i18n.tr("Home")
@@ -114,7 +114,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: reloadAction
         
         text: i18n.tr("Reload")
@@ -125,7 +125,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: goTopAction
         
         text: i18n.tr("Go to top")
@@ -136,7 +136,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: toggleFBHeader
         
         enabled: !mainView.desktopMode
@@ -273,42 +273,39 @@ BasePage {
             request.accepted = true
             console.log("context requested")
         }
-        
-        SwipeArea{
-            id: downSwipeArea
-            
-            readonly property real expansionThreshold: applicationHeader.maxHeight
-            
-            direction: SwipeArea.Downwards
-            enabled: webview.scrollPosition === Qt.point(0,0) && applicationHeader.expandable && String(webview.url).indexOf("/messages") < 0
+
+        Common.WebviewSwipeHandler {
+            id: pullUpSwipeGesture
+            objectName: "pullUpSwipeGesture"
+
             z: 1
+            enabled: applicationHeader.expandable && applicationHeader.expanded
+            usePhysicalUnit: true
             anchors.fill: parent
-            grabGesture: false
-            onDistanceChanged: {
-                if(distance > 0){
-                    if((distance + applicationHeader.height) >= expansionThreshold){
-                        applicationHeader.state = "Expanded"
-                    }
-                }	
-            }
-        }
-        
-        SwipeArea{
-            id: upSwipeArea
-            
-            direction: SwipeArea.Upwards
-            enabled: applicationHeader.expanded
-            z: 1
-            anchors.fill: parent
-            grabGesture: false
-            onDraggingChanged:{
-                if(dragging){
-                    applicationHeader.state = "Default"
-                }
+
+            onTrigger: {
+                applicationHeader.state = "Default"
+                Common.Haptics.play()
             }
         }
 
-        ScrollPositioner{
+        Common.WebviewSwipeHandler {
+            id: pullDownSwipeGesture
+            objectName: "pullDownSwipeGesture"
+
+            z: 1
+            enabled: applicationHeader.expandable && !applicationHeader.expanded
+            direction: SwipeArea.Downwards
+            usePhysicalUnit: true
+            anchors.fill: parent
+
+            onTrigger: {
+                applicationHeader.state = "Expanded"
+                Common.Haptics.play()
+            }
+        }
+
+        Common.ScrollPositioner{
             id: scrollPositioner
 
             z: 5
@@ -451,7 +448,7 @@ BasePage {
         }
     }
 
-    NavHistoryPopup {
+    Common.NavHistoryPopup {
         id: navHistPopup
 
         property int navOffset: 0
@@ -471,7 +468,7 @@ BasePage {
         }
     }
 
-    ExternalDialog {
+    Common.ExternalDialog {
         id: externalDialog
     }
 

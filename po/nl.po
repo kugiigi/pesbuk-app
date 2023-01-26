@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-26 13:52+0000\n"
+"POT-Creation-Date: 2023-01-26 14:05+0000\n"
 "PO-Revision-Date: 2021-02-05 13:53+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: \n"
@@ -143,17 +143,17 @@ msgid "Jobs"
 msgstr "Banen"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:380
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:233
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:265
 msgid "Notifications"
 msgstr "Meldingen"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:381
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:261
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:293
 msgid "Messages"
 msgstr "Berichten"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:382
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:317
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:349
 msgid "Feeds"
 msgstr "Feeds"
 
@@ -274,47 +274,55 @@ msgstr "Websitekop verbergen"
 msgid "Expand header on down swipe"
 msgstr "Kop uitklappen door omlaag te vegen"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:141
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:137
+msgid "Enable haptic feedback"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:153
+msgid "Hide bottom hint"
+msgstr ""
+
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:173
 msgid "Refresh the page to take effect"
 msgstr "Herlaad de pagina om de wijziging toe te passen"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:149
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:193
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:181
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:225
 msgid "Zoom factor"
 msgstr "Zoomniveau"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:160
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:192
 msgid "Home Site"
 msgstr "Startpagina"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:172
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:204
 msgid "Messenger"
 msgstr "Messenger"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:183
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:215
 msgid "Desktop version"
 msgstr "Volledige website"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:206
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:238
 msgid "Push notification"
 msgstr "Pushmelding"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:206
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:238
 msgid "Prevent app suspension to enable"
 msgstr "Voorkom appbevriezing om dit in te schakelen"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:212
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:244
 msgid "Notifications are not working when using the desktop site"
 msgstr "Meldingen werken niet op de volledige website"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:247
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:275
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:303
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:331
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:279
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:307
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:335
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:363
 msgid "Sound"
 msgstr "Geluid"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:289
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:321
 msgid "Friend requests"
 msgstr "Vriendschapsverzoeken"
 

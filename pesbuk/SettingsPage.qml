@@ -133,6 +133,38 @@ BasePage {
                 }
             }
 
+            CheckBoxItem{
+                text: i18n.tr("Enable haptic feedback")
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+
+                Component.onCompleted: {
+                    checked = appSettings.enableHaptics
+                }
+                onCheckedChanged: {
+                    appSettings.enableHaptics = checked
+                }
+            }
+
+            CheckBoxItem{
+                text: i18n.tr("Hide bottom hint")
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+
+                Component.onCompleted: {
+                    checked = appSettings.hideBottomHint
+                }
+                onCheckedChanged: {
+                    appSettings.hideBottomHint = checked
+                }
+            }
+
             Label {
                 id: refreshLabel
                 

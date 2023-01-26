@@ -1,5 +1,6 @@
 v2.1
  - Fixed chromium flags
+ - Redesigned crash/sad page and hopefully fixes and make it show
 
 v2.0
  - Fixed "Search" from the drawer (Thanks nitanmarcel)

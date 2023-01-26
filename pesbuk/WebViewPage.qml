@@ -49,7 +49,12 @@ BasePage {
     /* For testing only */
 //~     headerRightActions: [testAction, testAction2, homeAction, reloadAction, forwardAction, backAction]
     headerRightActions: [toggleFBHeader, homeAction, reloadAction, forwardAction, backAction]
-    
+
+    function showNavHistory(model, fromBottom, caller) {
+        navHistPopup.model = model
+        navHistPopup.show(fromBottom, caller)
+    }
+
     BaseHeaderAction{
         id: backAction
         
@@ -414,6 +419,26 @@ BasePage {
 
         onNewViewRequested: function(request) {
             Qt.openUrlExternally(request.requestedUrl);
+        }
+    }
+
+    NavHistoryPopup {
+        id: navHistPopup
+
+        property int navOffset: 0
+        
+        availHeight: page.height
+        availWidth: page.width
+        onNavigate: {
+            // Navigate only after the dialog has closed
+            // so history list won't be seen updating
+            navOffset = offset
+        }
+        onClosed: {
+            if (navOffset !== 0) {
+                webview.goBackOrForward(navOffset)
+            }
+            navOffset = 0
         }
     }
 

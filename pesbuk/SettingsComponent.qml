@@ -1,6 +1,6 @@
 import QtQuick 2.9
 import Qt.labs.settings 1.0
-
+import "components" as Common
 
 Item{
     id: settingsComponent
@@ -27,6 +27,8 @@ Item{
     // New ones should be at the bottom
     property alias headerHide: settings.headerHide
     property alias forceDesktopVersion: settings.forceDesktopVersion
+    property alias enableHaptics: settings.enableHaptics
+    property alias hideBottomHint: settings.hideBottomHint
     
     Settings {
         id: settings
@@ -59,5 +61,9 @@ Item{
          3 - Always hidden
         */
         property bool forceDesktopVersion: false
+        property bool enableHaptics: true
+        property bool hideBottomHint: false
+
+        Component.onCompleted: Common.Haptics.enabled = Qt.binding( function() { return enableHaptics } )
     }
 }

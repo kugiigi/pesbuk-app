@@ -2,7 +2,8 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 import Ubuntu.Components 1.3 as UT
 import Ubuntu.PushNotifications 0.1
-import "components"
+import QtQuick.Layouts 1.12
+import "components" as Common
 
 ApplicationWindow {
     id: appWindow
@@ -168,7 +169,7 @@ ApplicationWindow {
         
         theme.name: appSettings.style === "Suru" ? "" : "Ubuntu.Components.Themes.Ambiance"
         
-        BaseHeaderAction{
+        Common.BaseHeaderAction{
             id: menuAction
             
             enabled: drawerLoader.visible
@@ -301,7 +302,7 @@ ApplicationWindow {
             id: appSettings
         }
        
-        KeyboardRectangle{
+        Common.KeyboardRectangle{
             id: keyboardRec
         }
         
@@ -394,42 +395,138 @@ ApplicationWindow {
 
             visible: status == Loader.Ready
         }
-        
-        Loader {
-            id: rightSwipeAreaLoader
-            
-            z: 20
-            active: true
-            asynchronous: true
-            visible: status == Loader.Ready
-            sourceComponent: BottomSwipeArea{
-                onTriggered: applicationHeader.triggerRight(true)
-            }
-            
-            anchors{
+
+        Common.GoIndicator {
+            id: goForwardIcon
+
+            iconName: "go-next"
+            dragDistance: bottomBackForwardHandle.distance
+            enabled: appWindow.webview ? appWindow.webview.canGoForward
+                                            : false
+            anchors {
                 right: parent.right
-                left: parent.horizontalCenter
-                bottom: parent.bottom
+                verticalCenter: parent.verticalCenter
             }
-        }  
-        
-        Loader {
-            id: leftSwipeAreaLoader
-            
-            z: 20
-            active: true
-            asynchronous: true
-            visible: status == Loader.Ready
-            sourceComponent: BottomSwipeArea{
-                onTriggered: applicationHeader.triggerLeft(true)
-            }
-            
-            anchors{
+        }
+
+        Common.GoIndicator {
+            id: goBackIcon
+
+            iconName: "go-previous"
+            dragDistance: bottomBackForwardHandle.distance
+            enabled: appWindow.webview ? appWindow.webview.canGoBack
+                                            : false
+            anchors {
                 left: parent.left
-                right: parent.horizontalCenter
-                bottom: parent.bottom
+                verticalCenter: parent.verticalCenter
             }
-        } 
+        }
+
+        RowLayout {
+            id: bottomGestures
+
+            property real sideSwipeAreaWidth: appWindow.webview && !appWindow.webview.isFullScreen ?
+                                                            appWindow.width * (appWindow.width > appWindow.height ? 0.15 : 0.30)
+                                                            : 0
+
+            anchors {
+                bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+                top: parent.top
+            }
+
+            Loader {
+                id: leftSwipeAreaLoader
+
+                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
+                active: true
+                asynchronous: true
+                visible: status == Loader.Ready
+                sourceComponent: Common.BottomSwipeArea{
+                    implicitWidth: bottomGestures.sideSwipeAreaWidth
+                    onTriggered: {
+                        applicationHeader.triggerLeft(true)
+                        Common.Haptics.play()
+                    }
+                }
+            }
+            
+             Item {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.alignment: Qt.AlignBottom
+                visible: stackView.inWebView
+
+                Rectangle {
+                    id: bottomHint
+
+                    visible: !appSettings.hideBottomHint
+                    color: bottomBackForwardHandle.pressed ? UT.UbuntuColors.silk : UT.UbuntuColors.ash
+                    radius: height / 2
+                    height: bottomBackForwardHandle.pressed ? units.gu(1) : units.gu(0.5)
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        bottom: parent.bottom
+                        bottomMargin: units.gu(0.5)
+                    }
+                }
+
+                Common.HorizontalSwipeHandle {
+                    id: bottomBackForwardHandle
+                    objectName: "bottomBackForwardHandle"
+
+                    leftAction: goBackIcon
+                    rightAction: goForwardIcon
+                    immediateRecognition: true
+                    usePhysicalUnit: true
+                    height: units.gu(2)
+                    swipeHoldDuration: 700
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        bottom: parent.bottom
+                    }
+
+                    rightSwipeHoldEnabled: appWindow.webview ? appWindow.webview.canGoBack
+                                                              : false
+                    leftSwipeHoldEnabled: appWindow.webview ? appWindow.webview.canGoForward
+                                                             : false
+                    onRightSwipe:  appWindow.webview.goBack()
+                    onLeftSwipe:  appWindow.webview.goForward()
+                    onLeftSwipeHeld: webViewPage.showNavHistory(appWindow.webview.navigationHistory.forwardItems, true, navHistoryMargin)
+                    onRightSwipeHeld: webViewPage.showNavHistory(appWindow.webview.navigationHistory.backItems, true, navHistoryMargin)
+                    onPressedChanged: if (pressed) Common.Haptics.playSubtle()
+
+                    Item {
+                        id: navHistoryMargin
+                        height: units.gu(10)
+                        anchors {
+                            left: parent.left
+                            right: parent.right
+                            bottom: parent.top
+                        }
+                    }
+                }
+            }
+
+            Loader {
+                id: rightSwipeAreaLoader
+
+                Layout.alignment: Qt.AlignRight | Qt.AlignBottom
+                active: true
+                asynchronous: true
+                visible: status == Loader.Ready
+                sourceComponent: Common.BottomSwipeArea{
+                    implicitWidth: bottomGestures.sideSwipeAreaWidth
+                    onTriggered: {
+                        applicationHeader.triggerRight(true)
+                        Common.Haptics.play()
+                    }
+                }
+            }
+        }
         
         Loader {
             id: bottomEdgeHintLoader
@@ -438,7 +535,7 @@ ApplicationWindow {
             active: appSettings.firstRun
             asynchronous: true
             visible: status == Loader.Ready
-            sourceComponent: BottomEdgeHint{}
+            sourceComponent: Common.BottomEdgeHint{}
             
             anchors{
                 fill: parent

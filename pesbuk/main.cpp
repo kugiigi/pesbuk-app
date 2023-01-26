@@ -4,6 +4,7 @@
 #include <QSettings>
 #include <QQuickStyle>
 #include <QDebug>
+#include <QScreen>
 
 int main(int argc, char *argv[])
 {
@@ -29,6 +30,10 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("availableStyles", QQuickStyle::availableStyles());
+
+    QScreen* screen = QGuiApplication::primaryScreen();
+    engine.rootContext()->setContextProperty("physicalDotsPerInch", screen->physicalDotsPerInch());
+
     engine.load(QUrl(QStringLiteral("qrc:///Main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;

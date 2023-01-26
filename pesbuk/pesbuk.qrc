@@ -17,12 +17,18 @@
         <file>MenuDrawer.qml</file>
         <file>SettingsPage.qml</file>
         <file>SettingsComponent.qml</file>
+        <file>components/qmldir</file>
         <file>components/BaseDialog.qml</file>
         <file>components/BottomEdgeHint.qml</file>
         <file>components/KeyboardRectangle.qml</file>
         <file>components/BaseHeaderAction.qml</file>
         <file>components/BottomSwipeArea.qml</file>
+        <file>components/GoIndicator.qml</file>
+        <file>components/SwipeGestureHandler.qml</file>
+        <file>components/HorizontalSwipeHandle.qml</file>
+        <file>components/Haptics.qml</file>
         <file>components/ScrollPositioner.qml</file>
+        <file>components/NavHistoryPopup.qml</file>
         <file>components/NotificationIndicator.qml</file>
         <file>components/applicationheader/HeaderActions.qml</file>
         <file>components/applicationheader/HeaderTitle.qml</file>

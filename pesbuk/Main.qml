@@ -150,15 +150,9 @@ ApplicationWindow {
         objectName: "mainView"  
         
         readonly property string version: "2.0"
+        readonly property bool wide: width >= units.gu(120)
         
-        readonly property string siteMode: switch (true) {
-                                    case width >= units.gu(120):
-                                        "Desktop"
-                                        break
-                                    default:
-                                        "Phone"
-                                        break
-                                }
+        readonly property string siteMode: wide ? "Desktop" : "Phone"
         readonly property bool desktopMode: appSettings.baseSite === 2 || (appSettings.baseSite === 3 && mainView.siteMode === "Desktop")
         
         property bool blockOpenExternalUrls: false
@@ -259,6 +253,7 @@ ApplicationWindow {
 
         WebViewPage{
             id: webViewPage
+            wide: mainView.wide
         }
        
         StackView {

@@ -8,6 +8,7 @@ import Ubuntu.Content 1.1
 import QtMultimedia 5.8
 import QtSystemInfo 5.0
 import "components"
+import "js/UrlUtils.js" as UrlUtils
 import "actions" as Actions
 import "."
 
@@ -34,6 +35,7 @@ BasePage {
                             }
     readonly property string home: baseURL + "/home.php?sk="
     readonly property alias scrollDirection: scrollPositioner.scrollDirection
+    property bool wide: false
     
     property alias webView: webview
     
@@ -324,6 +326,20 @@ BasePage {
             persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
 
         }
+        
+        onNavigationRequested: {
+
+            var requestUrl = request.url;
+
+            // for file urls we set currentDomain to "scheme:file", because there is no host
+            var expectedDomain = "facebook.com";
+            var requestDomain = UrlUtils.schemeIs(requestUrl, "file") ? "scheme:file" : UrlUtils.extractHost(requestUrl);
+
+            if (requestDomain.indexOf(expectedDomain) == -1) {
+                request.action = WebEngineNavigationRequest.IgnoreRequest
+                externalDialog.show(requestUrl)
+            }
+        }
 
         onJavaScriptDialogRequested: function(request) {
 
@@ -418,7 +434,20 @@ BasePage {
            }
 
         onNewViewRequested: function(request) {
-            Qt.openUrlExternally(request.requestedUrl);
+            var url = request.requestedUrl.toString()
+            //handle redirection links
+            console.log(url)
+            if (url.startsWith('https://l.facebook.com')) {
+                var redirectionUrl = UrlUtils.getParameterByName("u", request.requestedUrl)
+                if (redirectionUrl) {
+                    externalDialog.show(redirectionUrl)
+                } else {
+                    externalDialog.show(url)
+                    request.action = WebEngineNavigationRequest.IgnoreRequest;
+                }
+            } else {
+                externalDialog.show(url)
+            }
         }
     }
 
@@ -440,6 +469,10 @@ BasePage {
             }
             navOffset = 0
         }
+    }
+
+    ExternalDialog {
+        id: externalDialog
     }
 
     Loader {

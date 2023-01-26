@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import "components/aboutpage"
+import "components" as Common
 
 BasePage {
     id: aboutPage
@@ -80,7 +81,7 @@ BasePage {
         }
     }
     
-    ExternalDialog{
+    Common.ExternalDialog{
         id: externalDialog
     }
 }

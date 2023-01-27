@@ -56,7 +56,6 @@ ApplicationWindow {
     Connections {
         target: Qt.application
         onStateChanged: {
-            console.log
             if (previousTheme !== theme.name) {
                 appWindow.Suru.theme = Theme.name == "Ubuntu.Components.Themes.SuruDark" ? Suru.Dark : Suru.Light
                 appWindow.Material.theme = Theme.name == "Ubuntu.Components.Themes.SuruDark" ? Material.Dark : Material.Light

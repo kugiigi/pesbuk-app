@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
-import Ubuntu.Components 1.3 as UT
-import Ubuntu.PushNotifications 0.1
+import Lomiri.Components 1.3 as UT
+import Lomiri.PushNotifications 0.1
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
 import QtQuick.Controls.Suru 2.2
@@ -156,9 +156,9 @@ ApplicationWindow {
         }
         
         Behavior on opacity{ 
-            UT.UbuntuNumberAnimation{
-                easing: UT.UbuntuAnimation.StandardEasing
-                duration: UT.UbuntuAnimation.SleepyDuration
+            UT.LomiriNumberAnimation{
+                easing: UT.LomiriAnimation.StandardEasing
+                duration: UT.LomiriAnimation.SleepyDuration
             }
         }
     }
@@ -508,7 +508,7 @@ ApplicationWindow {
                     id: bottomHint
 
                     visible: !appSettings.hideBottomHint
-                    color: bottomBackForwardHandle.pressed ? UT.UbuntuColors.silk : UT.UbuntuColors.ash
+                    color: bottomBackForwardHandle.pressed ? UT.LomiriColors.silk : UT.LomiriColors.ash
                     radius: height / 2
                     height: bottomBackForwardHandle.pressed ? units.gu(1) : units.gu(0.5)
                     anchors {

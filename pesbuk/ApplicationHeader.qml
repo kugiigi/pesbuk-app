@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import Ubuntu.Components 1.3 as UT
+import Lomiri.Components 1.3 as UT
 import "components"
 import "components/applicationheader"
 
@@ -29,16 +29,16 @@ Rectangle {
     
     Behavior on height {
         enabled: !flickableLoader.item || (flickableLoader.item && flickableLoader.item.target.verticalOvershoot == 0) || expanded
-        UT.UbuntuNumberAnimation { 
-            easing: UT.UbuntuAnimation.StandardEasing
-            duration: UT.UbuntuAnimation.BriskDuration
+        UT.LomiriNumberAnimation { 
+            easing: UT.LomiriAnimation.StandardEasing
+            duration: UT.LomiriAnimation.BriskDuration
         }
     }
 
     Behavior on opacity {
-        UT.UbuntuNumberAnimation { 
-            easing: UT.UbuntuAnimation.StandardEasing
-            duration: UT.UbuntuAnimation.SnapDuration
+        UT.LomiriNumberAnimation { 
+            easing: UT.LomiriAnimation.StandardEasing
+            duration: UT.LomiriAnimation.SnapDuration
         }
     }
 
@@ -163,9 +163,9 @@ Rectangle {
         
         Behavior on y {
             enabled: !flickableLoader.item || (flickableLoader.item && flickableLoader.item.target.verticalOvershoot == 0) || expanded
-            UT.UbuntuNumberAnimation { 
-                easing: UT.UbuntuAnimation.StandardEasing
-                duration: UT.UbuntuAnimation.BriskDuration
+            UT.LomiriNumberAnimation { 
+                easing: UT.LomiriAnimation.StandardEasing
+                duration: UT.LomiriAnimation.BriskDuration
             }
         }
 

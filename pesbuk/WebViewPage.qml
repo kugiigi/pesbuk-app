@@ -2,9 +2,9 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import Morph.Web 0.1
 import QtWebEngine 1.7
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
-import Ubuntu.Content 1.1
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
+import Lomiri.Content 1.1
 import QtMultimedia 5.8
 import QtSystemInfo 5.0
 import "components" as Common

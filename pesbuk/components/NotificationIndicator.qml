@@ -1,6 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import Ubuntu.Components 1.3 as UT
+import Lomiri.Components 1.3 as UT
 import QtQuick.Controls.Suru 2.2
 
 Rectangle{
@@ -16,7 +16,7 @@ Rectangle{
     height: indicatorOnly ? width
                           : small ? units.gu(1.5) : units.gu(2.5)
     
-    color: UT.UbuntuColors.red
+    color: UT.LomiriColors.red
     radius: indicatorOnly ? width
                           : small ? units.gu(0.3) : units.gu(0.5)
     

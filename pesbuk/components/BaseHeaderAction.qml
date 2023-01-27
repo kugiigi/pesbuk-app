@@ -1,4 +1,4 @@
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 
 Action{
 	id: action

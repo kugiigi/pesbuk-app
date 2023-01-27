@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     QGuiApplication::setOrganizationName("pesbuk.kugiigi");
     QGuiApplication::setApplicationName("pesbuk.kugiigi");
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
     QGuiApplication app(argc, argv);
 

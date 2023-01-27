@@ -1,5 +1,5 @@
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 
 Icon {
     id: goForwardIcon
@@ -12,7 +12,7 @@ Icon {
     visible: opacity > 0
     opacity: 0
     name: iconName
-    color: heldState ? UbuntuColors.blue : UbuntuColors.ash
+    color: heldState ? LomiriColors.blue : LomiriColors.ash
     width: units.gu(2)
     height: width
 
@@ -32,14 +32,14 @@ Icon {
     }
 
     Behavior on opacity {
-        UbuntuNumberAnimation {
-            duration: UbuntuAnimation.FastDuration
+        LomiriNumberAnimation {
+            duration: LomiriAnimation.FastDuration
         }
     }
 
     Behavior on color {
         ColorAnimation {
-            duration: UbuntuAnimation.FastDuration
+            duration: LomiriAnimation.FastDuration
         }
     }
 }

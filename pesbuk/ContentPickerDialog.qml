@@ -1,6 +1,6 @@
 import QtQuick 2.9
-//~ import Ubuntu.Components 1.3 as UITK
-import Ubuntu.Content 1.3
+//~ import Lomiri.Components 1.3 as UITK
+import Lomiri.Content 1.3
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import "MimeTypeMapper.js" as MimeTypeMapper

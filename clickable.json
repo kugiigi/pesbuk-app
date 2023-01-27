@@ -1,4 +1,5 @@
 {
   "builder": "qmake"
   ,"qt_version": "5.12"
+  ,"framework": "ubuntu-sdk-20.04"
 }

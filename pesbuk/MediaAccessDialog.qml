@@ -17,8 +17,8 @@
  */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
 
 Dialog {
     property var request
@@ -70,7 +70,7 @@ Dialog {
         Button {
             objectName: "mediaAccessDialog.allowButton"
             text: i18n.tr("Yes")
-            color: UbuntuColors.green
+            color: LomiriColors.green
             width: units.gu(10)
             onClicked: {
                 request.allow()
@@ -81,7 +81,7 @@ Dialog {
         Button {
             objectName: "mediaAccessDialog.denyButton"
             text: i18n.tr("No")
-            color: UbuntuColors.lightGrey
+            color: LomiriColors.lightGrey
             width: units.gu(10)
             onClicked: {
                 request.deny()

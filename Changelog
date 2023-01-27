@@ -5,6 +5,7 @@ v2.1
  - Properly handle opening of external sites
  - System theme now takes effect without restarting the app (Only works with Suru style)
  - System theme now takes effect in Material style but needs restarting the app
+ - Improve performance
 
 v2.0
  - Fixed "Search" from the drawer (Thanks nitanmarcel)

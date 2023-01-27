@@ -1,13 +1,13 @@
 /*
  * Copyright 2014-2016 Canonical Ltd.
  *
- * This file is part of webbrowser-app.
+ * This file is part of morph-browser.
  *
- * webbrowser-app is free software; you can redistribute it and/or modify
+ * morph-browser is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * webbrowser-app is distributed in the hope that it will be useful,
+ * morph-browser is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.4
-import com.canonical.Oxide 1.19 as Oxide
+import Morph.Web 0.1
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
 import Qt.labs.settings 1.0
@@ -30,7 +30,7 @@ Item {
     property var views: []
     property bool blockOpenExternalUrls: false
     property var mediaAccessDialogComponent
-    //property bool wide: false
+    property bool wide: false
 
     // Used to access runtime behavior during tests
     signal openExternalUrlTriggered(string url)
@@ -226,7 +226,7 @@ Item {
             height: parent.height
             width: parent.width
 
-            //wide: controller.wide
+            wide: controller.wide
 
             y: overlay.parent.height
 
@@ -239,7 +239,7 @@ Item {
                     windowOverlayOpenAnimationDone()
                 }
             }
-	    
+
             Behavior on y {
                 NumberAnimation {
                     duration: 500
@@ -249,16 +249,13 @@ Item {
         }
     }
 
-    function handleNewForegroundNavigationRequest(
-            url, request, isRequestFromMainWebappWebview) {
+    function handleNewForegroundNavigationRequest(url, request, isRequestFromMainWebappWebview) {
 
         if (views.length >= maxSimultaneousViews) {
-            request.action = Oxide.NavigationRequest.ActionReject
+            request.action = WebEngineNavigationRequest.IgnoreRequest
             // Default to open externally, maybe should present a dialog
             openUrlExternally(url.toString())
-            console.log("Maximum number of popup overlay opened, opening: "
-                        + url
-                        + " in the browser")
+            console.log("Maximum number of popup overlay opened, opening: %1 in the browser".arg(url))
             return false
         }
         return true

@@ -17,12 +17,24 @@
         <file>MenuDrawer.qml</file>
         <file>SettingsPage.qml</file>
         <file>SettingsComponent.qml</file>
+        <file>components/qmldir</file>
         <file>components/BaseDialog.qml</file>
         <file>components/BottomEdgeHint.qml</file>
         <file>components/KeyboardRectangle.qml</file>
         <file>components/BaseHeaderAction.qml</file>
         <file>components/BottomSwipeArea.qml</file>
+        <file>components/GoIndicator.qml</file>
+        <file>components/SwipeGestureHandler.qml</file>
+        <file>components/HorizontalSwipeHandle.qml</file>
+        <file>components/Haptics.qml</file>
         <file>components/ScrollPositioner.qml</file>
+        <file>components/ActionRowMenu.qml</file>
+        <file>components/RowMenuAction.qml</file>
+        <file>components/CustomizedMenuSeparator.qml</file>
+        <file>components/MenuToolButton.qml</file>
+        <file>components/WebviewSwipeHandler.qml</file>
+        <file>components/ExternalDialog.qml</file>
+        <file>components/NavHistoryPopup.qml</file>
         <file>components/NotificationIndicator.qml</file>
         <file>components/applicationheader/HeaderActions.qml</file>
         <file>components/applicationheader/HeaderTitle.qml</file>
@@ -32,7 +44,6 @@
         <file>components/settingspage/ComboBoxItem.qml</file>
         <file>components/settingspage/RadioButtonsItem.qml</file>
         <file>components/settingspage/SpinRange.qml</file>
-        <file>components/aboutpage/ExternalDialog.qml</file>
         <file>components/aboutpage/IconComponent.qml</file>
         <file>components/aboutpage/NavigationItem.qml</file>
         <file>components/aboutpage/SectionItem.qml</file>
@@ -45,6 +56,7 @@
         <file>js/fb-no-appbanner.js</file>
         <file>js/fb-no-header.js</file>
         <file>js/notifier.js</file>
+        <file>js/UrlUtils.js</file>
         <file>MediaAccessDialog.qml</file>
         <file>MimeTypeMapper.js</file>
         <file>OpenDialog.qml</file>

@@ -44,7 +44,6 @@ ItemDelegate {
 
                 font.pixelSize: 14
                 elide: Text.ElideRight
-//~                 color: theme.normal.backgroundText
                 visible: text
             }
             
@@ -57,7 +56,6 @@ ItemDelegate {
 
                 font.pixelSize: 11
                 elide: Text.ElideRight
-//~                 color: theme.normal.backgroundText
                 visible: text
             }
         }

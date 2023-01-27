@@ -7,7 +7,8 @@ import Ubuntu.Components.Popups 1.3
 import Ubuntu.Content 1.1
 import QtMultimedia 5.8
 import QtSystemInfo 5.0
-import "components"
+import "components" as Common
+import "js/UrlUtils.js" as UrlUtils
 import "actions" as Actions
 import "."
 
@@ -34,6 +35,7 @@ BasePage {
                             }
     readonly property string home: baseURL + "/home.php?sk="
     readonly property alias scrollDirection: scrollPositioner.scrollDirection
+    property bool wide: false
     
     property alias webView: webview
     
@@ -49,8 +51,13 @@ BasePage {
     /* For testing only */
 //~     headerRightActions: [testAction, testAction2, homeAction, reloadAction, forwardAction, backAction]
     headerRightActions: [toggleFBHeader, homeAction, reloadAction, forwardAction, backAction]
-    
-    BaseHeaderAction{
+
+    function showNavHistory(model, fromBottom, caller) {
+        navHistPopup.model = model
+        navHistPopup.show(fromBottom, caller)
+    }
+
+    Common.BaseHeaderAction {
         id: backAction
         
         enabled: webview.canGoBack
@@ -62,7 +69,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: testAction
         
         text: i18n.tr("Test")
@@ -72,7 +79,7 @@ BasePage {
             webview.runJavaScript("var test = document.querySelector('a[name=\"Notifications\"] span[data-sigil=count]'); test.innerHTML = \"" + Math.floor((Math.random() * 10) + 1) + '";')
         }
     }
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: testAction2
         
         text: i18n.tr("Test 2")
@@ -84,7 +91,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: forwardAction
         
         enabled: webview.canGoForward
@@ -95,8 +102,8 @@ BasePage {
             webview.goForward()
         }
     }
-    
-    BaseHeaderAction{
+
+    Common.BaseHeaderAction {
         id: homeAction
         
         text: i18n.tr("Home")
@@ -107,7 +114,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: reloadAction
         
         text: i18n.tr("Reload")
@@ -118,7 +125,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: goTopAction
         
         text: i18n.tr("Go to top")
@@ -129,7 +136,7 @@ BasePage {
         }
     }
     
-    BaseHeaderAction{
+    Common.BaseHeaderAction {
         id: toggleFBHeader
         
         enabled: !mainView.desktopMode
@@ -266,42 +273,39 @@ BasePage {
             request.accepted = true
             console.log("context requested")
         }
-        
-        SwipeArea{
-            id: downSwipeArea
-            
-            readonly property real expansionThreshold: applicationHeader.maxHeight
-            
-            direction: SwipeArea.Downwards
-            enabled: webview.scrollPosition === Qt.point(0,0) && applicationHeader.expandable && String(webview.url).indexOf("/messages") < 0
+
+        Common.WebviewSwipeHandler {
+            id: pullUpSwipeGesture
+            objectName: "pullUpSwipeGesture"
+
             z: 1
+            enabled: applicationHeader.expandable && applicationHeader.expanded
+            usePhysicalUnit: true
             anchors.fill: parent
-            grabGesture: false
-            onDistanceChanged: {
-                if(distance > 0){
-                    if((distance + applicationHeader.height) >= expansionThreshold){
-                        applicationHeader.state = "Expanded"
-                    }
-                }	
-            }
-        }
-        
-        SwipeArea{
-            id: upSwipeArea
-            
-            direction: SwipeArea.Upwards
-            enabled: applicationHeader.expanded
-            z: 1
-            anchors.fill: parent
-            grabGesture: false
-            onDraggingChanged:{
-                if(dragging){
-                    applicationHeader.state = "Default"
-                }
+
+            onTrigger: {
+                applicationHeader.state = "Default"
+                Common.Haptics.play()
             }
         }
 
-        ScrollPositioner{
+        Common.WebviewSwipeHandler {
+            id: pullDownSwipeGesture
+            objectName: "pullDownSwipeGesture"
+
+            z: 1
+            enabled: applicationHeader.expandable && !applicationHeader.expanded
+            direction: SwipeArea.Downwards
+            usePhysicalUnit: true
+            anchors.fill: parent
+
+            onTrigger: {
+                applicationHeader.state = "Expanded"
+                Common.Haptics.play()
+            }
+        }
+
+        Common.ScrollPositioner{
             id: scrollPositioner
 
             z: 5
@@ -318,6 +322,20 @@ BasePage {
 
             persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
 
+        }
+        
+        onNavigationRequested: {
+
+            var requestUrl = request.url;
+
+            // for file urls we set currentDomain to "scheme:file", because there is no host
+            var expectedDomain = "facebook.com";
+            var requestDomain = UrlUtils.schemeIs(requestUrl, "file") ? "scheme:file" : UrlUtils.extractHost(requestUrl);
+
+            if (requestDomain.indexOf(expectedDomain) == -1) {
+                request.action = WebEngineNavigationRequest.IgnoreRequest
+                externalDialog.show(requestUrl)
+            }
         }
 
         onJavaScriptDialogRequested: function(request) {
@@ -413,24 +431,63 @@ BasePage {
            }
 
         onNewViewRequested: function(request) {
-            Qt.openUrlExternally(request.requestedUrl);
+            var url = request.requestedUrl.toString()
+            //handle redirection links
+            console.log(url)
+            if (url.startsWith('https://l.facebook.com')) {
+                var redirectionUrl = UrlUtils.getParameterByName("u", request.requestedUrl)
+                if (redirectionUrl) {
+                    externalDialog.show(redirectionUrl)
+                } else {
+                    externalDialog.show(url)
+                    request.action = WebEngineNavigationRequest.IgnoreRequest;
+                }
+            } else {
+                externalDialog.show(url)
+            }
         }
+    }
+
+    Common.NavHistoryPopup {
+        id: navHistPopup
+
+        property int navOffset: 0
+        
+        availHeight: page.height
+        availWidth: page.width
+        onNavigate: {
+            // Navigate only after the dialog has closed
+            // so history list won't be seen updating
+            navOffset = offset
+        }
+        onClosed: {
+            if (navOffset !== 0) {
+                webview.goBackOrForward(navOffset)
+            }
+            navOffset = 0
+        }
+    }
+
+    Common.ExternalDialog {
+        id: externalDialog
+    }
 
     Loader {
-        anchors {
-            fill: webview
-        }
+        id: sadTabLoader
+
+        anchors.fill: webview
         active: webProcessMonitor.crashed || (webProcessMonitor.killed && !webview.currentWebview.loading)
-        sourceComponent: SadPage {
-            webview: webview
-            objectName: "overlaySadPage"
-        }
+        focus: active
+
+        Component.onCompleted: setSource("SadPage.qml", {
+                                             "webview": Qt.binding(function () {return webview.currentWebview})
+                                         })
         WebProcessMonitor {
             id: webProcessMonitor
-            webview: webview
+            webview: webview.currentWebview
         }
+
         asynchronous: true
-      }
     }
     
     Loader {

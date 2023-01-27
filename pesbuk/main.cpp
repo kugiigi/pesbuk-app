@@ -4,6 +4,7 @@
 #include <QSettings>
 #include <QQuickStyle>
 #include <QDebug>
+#include <QScreen>
 
 int main(int argc, char *argv[])
 {
@@ -25,10 +26,14 @@ int main(int argc, char *argv[])
     }
 
     const auto chromiumFlags = qgetenv("QTWEBENGINE_CHROMIUM_FLAGS");
-    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", chromiumFlags + "--enable-features=OverlayScrollbar,OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter");
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", chromiumFlags + " --enable-features=OverlayScrollbar,OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("availableStyles", QQuickStyle::availableStyles());
+
+    QScreen* screen = QGuiApplication::primaryScreen();
+    engine.rootContext()->setContextProperty("physicalDotsPerInch", screen->physicalDotsPerInch());
+
     engine.load(QUrl(QStringLiteral("qrc:///Main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;

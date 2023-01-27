@@ -1,6 +1,7 @@
 import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick.Controls 2.12
 import Ubuntu.Components 1.3 as UT
+import QtQuick.Controls.Suru 2.2
 import "components"
 import "components/menudrawer"
 
@@ -8,9 +9,13 @@ Drawer {
     id: menuDrawer
     
     property alias model: listView.model
+    property list<Action> rowActions
+    property bool shownAtBottom: false
     
     readonly property real minimumWidth: 250
     readonly property real preferredWidth: mainView.width * 0.25
+
+    property alias currentIndex: listView.currentIndex
     
     width: preferredWidth < minimumWidth ? minimumWidth : preferredWidth
     height: appWindow.height
@@ -18,12 +23,12 @@ Drawer {
     dragMargin: 0
     
     function openTop(){
-        listView.verticalLayoutDirection = ListView.TopToBottom
+        shownAtBottom = false
         open()
     }
     
     function openBottom(){
-        listView.verticalLayoutDirection = ListView.BottomToTop
+        shownAtBottom = true
         open()
     }
     
@@ -31,13 +36,65 @@ Drawer {
         listView.currentIndex = -1
     }
 
+    ActionRowMenu {
+        id: rowActionMenu
+
+        model: menuDrawer.rowActions
+        separatorAtTop: menuDrawer.shownAtBottom
+        menu: menuDrawer
+
+        anchors {
+            topMargin: applicationHeader.expanded ? applicationHeader.height - applicationHeader.defaultHeight : 0
+            left: parent.left
+            right: parent.right
+        }
+
+        state: "default"
+        states: [
+            State {
+                name: "default"
+                when: !menuDrawer.shownAtBottom
+                AnchorChanges {
+                    target: rowActionMenu
+                    anchors.top: parent.top
+                    anchors.bottom: undefined
+                }
+                AnchorChanges {
+                    target: listView
+                    anchors.top: rowActionMenu.bottom
+                    anchors.bottom: listView.parent.bottom
+                }
+            }
+            , State {
+                name: "bottom"
+                when: menuDrawer.shownAtBottom
+                AnchorChanges {
+                    target: rowActionMenu
+                    anchors.top: undefined
+                    anchors.bottom: rowActionMenu.parent.bottom
+                }
+                AnchorChanges {
+                    target: listView
+                    anchors.top: listView.parent.top
+                    anchors.bottom: rowActionMenu.top
+                }
+            }
+        ]
+    }
+
     ListView {
         id: listView
 
         focus: true
         currentIndex: -1
-        anchors.fill: parent
-        anchors.topMargin: applicationHeader.expanded ? applicationHeader.height - applicationHeader.defaultHeight : 0
+        clip: true
+        anchors {
+            left: parent.left
+            right: parent.right
+        }
+        verticalLayoutDirection: menuDrawer.shownAtBottom ? ListView.BottomToTop : ListView.TopToBottom
+        keyNavigationWraps: false
+        boundsBehavior: Flickable.StopAtBounds
 
         delegate: ItemDelegate {
             id: itemDelegate
@@ -76,7 +133,7 @@ Drawer {
             }
 
             icon.name: modelData ? modelData.iconName : ""
-            icon.color: theme.palette.normal.backgroundText
+            icon.color: Suru.tertiaryForegroundColor
             indicator: Switch {
                 id: switchDesktopSite
 

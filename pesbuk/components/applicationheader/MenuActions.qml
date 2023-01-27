@@ -1,14 +1,16 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import Ubuntu.Components 1.3 as UT
-
+import QtQuick.Controls.Suru 2.2
 
 Menu {
     id: menuActions
     
     property alias model: instantiator.model
     property bool isBottom: false
-    
+
+    margins: Suru.units.gu(2)
+
     function openBottom(){
         y = appWindow.height - height
         isBottom = true
@@ -41,7 +43,7 @@ Menu {
                  anchors.leftMargin: 10
                  anchors.verticalCenter: parent.verticalCenter
                  name: modelData ? modelData.iconName : ""
-                 color: theme.palette.normal.backgroundText
+                 color: Suru.tertiaryForegroundColor
              }
              leftPadding: iconMenu.implicitWidth + (iconMenu.anchors.leftMargin * 2)
         }

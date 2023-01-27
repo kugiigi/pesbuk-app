@@ -9,6 +9,11 @@ BaseDialog {
     
     title: i18n.tr("Open external link")
     height: 250
+
+    function show(url) {
+        externalURL = url
+        openNormal()
+    }
     
     onAccepted: {
         Qt.openUrlExternally(externalURL)

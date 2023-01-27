@@ -134,6 +134,46 @@ BasePage {
             }
 
             Label {
+                text: i18n.tr("%1 Swipe up/down and hold to expand").arg (" **")
+                height: visible ? font.pixelSize : 0
+                visible: appSettings.headerExpand
+                verticalAlignment: Label.AlignVCenter
+                anchors.left: parent.left
+            }
+
+            CheckBoxItem{
+                text: i18n.tr("Enable haptic feedback")
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+
+                Component.onCompleted: {
+                    checked = appSettings.enableHaptics
+                }
+                onCheckedChanged: {
+                    appSettings.enableHaptics = checked
+                }
+            }
+
+            CheckBoxItem{
+                text: i18n.tr("Hide bottom hint")
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+
+                Component.onCompleted: {
+                    checked = appSettings.hideBottomHint
+                }
+                onCheckedChanged: {
+                    appSettings.hideBottomHint = checked
+                }
+            }
+
+            Label {
                 id: refreshLabel
                 
                 visible: false

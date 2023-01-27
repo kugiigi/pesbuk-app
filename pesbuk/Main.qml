@@ -391,16 +391,46 @@ ApplicationWindow {
                     id: drawer
                      
                      model:  [
-                        { enabled: true, title: i18n.tr("Notifications"), type: "URL" ,url: webViewPage.baseURL + "/notifications", iconName: "notification", notifyText: webViewPage.notificationsCount }
-                        ,{ enabled: true, title: i18n.tr("Messages"), type: "URL",url: (appSettings.messengerDesktop ? "https://www.facebook.com" : webViewPage.baseURL) + "/messages", iconName: "message", notifyText: webViewPage.messagesCount }
-                        ,{ enabled: true, title: i18n.tr("Feeds"), type: "JS",url: "var button = document.querySelector('a[name=" + "\"News Feed\"" + "].touchable'); if(button){button.click()}", iconName: "rssreader-app-symbolic", notifyText: webViewPage.feedsCount }
-                        ,{ enabled: true, title: i18n.tr("Friends"), type: "URL",url: webViewPage.baseURL + "/friends" + (!mainView.desktopMode ? "/center/requests/" : ""), iconName: "contact", notifyText: webViewPage.requestsCount }
+                        { enabled: true, title: i18n.tr("Friends"), type: "URL",url: webViewPage.baseURL + "/friends" + (!mainView.desktopMode ? "/center/requests/" : ""), iconName: "contact", notifyText: webViewPage.requestsCount }
                         ,{ enabled: true, title: i18n.tr("Search"), type: "JS",url: "var button = document.querySelector('a[name=Search ]') || document.querySelector('input[type=search ]'); if(button){button.click()}", iconName: "find" }
                         ,{ enabled: true, title: i18n.tr("Menu"), type: "JS",url: "var button = document.querySelector('a[name=More].touchable'); if(button){button.click()};", iconName: "navigation-menu" }
                         ,{ enabled: true, title: i18n.tr("More"), type: "Menu",url: moreActions, iconName: "other-actions" }
                         ,{ enabled: appSettings.baseSite !== 2, title: i18n.tr("Desktop site"), type: "Toggle", url: "appSettings.forceDesktopVersion = !appSettings.forceDesktopVersion", iconName: "computer-symbolic", initialValue: appSettings.forceDesktopVersion }
-                        ,{ enabled: true, title: i18n.tr("Settings"), type: "PAGE",url: Qt.resolvedUrl("SettingsPage.qml"), iconName: "settings" }
                         ,{ enabled: true, title: i18n.tr("About"), type: "PAGE",url: Qt.resolvedUrl("AboutPage.qml"), iconName: "info" }
+                    ]
+
+                    rowActions: [
+                        Common.RowMenuAction {
+                            text: i18n.tr("Settings")
+                            icon.name: "settings"
+                            closeMenuOnTrigger: true
+                            type: "PAGE"
+                            url: Qt.resolvedUrl("SettingsPage.qml")
+                        }
+                        , Common.RowMenuAction {
+                            text: i18n.tr("Feeds")
+                            icon.name: "rssreader-app-symbolic"
+                            closeMenuOnTrigger: true
+                            type: "JS"
+                            url: "var button = document.querySelector('a[name=" + "\"News Feed\"" + "].touchable'); if(button){button.click()}"
+                            notifyText: webViewPage.feedsCount
+                        }
+                        , Common.RowMenuAction {
+                            text: i18n.tr("Messages")
+                            icon.name: "message"
+                            closeMenuOnTrigger: true
+                            type: "URL"
+                            url: (appSettings.messengerDesktop ? "https://www.facebook.com" : webViewPage.baseURL) + "/messages"
+                            notifyText: webViewPage.messagesCount
+                        }
+                        ,Common.RowMenuAction {
+                            text: i18n.tr("Notifications")
+                            icon.name: "notification"
+                            closeMenuOnTrigger: true
+                            type: "URL"
+                            url: webViewPage.baseURL + "/notifications"
+                            notifyText: webViewPage.notificationsCount
+                        }
                     ]
 
                     onOpened: applicationHeader.holdTimeout = true

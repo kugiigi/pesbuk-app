@@ -28,6 +28,10 @@
         <file>components/HorizontalSwipeHandle.qml</file>
         <file>components/Haptics.qml</file>
         <file>components/ScrollPositioner.qml</file>
+        <file>components/ActionRowMenu.qml</file>
+        <file>components/RowMenuAction.qml</file>
+        <file>components/CustomizedMenuSeparator.qml</file>
+        <file>components/MenuToolButton.qml</file>
         <file>components/WebviewSwipeHandler.qml</file>
         <file>components/ExternalDialog.qml</file>
         <file>components/NavHistoryPopup.qml</file>

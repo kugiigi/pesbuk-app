@@ -3,6 +3,7 @@ v2.1
  - Redesigned crash/sad page and hopefully fixes and make it show
  - Added bottom horizontal swipe gestures for back/forward navigation
  - Properly handle opening of external sites
+ - System theme now takes effect without restarting the app (Only works with Suru style)
 
 v2.0
  - Fixed "Search" from the drawer (Thanks nitanmarcel)

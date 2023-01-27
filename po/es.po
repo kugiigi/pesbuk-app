@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pesbuk 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-27 04:04+0000\n"
+"POT-Creation-Date: 2023-01-27 04:35+0000\n"
 "PO-Revision-Date: 2019-01-07 17:10+0100\n"
 "Last-Translator: Josu\n"
 "Language-Team: Ubports Spanish Team\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:9
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:404
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:406
 msgid "About"
 msgstr "Acerca de"
 
@@ -97,84 +97,84 @@ msgstr ""
 msgid "Upload from"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:190
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:192
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:64
 msgid "Back"
 msgstr "Volver"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:190
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:400
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:192
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:402
 msgid "Menu"
 msgstr "Menú"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:378
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:380
 msgid "View Profile"
 msgstr "Ver perfil"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:379
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:381
 msgid "Marketplace"
 msgstr "Marketplace"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:380
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:382
 msgid "Pages"
 msgstr "Páginas"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:381
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:383
 msgid "Saved"
 msgstr "Guardado"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:382
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:384
 msgid "Groups"
 msgstr "Grupo"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:383
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:385
 msgid "Events"
 msgstr "Eventos"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:384
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:386
 msgid "On This Day"
 msgstr "Recuerdos"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:385
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:387
 msgid "Buy and Sell Groups"
 msgstr "Grupos de compraventa"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:386
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:388
 msgid "Jobs"
 msgstr "Empleos"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:395
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:397
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:273
 msgid "Notifications"
 msgstr "Notificaciones"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:396
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:398
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:301
 msgid "Messages"
 msgstr "Mensajes"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:397
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:399
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:357
 msgid "Feeds"
 msgstr "Noticias"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:398
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:400
 msgid "Friends"
 msgstr "Amigos"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:399
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:401
 msgid "Search"
 msgstr "Buscar"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:401
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:403
 msgid "More"
 msgstr "Mas"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:402
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:404
 msgid "Desktop site"
 msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:403
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:405
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:9
 msgid "Settings"
 msgstr "Configuración"

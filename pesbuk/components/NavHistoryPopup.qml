@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import Ubuntu.Components 1.3
 import QtQuick.Controls 2.2 as QQC2
+import QtQuick.Controls.Suru 2.2
 
 QQC2.Popup {
     id: navHistoryPopup
@@ -98,14 +99,14 @@ QQC2.Popup {
                     anchors.fill: parent
                     opacity: 0.2
                     visible: hover.containsMouse && !listItem.ListView.isCurrentItem
-                    color: theme.palette.normal.focus
+                    color: Suru.highlightColor
                 }
 
                 ListItemLayout {
                     id: layout
 
                     title.text: model.title
-                    title.color: theme.palette.normal.foregroundText
+                    title.color: Suru.foregroundColor
                     
                     Icon {
                         SlotsLayout.position: SlotsLayout.Leading;
@@ -113,6 +114,7 @@ QQC2.Popup {
                         height: units.gu(2)
                         width: height
                         visible: model.index == 0 && historyListView.count > 1
+                        color: Suru.foregroundColor
                     }
                 }
             }

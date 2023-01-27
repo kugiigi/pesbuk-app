@@ -43,7 +43,7 @@ Menu {
                  anchors.leftMargin: 10
                  anchors.verticalCenter: parent.verticalCenter
                  name: modelData ? modelData.iconName : ""
-                 color: theme.palette.normal.backgroundText
+                 color: Suru.tertiaryForegroundColor
              }
              leftPadding: iconMenu.implicitWidth + (iconMenu.anchors.leftMargin * 2)
         }

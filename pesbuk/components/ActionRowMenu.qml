@@ -27,7 +27,7 @@ MouseArea {
     
     Rectangle {
         anchors.fill: parent
-        color: Suru.backgroundColor
+        color: Suru.secondaryBackgroundColor
     }
 
     RowLayout {
@@ -61,6 +61,7 @@ MouseArea {
                 iconName: modelData.icon.name
                 iconWidth: Suru.units.gu(3)
                 iconHeight: iconWidth
+                iconColor: Suru.tertiaryForegroundColor
                 tooltipText: modelData.text
                 notifyText: modelData.notifyText
                 focusPolicy: actionRowMenu.getsFocus ? Qt.StrongFocus : Qt.NoFocus

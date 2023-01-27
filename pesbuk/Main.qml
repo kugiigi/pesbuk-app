@@ -49,6 +49,9 @@ ApplicationWindow {
                     break
                 }
 
+    Material.theme: Suru.theme == Suru.Dark ? Material.Dark : Material.Light
+    Material.accent: Material.Indigo
+
     // Change theme in real time when set to follow system theme
     // Only works when the app gets unfocused then focused
     // Possibly ideal so the change won't happen while the user is using the app
@@ -58,14 +61,13 @@ ApplicationWindow {
         onStateChanged: {
             if (previousTheme !== theme.name) {
                 appWindow.Suru.theme = Theme.name == "Ubuntu.Components.Themes.SuruDark" ? Suru.Dark : Suru.Light
-                appWindow.Material.theme = Theme.name == "Ubuntu.Components.Themes.SuruDark" ? Material.Dark : Material.Light
                 theme.name = Theme.name
                 theme.name = ""
             }
             previousTheme = Theme.name
         }
     }
-    
+
     header: ApplicationHeader{
             id: applicationHeader
             

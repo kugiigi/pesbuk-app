@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.12
 import Ubuntu.Components 1.3 as UT
+import QtQuick.Controls.Suru 2.2
 import "components"
 import "components/menudrawer"
 
@@ -132,7 +133,7 @@ Drawer {
             }
 
             icon.name: modelData ? modelData.iconName : ""
-            icon.color: theme.palette.normal.backgroundText
+            icon.color: Suru.tertiaryForegroundColor
             indicator: Switch {
                 id: switchDesktopSite
 

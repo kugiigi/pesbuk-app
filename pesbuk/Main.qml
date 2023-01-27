@@ -170,7 +170,7 @@ ApplicationWindow {
         anchors.fill: parent
         objectName: "mainView"  
         
-        readonly property string version: "2.0"
+        readonly property string version: "2.1"
         readonly property bool wide: width >= units.gu(120)
         
         readonly property string siteMode: wide ? "Desktop" : "Phone"

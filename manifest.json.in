@@ -15,7 +15,7 @@
             "push-helper": "push/push.json"
         }
     },
-    "version": "2.1",
+    "version": "2.2",
     "maintainer": "Kugi Eusebio <kugi_eusebio@protonmail.com>",
     "framework": "ubuntu-sdk-20.04"
 }

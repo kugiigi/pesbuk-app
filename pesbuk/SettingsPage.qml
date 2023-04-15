@@ -134,7 +134,7 @@ BasePage {
             }
 
             Label {
-                text: i18n.tr("%1 Swipe up/down and hold to expand").arg (" **")
+                text: i18n.tr("%1 Swipe up/down on the leftmost and rightmost side").arg (" **")
                 height: visible ? font.pixelSize : 0
                 visible: appSettings.headerExpand
                 verticalAlignment: Label.AlignVCenter

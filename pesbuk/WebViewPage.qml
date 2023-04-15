@@ -275,33 +275,50 @@ BasePage {
         }
 
         Common.WebviewSwipeHandler {
-            id: pullUpSwipeGesture
-            objectName: "pullUpSwipeGesture"
+            id: leftSwipeGesture
+            objectName: "leftSwipeGesture"
 
             z: 1
-            enabled: applicationHeader.expandable && applicationHeader.expanded
+            webviewPullDownState: applicationHeader.expanded
+            enabled: applicationHeader.expandable
             usePhysicalUnit: true
-            anchors.fill: parent
+            width: physicalDotsPerInch * 0.2 // 0.2 inch
+            anchors {
+                left: parent ? parent.left : undefined
+                top: parent ? parent.top : undefined
+                bottom: parent ? parent.bottom : undefined
+            }
 
             onTrigger: {
-                applicationHeader.state = "Default"
-                Common.Haptics.play()
+                if (webviewPullDownState) {
+                    applicationHeader.state = "Default"
+                } else {
+                    applicationHeader.state = "Expanded"
+                }
             }
         }
 
         Common.WebviewSwipeHandler {
-            id: pullDownSwipeGesture
-            objectName: "pullDownSwipeGesture"
+            id: rightSwipeGesture
+            objectName: "rightSwipeGesture"
 
             z: 1
-            enabled: applicationHeader.expandable && !applicationHeader.expanded
-            direction: SwipeArea.Downwards
+            webviewPullDownState: applicationHeader.expanded
+            enabled: applicationHeader.expandable
             usePhysicalUnit: true
-            anchors.fill: parent
+            width: physicalDotsPerInch * 0.2 // 0.2 inch
+            anchors {
+                right: parent ? parent.right : undefined
+                top: parent ? parent.top : undefined
+                bottom: parent ? parent.bottom : undefined
+            }
 
             onTrigger: {
-                applicationHeader.state = "Expanded"
-                Common.Haptics.play()
+                if (webviewPullDownState) {
+                    applicationHeader.state = "Default"
+                } else {
+                    applicationHeader.state = "Expanded"
+                }
             }
         }
 

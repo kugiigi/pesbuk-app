@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-15 05:31+0000\n"
+"POT-Creation-Date: 2023-04-15 05:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -271,7 +271,7 @@ msgstr ""
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:137
 #, qt-format
-msgid "%1 Swipe up/down and hold to expand"
+msgid "%1 Swipe up/down on the leftmost and rightmost side"
 msgstr ""
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:145

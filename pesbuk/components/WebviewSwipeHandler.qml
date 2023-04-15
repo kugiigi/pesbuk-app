@@ -5,25 +5,33 @@ import "." as Common
 Common.SwipeGestureHandler {
     id: pullUpSwipeGesture
 
+    property bool webviewPullDownState: false
     property int triggerStage: 3
+
+    readonly property bool triggerStageReached: stage >= triggerStage
+
     signal trigger
-    signal aboutToTrigger
 
+    visible: enabled
+    direction: webviewPullDownState ? SwipeArea.Upwards : SwipeArea.Downwards
     immediateRecognition: false
-    grabGesture: false
-    swipeHoldDuration:  700
+    grabGesture: true
 
-    onStageChanged: {
-        if (dragging && towardsDirection) {
-            if (stage >= triggerStage) {
-                aboutToTrigger()
+    onTriggerStageReachedChanged: {
+        if (dragging) {
+            if (triggerStageReached) {
+                Common.Haptics.play()
+            } else {
+                Common.Haptics.playSubtle()
             }
         }
     }
 
-    onSwipeHeld: {
-        if (stage >= triggerStage) {
-            trigger()
+    onDraggingChanged: {
+        if (!dragging && towardsDirection) {
+            if (stage >= triggerStage) {
+                trigger()
+            }
         }
     }
 }

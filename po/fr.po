@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-15 05:31+0000\n"
+"POT-Creation-Date: 2023-04-15 05:37+0000\n"
 "PO-Revision-Date: 2021-02-09 21:48+0100\n"
 "Last-Translator: Anne017\n"
 "Language-Team: \n"
@@ -275,7 +275,7 @@ msgstr "Agrandir l'en-tête lors d'un balayage vers le bas"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:137
 #, qt-format
-msgid "%1 Swipe up/down and hold to expand"
+msgid "%1 Swipe up/down on the leftmost and rightmost side"
 msgstr ""
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:145

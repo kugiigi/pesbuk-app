@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-27 15:56+0000\n"
+"POT-Creation-Date: 2023-04-15 05:31+0000\n"
 "PO-Revision-Date: 2021-02-09 21:48+0100\n"
 "Last-Translator: Anne017\n"
 "Language-Team: \n"
@@ -464,7 +464,7 @@ msgstr "Version"
 msgid "Released under license"
 msgstr "Distribué sous licence"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/build/x86_64-linux-gnu/app/pesbuk/pesbuk.desktop.h:1
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/build/aarch64-linux-gnu/app/pesbuk/pesbuk.desktop.h:1
 msgid "Pesbuk"
 msgstr "Pesbuk"
 

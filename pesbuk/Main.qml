@@ -446,7 +446,7 @@ ApplicationWindow {
             id: goForwardIcon
 
             iconName: "go-next"
-            dragDistance: bottomBackForwardHandle.distance
+            swipeProgress: bottomBackForwardHandle.swipeProgress
             enabled: appWindow.webview ? appWindow.webview.canGoForward
                                             : false
             anchors {
@@ -459,7 +459,7 @@ ApplicationWindow {
             id: goBackIcon
 
             iconName: "go-previous"
-            dragDistance: bottomBackForwardHandle.distance
+            swipeProgress: bottomBackForwardHandle.swipeProgress
             enabled: appWindow.webview ? appWindow.webview.canGoBack
                                             : false
             anchors {

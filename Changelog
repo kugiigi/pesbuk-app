@@ -1,3 +1,7 @@
+v2.2
+ - Moved web view pull down gesture area to the leftmost and rightmost sides
+ - Minor UI changes
+
 v2.1
  - Fixed chromium flags
  - Redesigned crash/sad page and hopefully fixes and make it show

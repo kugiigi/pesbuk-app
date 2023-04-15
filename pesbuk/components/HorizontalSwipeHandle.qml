@@ -5,6 +5,11 @@ import "." as Local
 Local.SwipeGestureHandler {
     id: horizontalSwipeHandle
 
+    readonly property real swipeProgress: usePhysicalUnit ? Math.min(1.0, Math.max(0.0, Math.abs(distance) / (thresholds[stage] * physicalDotsPerInch)))
+                                                    : Math.min(1.0, Math.max(0.0, Math.abs(distance) / (thresholds[stage] * parent.width)))
+    readonly property int physicalStageTrigger: 2
+    readonly property int defaultStageTrigger: 4
+
     property bool leftSwipeHoldEnabled: true
     property bool rightSwipeHoldEnabled: true
     property bool leftSwipeEnabled: true
@@ -21,8 +26,8 @@ Local.SwipeGestureHandler {
     direction: SwipeArea.Horizontal
 
     function assessAction(swipeHold) {
-        if ( (usePhysicalUnit && stage >= 2)
-             || (!usePhysicalUnit && stage >= 4)
+        if ( (usePhysicalUnit && stage >= physicalStageTrigger)
+             || (!usePhysicalUnit && stage >= defaultStageTrigger)
            ) {
             if (distance > 0 && rightSwipeEnabled) {
                 if (swipeHold) {
@@ -31,6 +36,9 @@ Local.SwipeGestureHandler {
                         Local.Haptics.play()
                         rightSwipeHeld()
                         internal.delayedHideActions()
+                    } else {
+                        // Whem hold is disabled, only trigger after lifting swipe
+                        internal.swipeHeld = false
                     }
                 } else {
                     rightSwipe()
@@ -44,6 +52,9 @@ Local.SwipeGestureHandler {
                         Local.Haptics.play()
                         leftSwipeHeld()
                         internal.delayedHideActions()
+                    } else {
+                        // Whem hold is disabled, only trigger after lifting swipe
+                        internal.swipeHeld = false
                     }
                 } else {
                     leftSwipe()
@@ -60,8 +71,8 @@ Local.SwipeGestureHandler {
 
     onStageChanged: {
         if (dragging) {
-            if ( (usePhysicalUnit && stage >= 2)
-                 || (!usePhysicalUnit && stage >= 4)
+            if ( (usePhysicalUnit && stage >= physicalStageTrigger)
+                 || (!usePhysicalUnit && stage >= defaultStageTrigger)
                ) {
                 if (distance > 0 && rightSwipeEnabled) {
                     leftAction.show()

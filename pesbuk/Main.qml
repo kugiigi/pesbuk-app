@@ -174,16 +174,18 @@ ApplicationWindow {
         readonly property bool wide: width >= units.gu(120)
         
         readonly property string siteMode: wide ? "Desktop" : "Phone"
-        readonly property bool desktopMode: appSettings.baseSite === 2 || (appSettings.baseSite === 3 && mainView.siteMode === "Desktop")
-        
+        readonly property bool desktopMode: appSettings.baseSite === 2
+                                                || (appSettings.baseSite === 3 && mainView.siteMode === "Desktop")
+                                                || appSettings.forceDesktopVersion
+
         property bool blockOpenExternalUrls: false
         property bool runningLocalApplication: false
         property bool openExternalUrlInOverlay: false
         property bool popupBlockerEnabled: true
         property bool fullscreen: false
-        
-        theme.name: appSettings.style === "Suru" ? "" : "Ubuntu.Components.Themes.Ambiance"
-        
+
+        theme.name: appSettings.style === "Suru" ? "" : "Lomiri.Components.Themes.Ambiance"
+
         Common.BaseHeaderAction{
             id: menuAction
             
@@ -247,7 +249,7 @@ ApplicationWindow {
                 webViewPage.webView.url = uri
             }
         }
-        
+
         UT.Arguments {
             id: args
         

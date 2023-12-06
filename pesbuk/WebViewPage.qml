@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import Morph.Web 0.1
-import QtWebEngine 1.7
+import QtWebEngine 1.10
 import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Content 1.1
@@ -14,7 +14,7 @@ import "."
 
 BasePage {
     id: page
-    
+
     readonly property string baseURL: switch(appSettings.baseSite){
                                 case 0:
                                     appSettings.forceDesktopVersion ? "https://www.facebook.com" : "https://touch.facebook.com"
@@ -26,10 +26,10 @@ BasePage {
                                     "https://www.facebook.com"
                                 break
                                 case 3:
-                                    mainView.siteMode === "Phone" && !appSettings.forceDesktopVersion ? "https://touch.facebook.com" : "https://www.facebook.com"
+                                    mainView.desktopMode ? "https://www.facebook.com" : "https://m.facebook.com"
                                 break
                                 default:
-                                    "https://touch.facebook.com"
+                                    "https://m.facebook.com"
                                 break
                                 
                             }
@@ -149,7 +149,7 @@ BasePage {
         }
     }
 
-    WebEngineView {
+    WebView {
         id: webview
 
         property var currentWebview: webview
@@ -328,23 +328,10 @@ BasePage {
             z: 5
             mode: "Down"
         }
-            
-        WebEngineProfile {
-            id: webContext 
 
-            property alias userAgent: webContext.httpUserAgent
-            property alias dataPath: webContext.persistentStoragePath
-
-            dataPath: dataLocation
-
-            persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
-
-        }
-        
         onNavigationRequested: {
 
             var requestUrl = request.url;
-
             // for file urls we set currentDomain to "scheme:file", because there is no host
             var expectedDomain = "facebook.com";
             var requestDomain = UrlUtils.schemeIs(requestUrl, "file") ? "scheme:file" : UrlUtils.extractHost(requestUrl);
@@ -353,6 +340,8 @@ BasePage {
                 request.action = WebEngineNavigationRequest.IgnoreRequest
                 externalDialog.show(requestUrl)
             }
+
+            webview.context.__ua.setDesktopMode(mainView.desktopMode)
         }
 
         onJavaScriptDialogRequested: function(request) {

@@ -1,3 +1,8 @@
+v2.3
+ - Focal only release
+ - Properly use WebView from Morph.Web instead of directly using from QtWebEngine
+ - Fix detection of the new mobile site
+
 v2.2
  - Moved web view pull down gesture area to the leftmost and rightmost sides
  - Minor UI changes

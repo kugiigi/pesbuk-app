@@ -1,9 +1,10 @@
 import QtQuick 2.9
+import QtQuick.Window 2.2
 
 Item{
 	id: keyboardRectangle
-		
-	height: keyboard.target.visible ? keyboard.target.keyboardRectangle.height / (units.gridUnit / 8) : 0
+
+	height: Qt.inputMethod.visible ? Qt.inputMethod.keyboardRectangle.height / Screen.devicePixelRatio : 0
 	anchors{
 		left: parent.left
 		right: parent.right

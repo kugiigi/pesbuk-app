@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 11:17+0000\n"
+"POT-Creation-Date: 2023-12-08 06:04+0000\n"
 "PO-Revision-Date: 2021-02-09 21:48+0100\n"
 "Last-Translator: Anne017\n"
 "Language-Team: \n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/AboutPage.qml:9
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:403
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:416
 msgid "About"
 msgstr "À propos"
 
@@ -97,12 +97,12 @@ msgid "Upload from"
 msgstr "Téléchargement à partir de"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:193
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:65
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:64
 msgid "Back"
 msgstr "Retour"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:193
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:400
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:408
 msgid "Menu"
 msgstr "Menu"
 
@@ -135,46 +135,42 @@ msgid "On This Day"
 msgstr "Ce jour-là"
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:388
-msgid "Buy and Sell Groups"
-msgstr "Groupe d'achats et de ventes"
+msgid "Reels"
+msgstr ""
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:389
-msgid "Jobs"
-msgstr "Emplois"
-
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:398
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:397
 msgid "Friends"
 msgstr "Amis"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:399
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:400
 msgid "Search"
 msgstr "Recherche"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:401
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:414
 msgid "More"
 msgstr "Plus"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:402
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:415
 #, fuzzy
 msgid "Desktop site"
 msgstr "Version pour ordinateur"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:408
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:421
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:9
 msgid "Settings"
 msgstr "Paramètres"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:415
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:428
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:357
 msgid "Feeds"
 msgstr "Flux"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:423
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:441
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:301
 msgid "Messages"
 msgstr "Messages"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:431
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/Main.qml:457
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SettingsPage.qml:273
 msgid "Notifications"
 msgstr "Notifications"
@@ -223,7 +219,7 @@ msgid "Close tab"
 msgstr ""
 
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/SadPage.qml:79
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:121
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:120
 msgid "Reload"
 msgstr "Actualiser"
 
@@ -332,81 +328,81 @@ msgstr "Son"
 msgid "Friend requests"
 msgstr "Demandes d'ami"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:76
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:75
 msgid "Test"
 msgstr "Test"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:86
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:85
 msgid "Test 2"
 msgstr "Test 2"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:99
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:98
 msgid "Forward"
 msgstr "Suivant"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:110
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:109
 msgid "Home"
 msgstr "Accueil"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:132
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:131
 msgid "Go to top"
 msgstr "Retour au début"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:144
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:143
 msgid "Show header"
 msgstr "Afficher l'en-tête"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:144
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:143
 msgid "Hide header"
 msgstr "Masquer l'en-tête"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:218
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:217
 msgid "New Facebook notification"
 msgid_plural "New Facebook notifications"
 msgstr[0] "Nouvelle notification de Facebook"
 msgstr[1] "Nouvelles notifications de Facebook"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:219
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:218
 msgid "notification"
 msgid_plural "notifications"
 msgstr[0] "notification"
 msgstr[1] "notifications"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:229
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:228
 msgid "New Facebook message"
 msgid_plural "New Facebook messages"
 msgstr[0] "Nouveau message de Facebook"
 msgstr[1] "Nouveaux messages de Facebook"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:230
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:229
 msgid "message"
 msgid_plural "messages"
 msgstr[0] "message"
 msgstr[1] "messages"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:240
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:239
 msgid "New items in your Facebook feeds"
 msgstr "Nouveaux éléments dans votre flux Facebook"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:241
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:240
 msgid "feed"
 msgid_plural "feeds"
 msgstr[0] "flux"
 msgstr[1] "flux"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:251
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:250
 msgid "New Facebook friend request"
 msgid_plural "New Facebook friend requests"
 msgstr[0] "Nouvelle demande d'ami de Facebook"
 msgstr[1] "Nouvelles demandes d'ami de Facebook"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:252
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:251
 msgid "friend request"
 msgid_plural "friend requests"
 msgstr[0] "demande d'ami"
 msgstr[1] "demandes d'ami"
 
-#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:262
+#: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/pesbuk/WebViewPage.qml:261
 #, qt-format
 msgid "You have %2 new %1"
 msgid_plural "You have %2 new %1"
@@ -467,6 +463,12 @@ msgstr "Distribué sous licence"
 #: /home/kugiigi/Documents/Development/Pesbuk/pesbuk-app/build/aarch64-linux-gnu/app/pesbuk/pesbuk.desktop.h:1
 msgid "Pesbuk"
 msgstr "Pesbuk"
+
+#~ msgid "Buy and Sell Groups"
+#~ msgstr "Groupe d'achats et de ventes"
+
+#~ msgid "Jobs"
+#~ msgstr "Emplois"
 
 #~ msgid "Oops, something went wrong."
 #~ msgstr "Oups, un problème s'est produit."

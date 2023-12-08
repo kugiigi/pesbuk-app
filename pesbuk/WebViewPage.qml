@@ -50,7 +50,7 @@ BasePage {
     title: webview.title
     /* For testing only */
 //~     headerRightActions: [testAction, testAction2, homeAction, reloadAction, forwardAction, backAction]
-    headerRightActions: [toggleFBHeader, homeAction, reloadAction, forwardAction, backAction]
+    headerRightActions: [homeAction, reloadAction, forwardAction, backAction]
 
     function showNavHistory(model, fromBottom, caller) {
         navHistPopup.model = model

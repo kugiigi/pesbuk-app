@@ -1,8 +1,8 @@
 var elements = [
-                {"name": "Notifications", "selector": "a[name='Notifications'] span[data-sigil=count]"}
-                ,{"name": "Feeds", "selector": "a[name='News Feed'] span[data-sigil=count]"}
-                ,{"name": "Requests", "selector": "a[name='Friend Requests'] span[data-sigil=count]"}
-                ,{"name": "Messages", "selector": "a[name='Messages'] span[data-sigil=count]"}
+                {"name": "Notifications", "selector": "div.m[data-comp-id='7'] div.native-text span.f6"}
+                ,{"name": "Feeds", "selector": "div.m[data-comp-id='1'] div.native-text span.f6"}
+                ,{"name": "Requests", "selector": "div.m[data-comp-id='4'] div.native-text span.f6"}
+                ,{"name": "Messages", "selector": "div.m[data-comp-id='5'] div.native-text span.f6"}
             ]
 
 var targetNode
@@ -12,7 +12,9 @@ for (var i = 0; i < arrayLength; i++) {
     elementName = elements[i].name
     targetNode = document.querySelector(elements[i].selector);
     if(targetNode){
-        console.log('{"type": "NOTIFY", "push": false, "name": "' + elementName + '", "value": "' + targetNode.innerText + '"}' )
+        let _countNumber = targetNode.innerText
+        _countNumber = parseFloat(_countNumber) ? _countNumber : 0
+        console.log('{"type": "NOTIFY", "push": false, "name": "' + elementName + '", "value": "' + _countNumber + '"}' )
         createObserver(targetNode, elementName)
     }
 }
@@ -21,36 +23,9 @@ for (var i = 0; i < arrayLength; i++) {
 function createObserver(target, targetName){
     var observer = new MutationObserver(function(mutations) {
         //~ console.log("mutation: " + mutation.type + " - " + JSON.stringify(targetName) + " - " + mutation)
-        console.log('{"type": "NOTIFY", "push": true, "name": "' + targetName + '", "value": "' + target.innerText + '"}' )
-        
-        // Commented out to avoid duplicate notifications
-        //~ mutations.forEach(function(mutation) {
-            //~ if (mutation.type === 'childList') {
-                //~ var isNodeChange = false;
-                //~ if (mutation.addedNodes.length) {
-                    //~ for (var i=0,node;node=mutation.addedNodes[i];i+=1) {
-                        //~ if (node.nodeType === 3) {
-                            //~ isNodeChange = true;
-                            //~ break;
-                        //~ }
-                    //~ }
-                //~ }
-                //~ if (mutation.removedNodes.length && !isNodeChange) {
-                    //~ for (var i=0,node;node=mutation.removedNodes[i];i+=1) {
-                        //~ if (node.nodeType === 3) {
-                            //~ isNodeChange = true;
-                            //~ break;
-                        //~ }
-                    //~ }
-                //~ }
-                
-                //~ if(isNodeChange){
-                    //~ console.log('{"type": "NOTIFY", "push": true, "name": "' + targetName + '", "value": "' + target.innerText + '"}' )
-                //~ }
-            //~ }
-            
-            
-          //~ });    
+        let _countNumber = target.innerText
+        _countNumber = parseFloat(_countNumber) ? _countNumber : 0
+        console.log('{"type": "NOTIFY", "push": true, "name": "' + targetName + '", "value": "' + _countNumber + '"}' )
     });
      
     var config = { childList: true };

@@ -378,15 +378,14 @@ ApplicationWindow {
             id: drawerLoader
             
             readonly property var moreActions: [
-                        { title: i18n.tr("View Profile"), type: "JS",url: "var menuButton = document.querySelector('a[name=More].touchable'); if(menuButton){menuButton.click()}; setTimeout(function(){var button = document.querySelector('div.mSideMenu ul li div.touchable a'); if(button){button.click()}}, 1000)", iconName: "account" }
+                        { title: i18n.tr("View Profile"), type: "URL",url: webViewPage.baseURL + "/profile", iconName: "account" }
                         ,{ title: i18n.tr("Marketplace"), type: "URL",url: webViewPage.baseURL + "/marketplace", iconName: "stock_store" }
-                        ,{ title: i18n.tr("Pages"), type: "URL",url: webViewPage.baseURL + "/nt/?id=%2Fpages%2Fnt_launchpoint%2Fhome_pages%2F", iconName: "stock_document" }
+                        ,{ title: i18n.tr("Pages"), type: "URL",url: webViewPage.baseURL + "pages", iconName: "stock_document" }
                         ,{ title: i18n.tr("Saved"), type: "URL",url: webViewPage.baseURL + "/saved", iconName: "bookmark" }
                         ,{ title: i18n.tr("Groups"), type: "URL",url: webViewPage.baseURL + "/groups", iconName: "contact-group" }
                         ,{ title: i18n.tr("Events"), type: "URL",url: webViewPage.baseURL + "/events", iconName: "event" }
                         ,{ title: i18n.tr("On This Day"), type: "URL",url: webViewPage.baseURL + "/onthisday", iconName: "calendar-today" }
-                        ,{ title: i18n.tr("Buy and Sell Groups"), type: "URL",url: webViewPage.baseURL + "/salegroups", iconName: "tag" }
-                        ,{ title: i18n.tr("Jobs"), type: "URL",url: webViewPage.baseURL + "/jobs", iconName: "preferences-desktop-accessibility-symbolic" }
+                        ,{ title: i18n.tr("Reels"), type: "URL",url: webViewPage.baseURL + "/reel", iconName: "stock_video" }
                     ]
             
             active: true
@@ -396,8 +395,22 @@ ApplicationWindow {
                      
                      model:  [
                         { enabled: true, title: i18n.tr("Friends"), type: "URL",url: webViewPage.baseURL + "/friends" + (!mainView.desktopMode ? "/center/requests/" : ""), iconName: "contact", notifyText: webViewPage.requestsCount }
-                        ,{ enabled: true, title: i18n.tr("Search"), type: "JS",url: "var button = document.querySelector('a[name=Search ]') || document.querySelector('input[type=search ]'); if(button){button.click()}", iconName: "find" }
-                        ,{ enabled: true, title: i18n.tr("Menu"), type: "JS",url: "var button = document.querySelector('a[name=More].touchable'); if(button){button.click()};", iconName: "navigation-menu" }
+                        ,{ 
+                            enabled: !mainView.desktopMode
+                            , title: i18n.tr("Search")
+                            , type: "JS"
+                            , url: "var button = document.querySelector('div.m[aria-label=\"Search\"]') || document.querySelector('a[name=Search ]') \
+                                    || document.querySelector('input[type=search ]'); if(button){button.click()}"
+                            , iconName: "find"
+                        }
+                        ,{
+                            enabled: true
+                            , title: i18n.tr("Menu")
+                            , type: "JS"
+                            , url: "var button = document.querySelector('div.m[data-action-id=\"32747\"') || document.querySelector('a[name=More].touchable'); \
+                                    if(button){button.click()};"
+                            , iconName: "navigation-menu"
+                        }
                         ,{ enabled: true, title: i18n.tr("More"), type: "Menu",url: moreActions, iconName: "other-actions" }
                         ,{ enabled: appSettings.baseSite !== 2, title: i18n.tr("Desktop site"), type: "Toggle", url: "appSettings.forceDesktopVersion = !appSettings.forceDesktopVersion", iconName: "computer-symbolic", initialValue: appSettings.forceDesktopVersion }
                         ,{ enabled: true, title: i18n.tr("About"), type: "PAGE",url: Qt.resolvedUrl("AboutPage.qml"), iconName: "info" }
@@ -416,23 +429,44 @@ ApplicationWindow {
                             icon.name: "rssreader-app-symbolic"
                             closeMenuOnTrigger: true
                             type: "JS"
-                            url: "var button = document.querySelector('a[name=" + "\"News Feed\"" + "].touchable'); if(button){button.click()}"
+                            url: "var button = document.querySelector('div.m[data-action-id=\"32738\"') \
+                                    || document.querySelector('div.m[data-action-id=\"32753\"') \
+                                    || document.querySelector('div.m[data-action-id=\"32756\"') \
+                                    || document.querySelector('div.m[data-action-id=\"32752\"') \
+                                    || document.querySelector('div.m[data-action-id=\"32751\"') \
+                                    || document.querySelector('a[name=" + "\"News Feed\"" + "].touchable'); if(button){button.click()}"
                             notifyText: webViewPage.feedsCount
                         }
                         , Common.RowMenuAction {
                             text: i18n.tr("Messages")
                             icon.name: "message"
                             closeMenuOnTrigger: true
+                            // type: mainView.desktopMode ? "URL" : "JS"
                             type: "URL"
-                            url: (appSettings.messengerDesktop ? "https://www.facebook.com" : webViewPage.baseURL) + "/messages"
+                            url: {
+                                // if (mainView.desktopMode) {
+                                    return (appSettings.messengerDesktop ? "https://www.facebook.com" : webViewPage.baseURL) + "/messages"
+                                // }
+                                // TODO: Disabled for now since ID changes depending on the current page :(
+                                // data-comp-id is closer but still changes
+                                // return "var button = document.querySelector('div.m[data-action-id=\"32723\"'); if(button){button.click()}"
+                            }
                             notifyText: webViewPage.messagesCount
                         }
                         ,Common.RowMenuAction {
                             text: i18n.tr("Notifications")
                             icon.name: "notification"
                             closeMenuOnTrigger: true
+                            // type: mainView.desktopMode ? "URL" : "JS"
                             type: "URL"
-                            url: webViewPage.baseURL + "/notifications"
+                            url: {
+                                // if (mainView.desktopMode) {
+                                    return webViewPage.baseURL + "/notifications"
+                                // }
+
+                                // return "var button = document.querySelector('div.m[data-action-id=\"32704\"') \
+                                //         || document.querySelector('div.m[data-action-id=\"32717\"'); if(button){button.click()}"
+                            }
                             notifyText: webViewPage.notificationsCount
                         }
                     ]
